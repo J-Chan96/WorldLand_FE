@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AiOutlineDown, AiOutlineUp, AiOutlineGlobal, AiOutlineApartment } from 'react-icons/ai';
+import {
+  AiOutlineDown,
+  AiOutlineUp,
+  AiOutlineGlobal,
+  AiOutlineFolderOpen,
+  AiOutlineFileSearch,
+  AiOutlineSetting,
+  AiOutlineTeam,
+} from 'react-icons/ai';
 
 const Header = styled.header`
   width: 100%;
@@ -17,6 +25,7 @@ const Header = styled.header`
   box-shadow:
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
+  user-select: none;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -55,7 +64,8 @@ const Dropdown = styled.div`
   /* width: 100%; */
   display: block;
   position: absolute;
-  background: rgba(0, 0, 0, 0.9);
+  /* background: rgba(0, 0, 0, 0.9);  */
+  background-color: rgb(18, 22, 30);
   font-size: 1rem;
   color: #fff;
   top: calc(100% + 1rem);
@@ -71,6 +81,11 @@ const Dropdown = styled.div`
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 25px;
   white-space: nowrap;
+  backdrop-filter: blur(10px);
+`;
+
+const CommunityDropdown = styled(Dropdown)`
+  right: -200px;
 `;
 
 const OutlineDown = styled(AiOutlineDown)`
@@ -109,6 +124,23 @@ const Strong = styled.div`
   /* padding-top: 2px; */
 `;
 
+const Network = styled.div`
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+`;
+
+const Divider = styled.div`
+  width: 1px;
+  height: auto;
+  color: red;
+  /* margin: -1rem, 2.5rem; */
+  /* margin-right: -20px; */
+  margin-left: 18px;
+  margin-right: 20px;
+  background: hsla(0, 0%, 100%, 0.1);
+`;
+
 function AppHeader() {
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -135,37 +167,84 @@ function AppHeader() {
                 <Strong>Intro to WorldLand</Strong>
                 <div>Introduction : What is WorldLand</div>
               </SpaceLink>
-              <SpaceLink>
-                <Strong>BlockChain and WorldLand</Strong>
-                <div>The basics on all things WorldLand and web3.</div>
-              </SpaceLink>
             </div>
           </Dropdown>
         </MenuItem>
         <MenuItem data-isactive={activeMenu === 'Build'} onClick={() => handleMenuClick('Build')}>
           Build {activeMenu === 'Build' ? <OutlineUp /> : <OutlineDown />}
           <Dropdown data-isvisible={activeMenu === 'Build'}>
-            Submenu 1<br />
-            Submenu 2
+            <div style={{ display: 'flex', margin: '20px 0' }}>
+              <AiOutlineSetting style={{ color: '#f9a109', paddingRight: '5px' }} /> DEVELOPER
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <SpaceLink href="https://www.worldland.space/Learn/">
+                <Strong>WorldLand Documentatation</Strong>
+                <div>Official WorldLand and WLC docs.</div>
+              </SpaceLink>
+              <SpaceLink href="https://www.worldland.space/">
+                <Strong>Participate WorldLand</Strong>
+                <div>How to participate in WorldLand</div>
+              </SpaceLink>
+              <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-deploy-smart-contract">
+                <Strong>Deploy Smart Contract</Strong>
+                <div>Here the section deploy tools</div>
+              </SpaceLink>
+            </div>
           </Dropdown>
         </MenuItem>
         <MenuItem data-isactive={activeMenu === 'Network'} onClick={() => handleMenuClick('Network')}>
           Network {activeMenu === 'Network' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown data-isvisible={activeMenu === 'Network'}>
-            <div style={{ display: 'flex', margin: '20px 0' }}>
-              <AiOutlineApartment style={{ color: '#f9a109', paddingRight: '5px' }} /> WorldLand Network
-            </div>
-            Connect WorldLand Network
-            <br />
-            Submenu 2
+          <Dropdown data-isvisible={activeMenu === 'Network'} style={{ left: '-500%' }}>
+            <Network>
+              <div>
+                <div style={{ display: 'flex', margin: '20px 0' }}>
+                  <AiOutlineFolderOpen style={{ color: '#f9a109', paddingRight: '5px' }} />
+                  RESOURCES
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/use/how-to-connect-wallet-to-worldland-network">
+                    <Strong>Connect WorldLand Network</Strong>
+                    <div>How to connec wallet to WorldLand Network</div>
+                  </SpaceLink>
+                  <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/worldland-api/apis">
+                    <Strong>WorldLand API</Strong>
+                    <div>Kind of WorldLand APIs</div>
+                  </SpaceLink>
+                </div>
+              </div>
+              <Divider></Divider>
+              <div>
+                <div style={{ display: 'flex', margin: '20px 0' }}>
+                  <AiOutlineFileSearch style={{ color: '#f9a109', paddingRight: '5px' }} />
+                  INSPECT
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <SpaceLink href="http://explorer.worldland.space:4001/">
+                    <Strong>WorldLand Explorer</Strong>
+                    <div>Explorer WorldLand Scan in real time.</div>
+                  </SpaceLink>
+                </div>
+              </div>
+            </Network>
           </Dropdown>
         </MenuItem>
         <MenuItem data-isactive={activeMenu === 'Community'} onClick={() => handleMenuClick('Community')}>
           Community {activeMenu === 'Community' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown data-isvisible={activeMenu === 'Community'}>
-            Submenu 1<br />
-            Submenu 2
-          </Dropdown>
+          <CommunityDropdown className="community" data-isvisible={activeMenu === 'Community'}>
+            <div style={{ display: 'flex', margin: '20px 0' }}>
+              <AiOutlineTeam style={{ color: '#f9a109', paddingRight: '5px' }} /> GET INVOLVED
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <SpaceLink href="https://www.worldland.space/">
+                <Strong>BlockChain and WorldLand</Strong>
+                <div>The basics on all things WorldLand and web3.</div>
+              </SpaceLink>
+              <SpaceLink href="https://github.com/cryptoecc">
+                <Strong>Visit our Github</Strong>
+                <div>Visit our DeScure Blockchain</div>
+              </SpaceLink>
+            </div>
+          </CommunityDropdown>
         </MenuItem>
       </Menu>
     </Header>
