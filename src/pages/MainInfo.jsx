@@ -143,7 +143,7 @@ const LearnBtn = styled.button`
   }
 `;
 
-const MainInfoPage = () => {
+function MainInfoPage() {
   return (
     <MainInfoContainer>
       <ContentContainer>
@@ -168,6 +168,6 @@ const MainInfoPage = () => {
       </ContentContainer>
     </MainInfoContainer>
   );
-};
+}
 
 export default MainInfoPage;
