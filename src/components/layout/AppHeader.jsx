@@ -11,7 +11,7 @@ import {
 } from 'react-icons/ai';
 
 const Header = styled.header`
-  width: 100%;
+  /* width: 100%; */
   height: 65px;
   background: #333;
   font-size: 18px;
@@ -26,10 +26,7 @@ const Header = styled.header`
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+  overflow: hidden;
 `;
 
 const Logo = styled.div`
