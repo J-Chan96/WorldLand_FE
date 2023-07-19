@@ -1,5 +1,11 @@
+import MainInfoPage from '../../pages/MainInfo';
+
 const AppRoute = () => {
-  return <div>Router</div>;
+  return (
+    <>
+      <MainInfoPage />
+    </>
+  );
 };
 
 export default AppRoute;

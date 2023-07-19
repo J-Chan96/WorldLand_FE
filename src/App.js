@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import AppLayout from './components/layout/AppLayout';
 import styled, { createGlobalStyle } from 'styled-components';
 
