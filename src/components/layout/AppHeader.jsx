@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AiOutlineDown, AiOutlineUp, AiOutlineGlobal } from 'react-icons/ai';
+import { AiOutlineDown, AiOutlineUp, AiOutlineGlobal, AiOutlineApartment } from 'react-icons/ai';
 
 const Header = styled.header`
   width: 100%;
@@ -42,8 +42,8 @@ const MenuItem = styled.div`
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  border-bottom: ${(props) => (props.isActive ? '2px solid #f9a109' : '2px solid transparent')};
-  color: ${(props) => (props.isActive ? '#f9a109' : 'none')};
+  border-bottom: ${(props) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
+  color: ${(props) => (props['data-isactive'] ? '#f9a109' : 'none')};
 
   &:hover {
     color: #f9a109;
@@ -65,9 +65,9 @@ const Dropdown = styled.div`
     opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     visibility 0.3s;
-  transform: translateY(${(props) => (props.isVisible ? '0' : '-10px')});
-  opacity: ${(props) => (props.isVisible ? '1' : '0')};
-  visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
+  transform: translateY(${(props) => (props['data-isvisible'] ? '0' : '-10px')});
+  opacity: ${(props) => (props['data-isvisible'] ? '1' : '0')};
+  visibility: ${(props) => (props['data-isvisible'] ? 'visible' : 'hidden')};
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 25px;
   white-space: nowrap;
@@ -120,9 +120,9 @@ function AppHeader() {
     <Header>
       <Logo>Logo</Logo>
       <Menu>
-        <MenuItem isActive={activeMenu === 'Learn'} onClick={() => handleMenuClick('Learn')}>
+        <MenuItem data-isactive={activeMenu === 'Learn'} onClick={() => handleMenuClick('Learn')}>
           Learn {activeMenu === 'Learn' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown isVisible={activeMenu === 'Learn'}>
+          <Dropdown data-isvisible={activeMenu === 'Learn'}>
             <div style={{ display: 'flex', margin: '20px 0' }}>
               <AiOutlineGlobal style={{ color: '#f9a109', paddingRight: '5px' }} /> HERE TO LEARN
             </div>
@@ -142,23 +142,27 @@ function AppHeader() {
             </div>
           </Dropdown>
         </MenuItem>
-        <MenuItem isActive={activeMenu === 'Build'} onClick={() => handleMenuClick('Build')}>
+        <MenuItem data-isactive={activeMenu === 'Build'} onClick={() => handleMenuClick('Build')}>
           Build {activeMenu === 'Build' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown isVisible={activeMenu === 'Build'}>
+          <Dropdown data-isvisible={activeMenu === 'Build'}>
             Submenu 1<br />
             Submenu 2
           </Dropdown>
         </MenuItem>
-        <MenuItem isActive={activeMenu === 'Network'} onClick={() => handleMenuClick('Network')}>
+        <MenuItem data-isactive={activeMenu === 'Network'} onClick={() => handleMenuClick('Network')}>
           Network {activeMenu === 'Network' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown isVisible={activeMenu === 'Network'}>
-            Submenu 1<br />
+          <Dropdown data-isvisible={activeMenu === 'Network'}>
+            <div style={{ display: 'flex', margin: '20px 0' }}>
+              <AiOutlineApartment style={{ color: '#f9a109', paddingRight: '5px' }} /> WorldLand Network
+            </div>
+            Connect WorldLand Network
+            <br />
             Submenu 2
           </Dropdown>
         </MenuItem>
-        <MenuItem isActive={activeMenu === 'Community'} onClick={() => handleMenuClick('Community')}>
+        <MenuItem data-isactive={activeMenu === 'Community'} onClick={() => handleMenuClick('Community')}>
           Community {activeMenu === 'Community' ? <OutlineUp /> : <OutlineDown />}
-          <Dropdown isVisible={activeMenu === 'Community'}>
+          <Dropdown data-isvisible={activeMenu === 'Community'}>
             Submenu 1<br />
             Submenu 2
           </Dropdown>
