@@ -16,6 +16,11 @@ const DashboardContainer = styled.div`
   @media (max-width: 768px) {
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
   }
 `;
 
@@ -39,6 +44,9 @@ const ImageContainer = styled.div`
 
   @media (max-width: 768px) {
     flex: none;
+    margin-top: 20px;
+    margin-left: 0;
+    order: 2;
   }
 `;
 
@@ -48,6 +56,7 @@ const Image = styled.img`
   @media (max-width: 768px) {
     max-width: 100%;
     max-height: 300px;
+    order: 1;
   }
 `;
 
@@ -64,6 +73,7 @@ const TextContainer = styled.div`
     padding: 0 20px;
     text-align: center;
     margin-bottom: 20px;
+    order: 3;
   }
 `;
 
@@ -91,6 +101,15 @@ const ButtonContainer = styled.div`
   display: flex;
   gap: 10px;
   justify-content: flex-start; /* 버튼을 왼쪽으로 정렬합니다. */
+  order: 1;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
 `;
 
 const DashBoardBtn = styled.button`
