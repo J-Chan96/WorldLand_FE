@@ -1,13 +1,11 @@
-import MainInfoPage from '../../pages/MainInfo';
-import MainStatistics from '../../pages/MainStatistics';
+import Main from '../../pages/Main';
 
-const AppRoute = () => {
+function AppRoute() {
   return (
     <>
-      <MainInfoPage />
-      <MainStatistics />
+      <Main />
     </>
   );
-};
+}
 
 export default AppRoute;

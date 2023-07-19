@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import image from '../asset/Explorer.png';
 
-const MainInfoContainer = styled.div`
+const DashboardContainer = styled.div`
   height: 80vh;
   margin: 0 auto;
   align-items: top;
@@ -143,9 +142,9 @@ const LearnBtn = styled.button`
   }
 `;
 
-function MainInfoPage() {
+function MainDashboard() {
   return (
-    <MainInfoContainer>
+    <DashboardContainer>
       <ContentContainer>
         <TextContainer>
           <Text>
@@ -166,8 +165,8 @@ function MainInfoPage() {
           />
         </ImageContainer>
       </ContentContainer>
-    </MainInfoContainer>
+    </DashboardContainer>
   );
 }
 
-export default MainInfoPage;
+export default MainDashboard;
