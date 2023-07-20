@@ -20,13 +20,15 @@ const Header = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* padding: 10px; */
+
   background-color: rgb(18, 22, 30);
   box-shadow:
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  overflow: hidden;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Logo = styled.div`
@@ -48,8 +50,8 @@ const MenuItem = styled.div`
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  border-bottom: ${(props) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
-  color: ${(props) => (props['data-isactive'] ? '#f9a109' : 'none')};
+  border-bottom: ${(props: any) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
+  color: ${(props: any) => (props['data-isactive'] ? '#f9a109' : 'none')};
 
   &:hover {
     color: #f9a109;
@@ -72,9 +74,9 @@ const Dropdown = styled.div`
     opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     visibility 0.3s;
-  transform: translateY(${(props) => (props['data-isvisible'] ? '0' : '-10px')});
-  opacity: ${(props) => (props['data-isvisible'] ? '1' : '0')};
-  visibility: ${(props) => (props['data-isvisible'] ? 'visible' : 'hidden')};
+  transform: translateY(${(props: any) => (props['data-isvisible'] ? '0' : '-10px')});
+  opacity: ${(props: any) => (props['data-isvisible'] ? '1' : '0')};
+  visibility: ${(props: any) => (props['data-isvisible'] ? 'visible' : 'hidden')};
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 25px;
   white-space: nowrap;
@@ -82,7 +84,8 @@ const Dropdown = styled.div`
 `;
 
 const CommunityDropdown = styled(Dropdown)`
-  right: -200px;
+  left: -250px;
+  /* overflow-x: hidden; */
 `;
 
 const OutlineDown = styled(AiOutlineDown)`
@@ -141,7 +144,7 @@ const Divider = styled.div`
 function AppHeader() {
   const [activeMenu, setActiveMenu] = useState(null);
 
-  const handleMenuClick = (menu) => {
+  const handleMenuClick = (menu: any) => {
     setActiveMenu(activeMenu === menu ? null : menu);
   };
 
@@ -216,7 +219,7 @@ function AppHeader() {
                   INSPECT
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <SpaceLink href="http://explorer.worldland.space:4001/">
+                  <SpaceLink href="http://explorer.worldland.space">
                     <Strong>WorldLand Explorer</Strong>
                     <div>Explorer WorldLand Scan in real time.</div>
                   </SpaceLink>
