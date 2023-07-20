@@ -4,12 +4,14 @@ import styled from 'styled-components';
 const StatisticsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
   background-color: black;
   color: white;
   padding: 30px;
   height: 70vh;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     padding: 20px;
@@ -18,6 +20,12 @@ const StatisticsContainer = styled.div`
 
 const StatisticsData = styled.div`
   font-size: calc(20px + 2vmin);
+  width: 80%;
+  height: 50px;
+  font-weight: bold;
+  font-size: calc(20px + 2vmin);
+  margin: 0 auto;
+
   @media (max-width: 600px) {
     font-size: calc(16px + 1.5vmin);
   }
@@ -107,19 +115,19 @@ const StatisticContainer = styled.div`
 function MainStatistics() {
   return (
     <StatisticsContainer>
-      <StatisticsData>Join a community of millions.</StatisticsData>
+      <StatisticsData>Made for mass adoption</StatisticsData>
       <StatisticsDetails>
         <StatisticContainer>
-          <StatisticsDetail>11.5+</StatisticsDetail>
-          <DetailDescription>ACTIVE ACCOUNTS</DetailDescription>
+          <StatisticsDetail>00.0sec</StatisticsDetail>
+          <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail2>21.9m</StatisticsDetail2>
-          <DetailDescription>NFTS MINTED</DetailDescription>
+          <StatisticsDetail2>00,000</StatisticsDetail2>
+          <DetailDescription>Total Transactions</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail3>$0.025</StatisticsDetail3>
-          <DetailDescription>AVERAGE COST PER TRANSACTION</DetailDescription>
+          <StatisticsDetail3>00,000</StatisticsDetail3>
+          <DetailDescription>Total Blocks</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>

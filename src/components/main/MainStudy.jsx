@@ -15,7 +15,7 @@ const MainStudyContainer = styled.div`
   background-color: darkblue;
 
   color: white;
-  height: 70vh;
+  height: 50vh;
 
   @media (max-width: 600px) {
     padding: 20px;
@@ -23,7 +23,7 @@ const MainStudyContainer = styled.div`
 `;
 
 const MainStudy = () => {
-  return <MainStudyContainer>ok</MainStudyContainer>;
+  return <MainStudyContainer>Study?</MainStudyContainer>;
 };
 
 export default MainStudy;

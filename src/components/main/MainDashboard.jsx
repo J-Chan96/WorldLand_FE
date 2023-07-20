@@ -115,7 +115,7 @@ const ButtonContainer = styled.div`
 
 const DashBoardBtn = styled.button`
   margin: 0px;
-  width: 160px;
+  width: 100px;
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Avenir', system-ui, sans-serif;
@@ -168,14 +168,15 @@ function MainDashboard() {
       <ContentContainer>
         <TextContainer>
           <Text>
-            Making Smarter & Safer Decisions Starts with Our Data
+            Let us build a global digital land called WorldLand.
             <SubText>
-              Messari helps businesses, compliance teams, builders, and investors navigate the crypto economy.
+              We the people of WorldLand aim to establish a global free trade digital land. This will be a platform on
+              which people from the five oceans and six continents can come and participate in one productive economy.
             </SubText>
           </Text>
           <ButtonContainer>
-            <DashBoardBtn>Go to Dashboard</DashBoardBtn>
-            <LearnBtn>Learn more</LearnBtn>
+            <DashBoardBtn>Learn</DashBoardBtn>
+            <LearnBtn>Docs</LearnBtn>
           </ButtonContainer>
         </TextContainer>
         <ImageContainer>
