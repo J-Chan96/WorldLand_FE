@@ -9,7 +9,8 @@ const StatisticsContainer = styled.div`
   color: white;
   padding: 30px;
   height: 70vh;
-  width: 100%;
+  /* width: 100%;
+   */
   background-color: black;
   overflow: hidden;
 
