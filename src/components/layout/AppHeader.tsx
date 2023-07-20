@@ -14,6 +14,7 @@ const Header = styled.header`
   /* width: 100%; */
   height: 65px;
   background: #333;
+  /* messari header color : #12161f */
   font-size: 18px;
   color: rgba(255, 255, 255, 0.95);
   font-weight: bold;

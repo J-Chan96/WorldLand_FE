@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const DashboardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 80vh;
-  margin: 0 auto;
   align-items: top;
   min-height: 600px;
   width: 100%;
@@ -28,8 +30,8 @@ const DashboardContainer = styled.div`
 const ContentContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-evenly;
+  width: 80%;
   height: 80vh;
 
   @media (max-width: 768px) {
@@ -41,7 +43,7 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 50px;
+  width: 40%;
 
   @media (max-width: 768px) {
     flex: none;
@@ -66,7 +68,7 @@ const TextContainer = styled.div`
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   height: auto;
 
   @media (max-width: 768px) {
