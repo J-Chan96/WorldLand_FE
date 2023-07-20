@@ -24,10 +24,22 @@ function MainData() {
     <ContainerData>
       <Head>There are WorldLand Technology</Head>
       <Section>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
       </Section>
     </ContainerData>
   );

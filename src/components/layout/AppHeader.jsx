@@ -20,13 +20,15 @@ const Header = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* padding: 10px; */
+
   background-color: rgb(18, 22, 30);
   box-shadow:
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  overflow: hidden;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Logo = styled.div`
@@ -82,7 +84,8 @@ const Dropdown = styled.div`
 `;
 
 const CommunityDropdown = styled(Dropdown)`
-  right: -200px;
+  left: -250px;
+  /* overflow-x: hidden; */
 `;
 
 const OutlineDown = styled(AiOutlineDown)`
@@ -216,7 +219,7 @@ function AppHeader() {
                   INSPECT
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <SpaceLink href="http://explorer.worldland.space:4001/">
+                  <SpaceLink href="http://explorer.worldland.space">
                     <Strong>WorldLand Explorer</Strong>
                     <div>Explorer WorldLand Scan in real time.</div>
                   </SpaceLink>
