@@ -50,8 +50,8 @@ const MenuItem = styled.div`
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  border-bottom: ${(props) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
-  color: ${(props) => (props['data-isactive'] ? '#f9a109' : 'none')};
+  border-bottom: ${(props: any) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
+  color: ${(props: any) => (props['data-isactive'] ? '#f9a109' : 'none')};
 
   &:hover {
     color: #f9a109;
@@ -74,9 +74,9 @@ const Dropdown = styled.div`
     opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     visibility 0.3s;
-  transform: translateY(${(props) => (props['data-isvisible'] ? '0' : '-10px')});
-  opacity: ${(props) => (props['data-isvisible'] ? '1' : '0')};
-  visibility: ${(props) => (props['data-isvisible'] ? 'visible' : 'hidden')};
+  transform: translateY(${(props: any) => (props['data-isvisible'] ? '0' : '-10px')});
+  opacity: ${(props: any) => (props['data-isvisible'] ? '1' : '0')};
+  visibility: ${(props: any) => (props['data-isvisible'] ? 'visible' : 'hidden')};
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 25px;
   white-space: nowrap;
@@ -144,7 +144,7 @@ const Divider = styled.div`
 function AppHeader() {
   const [activeMenu, setActiveMenu] = useState(null);
 
-  const handleMenuClick = (menu) => {
+  const handleMenuClick = (menu: any) => {
     setActiveMenu(activeMenu === menu ? null : menu);
   };
 
