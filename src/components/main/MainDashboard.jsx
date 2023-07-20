@@ -13,6 +13,7 @@ const DashboardContainer = styled.div`
     rgba(0, 30, 66, 1.5) 25%,
     rgba(10, 17, 20, 2) 100%
   );
+  overflow: hidden;
   @media (max-width: 768px) {
     background-position: center;
     background-size: cover;
