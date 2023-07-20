@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CountUp from 'react-countup';
 
 const StatisticsContainer = styled.div`
   display: flex;
@@ -17,19 +18,6 @@ const StatisticsContainer = styled.div`
     padding: 20px;
   }
 `;
-
-// const StatisticsData = styled.div`
-//   font-size: calc(20px + 2vmin);
-//   width: 80%;
-//   height: 50px;
-//   font-weight: bold;
-//   font-size: calc(20px + 2vmin);
-//   margin: 0 auto;
-
-//   @media (max-width: 600px) {
-//     font-size: calc(16px + 1.5vmin);
-//   }
-// `;
 
 const StatisticsDetails = styled.div`
   display: flex;
@@ -111,18 +99,23 @@ const StatisticContainer = styled.div`
 function MainStatistics() {
   return (
     <StatisticsContainer>
-      {/* <StatisticsData>Made for mass adoption</StatisticsData> */}
       <StatisticsDetails>
         <StatisticContainer>
-          <StatisticsDetail>00.0sec</StatisticsDetail>
+          <StatisticsDetail>
+            <CountUp start={0} end={12} duration={3} /> sec
+          </StatisticsDetail>
           <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail2>00,000</StatisticsDetail2>
+          <StatisticsDetail2>
+            <CountUp start={0} end={2200000} duration={3} />
+          </StatisticsDetail2>
           <DetailDescription>Total Transactions</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail3>00,000</StatisticsDetail3>
+          <StatisticsDetail3>
+            <CountUp start={0} end={250000} duration={3} />
+          </StatisticsDetail3>
           <DetailDescription>Total Blocks</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
