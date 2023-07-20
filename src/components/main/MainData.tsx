@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Img from '../../assets/images/3dicons.png';
 
 const ContainerData = styled.div`
   width: 100%;
@@ -40,7 +39,7 @@ function MainData() {
       <Section>
         <Content>
           <div>
-            <Image src={Img} alt="3d"></Image>
+            <Image src="../../assets/images/3dicons.png" alt="3d"></Image>
           </div>
           <div>BlockChain 3D IMG</div>
         </Content>
