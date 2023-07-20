@@ -9,8 +9,7 @@ const StatisticsContainer = styled.div`
   color: white;
   padding: 30px;
   height: 70vh;
-  /* width: 100%;
-   */
+
   background-color: black;
   overflow: hidden;
 
@@ -19,23 +18,22 @@ const StatisticsContainer = styled.div`
   }
 `;
 
-const StatisticsData = styled.div`
-  font-size: calc(20px + 2vmin);
-  width: 80%;
-  height: 50px;
-  font-weight: bold;
-  font-size: calc(20px + 2vmin);
-  margin: 0 auto;
+// const StatisticsData = styled.div`
+//   font-size: calc(20px + 2vmin);
+//   width: 80%;
+//   height: 50px;
+//   font-weight: bold;
+//   font-size: calc(20px + 2vmin);
+//   margin: 0 auto;
 
-  @media (max-width: 600px) {
-    font-size: calc(16px + 1.5vmin);
-  }
-`;
+//   @media (max-width: 600px) {
+//     font-size: calc(16px + 1.5vmin);
+//   }
+// `;
 
 const StatisticsDetails = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
   font-size: 1.5em;
 
   @media (max-width: 600px) {
@@ -45,7 +43,6 @@ const StatisticsDetails = styled.div`
 `;
 
 const StatisticsDetail = styled.div`
-  flex: 1;
   text-align: center;
   font-size: calc(40px + 3vmin);
   background: linear-gradient(
@@ -66,7 +63,6 @@ const StatisticsDetail = styled.div`
 `;
 
 const StatisticsDetail2 = styled.div`
-  flex: 1;
   text-align: center;
   font-size: calc(40px + 3vmin);
 
@@ -83,7 +79,6 @@ const StatisticsDetail2 = styled.div`
 `;
 
 const StatisticsDetail3 = styled.div`
-  flex: 1;
   text-align: center;
   font-size: calc(40px + 3vmin);
 
@@ -116,7 +111,7 @@ const StatisticContainer = styled.div`
 function MainStatistics() {
   return (
     <StatisticsContainer>
-      <StatisticsData>Made for mass adoption</StatisticsData>
+      {/* <StatisticsData>Made for mass adoption</StatisticsData> */}
       <StatisticsDetails>
         <StatisticContainer>
           <StatisticsDetail>00.0sec</StatisticsDetail>
