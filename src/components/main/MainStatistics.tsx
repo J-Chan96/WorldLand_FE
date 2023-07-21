@@ -179,7 +179,6 @@ function MainStatistics() {
 
           const blockTimes = blocks.map((block) => block.timestamp);
           const averageBlockTime = calculateAverageBlockTime(blockTimes);
-
           setBlockTime(averageBlockTime);
           setTotalBlocks(Number(latestBlockNumber));
 
@@ -188,10 +187,10 @@ function MainStatistics() {
           const blockHeightNumber = Number(blockHeight);
           setBlockHeight(Number(blockHeight));
 
-          const startBlock = await web3.eth.getBlock(Number(blockHeightNumber));
-          const endBlock = await web3.eth.getBlock(Number(blockHeightNumber - 2000));
-          const averageTime = (startBlock.timestamp - endBlock.timestamp) / BigInt(2000);
-          setTime(Number(averageTime));
+          const startBlock = await web3.eth.getBlock(blockHeightNumber);
+          const endBlock = await web3.eth.getBlock(blockHeightNumber - 2000);
+          const averageTime = (Number(startBlock.timestamp) - Number(endBlock.timestamp)) / 2000;
+          setTime(averageTime);
           console.log(time, '@@ time value');
 
           // Additional code to calculate total transactions
