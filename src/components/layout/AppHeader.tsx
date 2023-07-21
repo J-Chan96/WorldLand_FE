@@ -8,12 +8,19 @@ import {
   AiOutlineFileSearch,
   AiOutlineSetting,
   AiOutlineTeam,
+  AiOutlineClose,
+  AiOutlineMenu,
 } from 'react-icons/ai';
+import { BiMenu } from 'react-icons/bi';
+import { GiHamburgerMenu } from 'react-icons/gi';
+
+interface MenuProps {
+  isHamburgerOpen: boolean;
+}
 
 const Header = styled.header`
-  /* width: 100%; */
   height: 65px;
-  background: #333;
+  background: #12161f;
   /* messari header color : #12161f */
   font-size: 18px;
   color: rgba(255, 255, 255, 0.95);
@@ -27,22 +34,38 @@ const Header = styled.header`
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: row;
+    position: fixed;
+    width: 100vw;
+    justify-content: start;
+    padding-left: 40px;
   }
 `;
 
 const Logo = styled.div`
-  /* padding-top: 8px; */
+  @media (min-width: 768px) {
+    /* justify-content: left; */
+    /* margin-left: 50px; */
+  }
 `;
 
-const Menu = styled.nav`
+const Menu = styled.nav<MenuProps>`
   display: flex;
   height: 25px;
   align-items: center;
 
   @media (max-width: 768px) {
-    display: none;
+    display: ${(props) => (props.isHamburgerOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #12161f;
+    z-index: 999;
   }
 `;
 
@@ -61,10 +84,8 @@ const MenuItem = styled.div`
 `;
 
 const Dropdown = styled.div`
-  /* width: 100%; */
   display: block;
   position: absolute;
-  /* background: rgba(0, 0, 0, 0.9);  */
   background-color: rgb(18, 22, 30);
   font-size: 1rem;
   color: #fff;
@@ -142,17 +163,52 @@ const Divider = styled.div`
   background: hsla(0, 0%, 100%, 0.1);
 `;
 
+const HamburgerIcon = styled(BiMenu)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 70px;
+    z-index: 3;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+const HamburgerOutIcon = styled(AiOutlineClose)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 70px;
+    z-index: 3;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
 function AppHeader() {
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isHamburgerOpen, setHamburgerOpen] = useState(false);
 
   const handleMenuClick = (menu: any) => {
     setActiveMenu(activeMenu === menu ? null : menu);
   };
 
+  const toggleHamburgerMenu = () => {
+    setHamburgerOpen(!isHamburgerOpen);
+  };
+
   return (
     <Header>
       <Logo>Logo</Logo>
-      <Menu>
+      <Menu isHamburgerOpen={isHamburgerOpen}>
         <MenuItem data-isactive={activeMenu === 'Learn'} onClick={() => handleMenuClick('Learn')}>
           Learn {activeMenu === 'Learn' ? <OutlineUp /> : <OutlineDown />}
           <Dropdown data-isvisible={activeMenu === 'Learn'}>
@@ -248,6 +304,11 @@ function AppHeader() {
           </CommunityDropdown>
         </MenuItem>
       </Menu>
+      {isHamburgerOpen ? (
+        <HamburgerOutIcon onClick={toggleHamburgerMenu} />
+      ) : (
+        <HamburgerIcon onClick={toggleHamburgerMenu} />
+      )}
     </Header>
   );
 }
