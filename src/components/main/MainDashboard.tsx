@@ -90,7 +90,7 @@ const Text = styled.h1`
   }
 `;
 
-const SubText = styled.h6`
+const SubText = styled.p`
   color: #b3bacb;
   font-weight: 400;
   font-size: 22.4px;
