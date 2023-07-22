@@ -18,9 +18,9 @@ interface Block {
 }
 
 function MainStatistics() {
-  const [blockTime, setBlockTime] = useState<number>(12);
-  const [blockHeight, setBlockHeight] = useState<number>(blockTime);
-  const [time, setTime] = useState<number>(blockTime);
+  const [blockTime, setBlockTime] = useState<number>(0);
+  const [blockHeight, setBlockHeight] = useState<number>(0);
+  const [time, setTime] = useState<number>(54.2);
   const [totalTransactions, setTotalTransactions] = useState<number>(0);
   const [totalBlocks, setTotalBlocks] = useState<number>(0);
   const [animationPlayed, setAnimationPlayed] = useState<boolean>(false);
@@ -95,10 +95,10 @@ function MainStatistics() {
           setBlockHeight(Number(blockHeight));
 
           const startBlock = await web3.eth.getBlock(blockHeightNumber);
-          const endBlock = await web3.eth.getBlock(blockHeightNumber - 2000);
-          const averageTime = (Number(startBlock.timestamp) - Number(endBlock.timestamp)) / 2000;
+          const endBlock = await web3.eth.getBlock(blockHeightNumber - 1000);
+          const averageTime = (Number(startBlock.timestamp) - Number(endBlock.timestamp)) / 1000;
           setTime(averageTime);
-          console.log(time, '@@ time value');
+          // console.log(time, '@@ time value');
 
           // Additional code to calculate total transactions
           let totalTx = 0;
