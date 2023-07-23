@@ -1,31 +1,15 @@
-import AppLayout from './components/layout/AppLayout';
-import styled, { createGlobalStyle } from 'styled-components';
+import { theme } from 'style/theme';
+import Router from './Router';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'style/GlobalStyle';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'WLFont';
-    src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
-  }
-
-  body {
-    font-family: 'WLFont', sans-serif;
-  }
-`;
-
-function App() {
+const App = () => {
   return (
-    <>
-      <GlobalStyles />
-      <Container>
-        <AppLayout />
-      </Container>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Router />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
