@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "types": ["react-leaflet"],
-    "typeRoots": ["./@types", "./node_modules/@types"],
+    "types": ["react", "react-dom", "react-leaflet"],
+    "typeRoots": ["./node_modules/@types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
