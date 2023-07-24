@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import HamburgerBtn from '../main/HamburgerBtn';
-import MainMenu from '../main/MainMenu';
+import HamburgerBtn from 'components/main/HamburgerBtn';
+import MainMenu from 'components/main/MainMenu';
 
 const Header = styled.header`
   height: 65px;
