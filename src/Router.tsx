@@ -1,8 +1,8 @@
 import Main from 'pages/Main';
 import Learn from 'pages/Learn';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import AboutWorldLand from 'components/learn/Post/AboutWorldLand';
-import Charter from 'components/learn/Post/Charter';
+import AboutWorldLand from 'components/Learn/Post/AboutWorldLand';
+import Charter from 'components/Learn/Post/Charter';
 import { PATH } from 'constants/path';
 
 const Router = () => {
