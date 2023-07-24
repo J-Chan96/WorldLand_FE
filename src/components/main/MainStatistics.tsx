@@ -21,7 +21,7 @@ function MainStatistics() {
   const [blockTime, setBlockTime] = useState<number>(0);
   const [blockHeight, setBlockHeight] = useState<number>(0);
   const [time, setTime] = useState<number>(54.2);
-  const [totalTransactions, setTotalTransactions] = useState<number>(0);
+  const [activeNodes, setActiveNodes] = useState<number>(14);
   const [totalBlocks, setTotalBlocks] = useState<number>(0);
   const [animationPlayed, setAnimationPlayed] = useState<boolean>(false);
   const statisticsRef = useRef<HTMLDivElement>(null);
@@ -84,10 +84,13 @@ function MainStatistics() {
             blocks.push(blockWithTimestamp);
           }
 
-          const blockTimes = blocks.map((block) => block.timestamp);
-          const averageBlockTime = calculateAverageBlockTime(blockTimes);
-          setBlockTime(averageBlockTime);
           setTotalBlocks(Number(latestBlockNumber));
+
+          // Active Accounts
+          web3.eth.net.getPeerCount().then((peerCount) => {
+            // console.log(`연결된 노드 수: ${peerCount}`);
+            setActiveNodes(Number(peerCount));
+          });
 
           // Average Block Time
           const blockHeight = await web3.eth.getBlockNumber();
@@ -98,14 +101,6 @@ function MainStatistics() {
           const endBlock = await web3.eth.getBlock(blockHeightNumber - 1000);
           const averageTime = (Number(startBlock.timestamp) - Number(endBlock.timestamp)) / 1000;
           setTime(averageTime);
-          // console.log(time, '@@ time value');
-
-          // Additional code to calculate total transactions
-          let totalTx = 0;
-          for (const block of blocks) {
-            totalTx += block?.transactions?.length;
-          }
-          setTotalTransactions(totalTx);
         } catch (error) {
           console.log('Error fetching block number:', error);
         }
@@ -119,25 +114,12 @@ function MainStatistics() {
           const block = await web3.eth.getBlock(latestBlockNumber);
           setBlockTime(Number(block.timestamp));
           setTotalBlocks(Number(latestBlockNumber));
-
-          // Additional code to calculate total transactions for the latest block
-          setTotalTransactions(block?.transactions?.length);
         } catch (error) {
           console.log('Error fetching block number:', error);
         }
       })();
     }
-  }, [animationPlayed, blockTime, time]);
-
-  const calculateAverageBlockTime = (blockTimes: number[]): number => {
-    if (blockTimes.length === 0) {
-      return 0;
-    }
-
-    const totalBlockTime = blockTimes.reduce((accumulator, blockTime) => accumulator + blockTime, 0);
-    const averageBlockTime = totalBlockTime / blockTimes.length;
-    return averageBlockTime;
-  };
+  }, [animationPlayed, blockTime, time, activeNodes]);
 
   return (
     <StatisticsContainer ref={statisticsRef}>
@@ -149,16 +131,16 @@ function MainStatistics() {
           <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail2>
-            <CountUp end={totalTransactions} duration={5} />
-          </StatisticsDetail2>
-          <DetailDescription>Total Transactions</DetailDescription>
-        </StatisticContainer>
-        <StatisticContainer>
           <StatisticsDetail3>
             <CountUp end={totalBlocks} duration={0.5} />
           </StatisticsDetail3>
           <DetailDescription>Total Blocks</DetailDescription>
+        </StatisticContainer>
+        <StatisticContainer>
+          <StatisticsDetail2>
+            <CountUp end={activeNodes} duration={0.5} />
+          </StatisticsDetail2>
+          <DetailDescription>Active Accounts</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
