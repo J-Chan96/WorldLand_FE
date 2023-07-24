@@ -6,18 +6,8 @@ const GlobalStyle = createGlobalStyle`
     src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
   }
 
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-    src: url('https://fonts.googleapis.com/css2?family=Inter') format('woff2')
-  }
-
   * {
     box-sizing: border-box;
-  }
-
-  html {
-    height: 100%;
   }
 
   body {
@@ -25,20 +15,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'WLFont', sans-serif;
     background-image: ${({ theme }) =>
       `linear-gradient(to bottom, ${theme.colors.black} 0%, ${theme.colors.gray900} 100%)`};
-
-    h1 {
-      font-size: 38px;
-      font-weight: 600;
-    }
-
-    h4 {
-      font-size: 26px;
-      font-weight: 600;
-    }
   }
 
   :root {
     --text-size-primary: 14px;
+    --text-size-medium: 16px;
+    --text-size-large: 26px;
   }
 
   /* reset.css */

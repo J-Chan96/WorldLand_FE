@@ -1,25 +1,37 @@
+import { PATH } from './path';
+
 export const learnMenus = [
   {
-    path: '/learn',
+    menuType: 'menu',
+    path: `${PATH.LEARN}`,
     value: 'About WorldLand',
-    subMenu: [
-      { path: '/learn/charter', value: 'Charter' },
-      { path: '/learn/overview', value: 'Overview' },
-    ],
   },
   {
-    path: '/learn/technology',
-    value: 'Technology',
-    subMenu: [
-      { path: '/learn/ecgpow', value: 'ECCPoW' },
-      { path: '/learn/asic-resistence', value: 'Asic resistence' },
-      { path: '/learn/pq-security', value: 'PQ Security' },
-      { path: '/learn/green-vca', value: 'Green VCA' },
-    ],
+    menuType: 'subMenu',
+    path: `${PATH.LEARN_CHARTER}`,
+    value: 'Charter',
   },
-  { path: '/learn/design-principle', value: 'Design Principle' },
-  { path: '/learn/how-works', value: 'How works' },
-  { path: '/learn/tokenomics', value: 'Tokenomics' },
-  { path: '/learn/governance', value: 'Governance' },
-  { path: '/learn/faq', value: 'FAQ' },
+  {
+    menuType: 'subMenu',
+    path: `${PATH.LEARN_OVERVIEW}`,
+    value: 'Overview',
+  },
+  {
+    menuType: 'menu',
+    path: `${PATH.LEARN_TECHNOLOGY}`,
+    value: 'Technology',
+  },
+  {
+    menuType: 'subMenu',
+    path: `${PATH.LEARN_ECCPOW}`,
+    value: 'ECCPoW',
+  },
+  { menuType: 'subMenu', path: `${PATH.LEARN_ASIC_RESISTENCE}`, value: 'Asic resistence' },
+  { menuType: 'subMenu', path: `${PATH.LEARN_PQ_SECURITY}`, value: 'PQ Security' },
+  { menuType: 'subMenu', path: `${PATH.LEARN_GREEN_VCA}`, value: 'Green VCA' },
+  { menuType: 'menu', path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, value: 'Design Principle' },
+  { menuType: 'menu', path: `${PATH.LEARN_HOW_WORKS}`, value: 'How works' },
+  { menuType: 'menu', path: `${PATH.LEARN_TOKENOMICS}`, value: 'Tokenomics' },
+  { menuType: 'menu', path: `${PATH.LEARN_GOVERNANCE}`, value: 'Governance' },
+  { menuType: 'menu', path: `${PATH.LEARN_FAQ}`, value: 'FAQ' },
 ];

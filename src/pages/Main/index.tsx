@@ -1,11 +1,13 @@
-import MainDashboard from 'components/Main/MainDashboard';
-import MainStatistics from 'components/Main/MainStatistics';
-import MainData from 'components/Main/MainData';
+import MainDashboard from 'components/main/MainDashboard';
+import MainStatistics from 'components/main/MainStatistics';
+import MainData from 'components/main/MainData';
 import AppFooter from 'components/layout/AppFooter';
+import Header from 'components/Header';
 
 const Main = () => {
   return (
     <>
+      <Header />
       <MainDashboard />
       <MainStatistics />
       <MainData />

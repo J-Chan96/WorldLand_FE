@@ -1,16 +1,24 @@
+import Nav from 'components/learn/LearnNav';
+import Header from 'components/Header';
 import { Container } from 'style/layout';
-import * as Styled from './index.style';
-import Nav from 'components/Learn/LearnNav';
-import Content from 'components/Learn/Content';
+import { Content, Post } from './index.style';
+import { Outlet } from 'react-router-dom';
+import LearnFooter from 'components/learn/LearnFooter';
 
 const Learn = () => {
   return (
-    <Container $size={900}>
-      <Styled.Content>
-        <Nav />
-        <Content />
-      </Styled.Content>
-    </Container>
+    <>
+      <Header />
+      <Container $size={900}>
+        <Content>
+          <Nav />
+          <Post>
+            <Outlet />
+          </Post>
+        </Content>
+        <LearnFooter />
+      </Container>
+    </>
   );
 };
 
