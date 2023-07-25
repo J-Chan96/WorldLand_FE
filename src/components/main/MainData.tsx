@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Decentralized, EVM, Energy, Security } from 'assets/main/Main_core';
+import { Decentralized, EVM, Energy, Security } from 'assets/Main/Main_core';
 
 const ContainerData = styled.div`
   width: 100%;

@@ -17,7 +17,7 @@ import {
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Discord } from 'assets/header/Header';
-import { EVM } from 'assets/main/Main_core';
+// import { EVM } from 'assets/Main/Main_core';
 
 const MainMenu = () => {
   const [activeMenu, setActiveMenu] = useState(null);

@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 const Footer = styled.footer`
-  margin: 160px auto 80px;
+  margin: 100px auto 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@ const Footer = styled.footer`
   font-weight: 600;
   line-height: normal;
 
-  button {
+  a {
     cursor: pointer;
     padding: 12px 24px;
     gap: 6px;

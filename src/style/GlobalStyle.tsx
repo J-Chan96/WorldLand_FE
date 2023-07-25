@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     height: 100%;
+    min-height: 100vh;
     font-family: 'WLFont', sans-serif;
     background-image: ${({ theme }) =>
       `linear-gradient(to bottom, ${theme.colors.black} 0%, ${theme.colors.gray900} 100%)`};
