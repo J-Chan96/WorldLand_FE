@@ -6,9 +6,11 @@ const PartnerContainer = styled.div`
   align-items: center;
   align-self: stretch;
   background-color: black;
+  padding: 20px; /* Added padding for all screen sizes */
 
+  /* Media query for screens with a maximum width of 600px */
   @media (max-width: 600px) {
-    padding: 20px;
+    padding: 10px; /* Adjust the padding for smaller screens */
   }
 `;
 
@@ -25,34 +27,34 @@ const IconWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+  margin-top: 150px; /* Initial margin-top for the icons */
+
+  /* Media query for screens with a maximum width of 600px */
+  @media (max-width: 600px) {
+    margin-top: 100px; /* Adjust the margin-top for smaller screens */
+    flex-direction: column; /* Stack the icons vertically */
+    align-items: center; /* Center the icons horizontally */
+  }
 `;
 
 const Icon = styled.img`
-  margin-top: 150px;
-  width: 70px;
   height: auto;
-  /* Style for the icon images */
+  width: 70px;
 `;
 
 const Icon2 = styled.img`
-  margin-top: 150px;
-  width: 200px;
   height: auto;
-  /* Style for the icon images */
+  width: 200px;
 `;
 
 const Icon3 = styled.img`
-  margin-top: 150px;
-  width: 120px;
   height: auto;
-  /* Style for the icon images */
+  width: 120px;
 `;
 
 const Icon4 = styled.img`
-  margin-top: 150px;
-  width: 150px;
   height: auto;
-  /* Style for the icon images */
+  width: 150px;
 `;
 
 export { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4 };
