@@ -1,9 +1,7 @@
 export const PATH = {
   MAIN: '/',
   LEARN: '/learn',
-  LEARN_CHARTER: '/learn/charter',
   LEARN_OVERVIEW: '/learn/overview',
-  LEARN_TECHNOLOGY: '/learn/technology',
   LEARN_ECCPOW: '/learn/eccpow',
   LEARN_ASIC_RESISTENCE: '/learn/asic-resistence',
   LEARN_PQ_SECURITY: '/learn/pq-security',

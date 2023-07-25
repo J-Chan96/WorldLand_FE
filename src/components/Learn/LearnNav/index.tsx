@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
 import { learnMenus } from 'constants/learnMenus';
-
-import { Container } from 'style/layout';
 import { useLocation } from 'react-router-dom';
 import { Menu, Nav, SubMenu } from './index.style';
 
@@ -10,26 +7,35 @@ const LearnNav = ({ menus = learnMenus }) => {
 
   return (
     <Nav $size={121}>
-      {menus.map((menu) => {
-        return (
-          <ul>
-            {menu.menuType === 'menu' && (
-              <li key={menu.menuType}>
-                <Menu to={menu.path} isActive={location.pathname === menu.path}>
-                  {menu.value}
-                </Menu>
-              </li>
-            )}
-            {menu.menuType === 'subMenu' && (
-              <li key={menu.menuType}>
-                <SubMenu to={menu.path} isActive={location.pathname === menu.path}>
-                  {menu.value}
-                </SubMenu>
-              </li>
-            )}
-          </ul>
-        );
-      })}
+      <ul>
+        {menus.map((menu) => {
+          return (
+            <>
+              {menu.menuType === 'menu' && (
+                <li>
+                  <Menu
+                    key={menu.menuType}
+                    to={menu.path}
+                    isActive={
+                      menu.value === 'About WorldLand' || 'Technology' ? false : location.pathname === menu.path
+                    }
+                  >
+                    {menu.value}
+                  </Menu>
+                </li>
+              )}
+              {menu.menuType === 'subMenu' && (
+                <li>
+                  <SubMenu key={menu.menuType} to={menu.path} isActive={location.pathname === menu.path}>
+                    {menu.value}
+                  </SubMenu>
+                </li>
+              )}
+            </>
+          );
+        })}
+      </ul>
+      );
     </Nav>
   );
 };

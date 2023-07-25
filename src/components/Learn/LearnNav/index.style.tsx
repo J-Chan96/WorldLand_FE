@@ -9,6 +9,7 @@ const Nav = styled.nav<ContainerProps>`
   width: 100%;
   max-width: ${({ $size }) => `${$size}px`};
   font-size: var(--text-size-primary);
+  margin: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,6 +27,10 @@ const Nav = styled.nav<ContainerProps>`
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      & :hover {
+        color: #f4f4f4;
+      }
     }
   }
 `;

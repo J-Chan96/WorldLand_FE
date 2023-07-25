@@ -4,7 +4,7 @@ const LearnFooter = () => {
   return (
     <Footer>
       <p>learn more About WorldLand</p>
-      <button>Docs</button>
+      <a href="https://worldlanddocs.gitbook.io/ethereum-worldland/">Docs</a>
     </Footer>
   );
 };

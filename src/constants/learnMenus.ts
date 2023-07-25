@@ -8,7 +8,7 @@ export const learnMenus = [
   },
   {
     menuType: 'subMenu',
-    path: `${PATH.LEARN_CHARTER}`,
+    path: `${PATH.LEARN}`,
     value: 'Charter',
   },
   {
@@ -18,7 +18,7 @@ export const learnMenus = [
   },
   {
     menuType: 'menu',
-    path: `${PATH.LEARN_TECHNOLOGY}`,
+    path: `${PATH.LEARN_ECCPOW}`,
     value: 'Technology',
   },
   {
@@ -33,5 +33,4 @@ export const learnMenus = [
   { menuType: 'menu', path: `${PATH.LEARN_HOW_WORKS}`, value: 'How works' },
   { menuType: 'menu', path: `${PATH.LEARN_TOKENOMICS}`, value: 'Tokenomics' },
   { menuType: 'menu', path: `${PATH.LEARN_GOVERNANCE}`, value: 'Governance' },
-  { menuType: 'menu', path: `${PATH.LEARN_FAQ}`, value: 'FAQ' },
 ];
