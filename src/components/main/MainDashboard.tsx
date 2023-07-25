@@ -7,7 +7,7 @@ import {
   Text,
   SubText,
   ButtonContainer,
-  DashBoardBtn,
+  DocsBtn,
   LearnBtn,
 } from './MainDashboard.style';
 
@@ -24,8 +24,8 @@ const MainDashboard = () => {
             </SubText>
           </Text>
           <ButtonContainer>
-            <DashBoardBtn>Learn</DashBoardBtn>
-            <LearnBtn>Docs</LearnBtn>
+            <LearnBtn>Learn</LearnBtn>
+            <DocsBtn>Docs</DocsBtn>
           </ButtonContainer>
         </TextContainer>
         <ImageContainer>
