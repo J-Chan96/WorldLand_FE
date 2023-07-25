@@ -104,3 +104,5 @@ const AppFooter = () => {
 };
 
 export default AppFooter;
+
+// 과기부 // 국방과학연구소 // 한국연구재단 // IITP // 광주광역시청 //
