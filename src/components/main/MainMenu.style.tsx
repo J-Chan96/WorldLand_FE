@@ -62,8 +62,8 @@ const OutlineUp = styled(AiOutlineUp)`
   vertical-align: middle;
 `;
 
-const Learn = styled.a`
-  text-decoration: none;
+const Learn = styled.div`
+  /* text-decoration: none; */
   color: #848895;
   transition: color 0.3s ease-in-out;
 

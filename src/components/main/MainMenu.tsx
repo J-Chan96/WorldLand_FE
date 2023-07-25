@@ -15,6 +15,7 @@ import {
   Contack,
 } from './MainMenu.style';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Twitter, Discord } from 'assets/header/Header';
 import { EVM } from 'assets/main/Main_core';
 
@@ -27,7 +28,9 @@ const MainMenu = () => {
   return (
     <Menu>
       <MenuItem data-isactive={activeMenu === 'Learn'} onClick={() => handleMenuClick('Learn')}>
-        <Learn href="https://www.worldland.space/Learn/">Learn</Learn>
+        <Link to={'/learn'}>
+          <Learn>Learn</Learn>
+        </Link>
         {/* <Dropdown data-isvisible={activeMenu === 'Learn'}>
           <div style={{ display: 'flex', margin: '20px 0' }}>
             <AiOutlineGlobal style={{ color: '#f9a109', paddingRight: '5px' }} /> HERE TO LEARN
