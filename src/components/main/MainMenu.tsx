@@ -95,7 +95,7 @@ const MainMenu = () => {
                 <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/use/how-to-connect-wallet-to-worldland-network">
                   <Strong>Docs</Strong>
                 </SpaceLink>
-                <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/worldland-api/apis">
+                <SpaceLink href="https://github.com/cryptoecc/ECCPoW">
                   <Strong>GitHub</Strong>
                 </SpaceLink>
               </div>
