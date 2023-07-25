@@ -12,7 +12,9 @@ const MenuList = styled.ul<MenuListProps>`
   @media (max-width: 768px) {
     display: ${(props) => (props.isopen === 'true' ? 'block' : 'none')};
     font-size: 1.1rem;
-    transition: all 0.3s ease-in-out;
+    /* margin-left: 30px; */
+    /* transition: all 0.3s ease-in-out; */
+    padding-left: 40px;
     position: absolute;
     top: 45px;
     right: 0;

@@ -1,35 +1,41 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
-const Menu = styled.nav`
+const Menu = styled.div`
   display: flex;
+  /* padding-left: 50px; */
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* width: auto; */
   height: 25px;
   align-items: center;
+  /* margin: 0 auto; */
+  /* margin-left: 400px; */
 
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.div<{ isSelected?: boolean }>`
   margin: 0px 25px;
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  border-bottom: ${(props: any) => (props['data-isactive'] ? '2px solid #f9a109' : '2px solid transparent')};
-  color: ${(props: any) => (props['data-isactive'] ? '#f9a109' : 'none')};
+  color: ${(props) => (props.isSelected ? 'white' : '#848895')};
+  cursor: pointer;
+
   &:hover {
-    color: #f9a109;
-    cursor: pointer;
+    color: white;
   }
 `;
 
 const Dropdown = styled.div`
   display: block;
   position: absolute;
-  background-color: rgb(18, 22, 30);
+  background-color: black;
   font-size: 1rem;
-  color: #fff;
+  color: white;
   top: calc(100% + 1rem);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
@@ -47,7 +53,6 @@ const Dropdown = styled.div`
 `;
 
 const CommunityDropdown = styled(Dropdown)`
-  left: -250px;
   /* overflow-x: hidden; */
 `;
 
@@ -63,31 +68,46 @@ const OutlineUp = styled(AiOutlineUp)`
   vertical-align: middle;
 `;
 
-const SpaceLink = styled.a`
+const Learn = styled.a`
   text-decoration: none;
   color: #848895;
-  padding: 10px 50px 5px 10px;
-  margin: 0.5rem -0.5rem;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+`;
+
+const SpaceLink = styled.a`
+  text-decoration: none;
+  padding: 5px 30px 5px 5px;
   border: 1px solid transparent;
   border-radius: 8px;
   transition:
-    color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out;
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
   line-height: 25px;
+
   &:hover {
-    color: white;
+    background-color: #1e1e1e;
     font-weight: bold;
-    border-color: #848895;
   }
 `;
 
 const Strong = styled.div`
   color: white;
   font-weight: bold;
+  padding: 0 20px;
   /* padding-top: 2px; */
 `;
 
 const Network = styled.div`
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+`;
+
+const User = styled.div`
   display: flex;
   flex-direction: row;
   transition: all 0.3s ease;
@@ -104,4 +124,33 @@ const Divider = styled.div`
   background: hsla(0, 0%, 100%, 0.1);
 `;
 
-export { Menu, Dropdown, MenuItem, CommunityDropdown, OutlineDown, OutlineUp, SpaceLink, Strong, Network, Divider };
+const Contack = styled.div`
+  margin: 0px 25px;
+  /* padding: 0px 25px; */
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  align-items: center;
+  color: #848895;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+`;
+
+export {
+  Menu,
+  Dropdown,
+  MenuItem,
+  CommunityDropdown,
+  OutlineDown,
+  OutlineUp,
+  Learn,
+  SpaceLink,
+  Strong,
+  Network,
+  User,
+  Divider,
+  Contack,
+};
