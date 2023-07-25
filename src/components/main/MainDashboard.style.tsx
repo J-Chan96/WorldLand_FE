@@ -8,12 +8,13 @@ const DashboardContainer = styled.div`
   align-items: top;
   min-height: 600px;
   width: 100%;
-  background-image: radial-gradient(
+  background-color: black;
+  /* background-image: radial-gradient(
     circle farthest-side at 60% 75%,
     #ffffff -100%,
     rgba(0, 30, 66, 1.5) 25%,
     rgba(10, 17, 20, 2) 100%
-  );
+  ); */
   overflow: hidden;
   @media (max-width: 768px) {
     background-position: center;
@@ -80,6 +81,7 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.h1`
+  margin-bottom: 30px;
   color: #f3f4f6;
   font-size: 32px;
   font-weight: bold;
@@ -91,6 +93,7 @@ const Text = styled.h1`
 
 const SubText = styled.p`
   color: #b3bacb;
+  margin-top: 35px;
   font-weight: 400;
   font-size: 22.4px;
 
@@ -114,21 +117,21 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const DashBoardBtn = styled.button`
+const LearnBtn = styled.button`
   margin: 0px;
-  width: 100px;
+  width: 90px;
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Avenir', system-ui, sans-serif;
   -webkit-box-align: center;
-  background-color: #016bd4;
+  background-color: #f4f4f4;
 
   border: none;
-  color: rgba(255, 255, 255, 0.95);
+  color: black;
 
   cursor: pointer;
   display: inline-flex;
-  font-weight: 500;
+  font-weight: 600;
   height: 44px;
   line-height: 1;
   -webkit-box-pack: center;
@@ -139,18 +142,18 @@ const DashBoardBtn = styled.button`
   align-items: center;
 
   &:hover {
-    background-color: #2381df;
+    background-color: #a7a7a7;
   }
 `;
 
-const LearnBtn = styled.button`
+const DocsBtn = styled.button`
   padding: 0px 24px;
   white-space: nowrap;
   width: fit-content;
   font-family: 'Avenir', system-ui, sans-serif;
   background-color: transparent;
   border: 1px solid currentcolor;
-  color: #0091ea;
+  color: #f4f4f4;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 4px;
@@ -159,7 +162,7 @@ const LearnBtn = styled.button`
 
   &:hover {
     background-color: transparent;
-    color: white;
+    color: #a7a7a7;
   }
 `;
 
@@ -172,6 +175,6 @@ export {
   Text,
   SubText,
   ButtonContainer,
-  DashBoardBtn,
+  DocsBtn,
   LearnBtn,
 };
