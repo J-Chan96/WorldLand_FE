@@ -6,9 +6,6 @@ import youtube from '../../assets/footer/icons/youtube.svg';
 import github from '../../assets/footer/icons/github.svg';
 import logo from '../../assets/footer/images/Logo.svg';
 
-// import { twitter, discord, youtube, github } from '../../assets/footer/icons';
-// import { logo } from '../../assets/footer/images';
-
 const FooterContainer = styled.footer`
   display: flex;
   padding: 160px 0px;
@@ -40,6 +37,11 @@ const ContactWrap = styled.div`
 
 const Logo = styled.img`
   /* Style for the logo image */
+  /* background:
+    url(<path-to-image>),
+    lightgray 50% / cover no-repeat; */
+  /* background-color: black;
+  width: 100px; */
 `;
 
 const IconWrap = styled.div`
