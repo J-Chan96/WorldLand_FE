@@ -27,6 +27,11 @@ const Footer = styled.footer`
     font-size: var(--text-size-medium);
     font-weight: 600;
     line-height: normal;
+
+    &:hover {
+      background: rgba(244, 244, 244, 0.8);
+      transition: background 0.3s;
+    }
   }
 `;
 
