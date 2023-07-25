@@ -16,7 +16,7 @@ import {
 } from './MainMenu.style';
 import React, { useState } from 'react';
 import { Twitter, Discord } from 'assets/header/Header';
-import { EVM } from 'assets/main/Main';
+import { EVM } from 'assets/main/Main_core';
 
 const MainMenu = () => {
   const [activeMenu, setActiveMenu] = useState(null);
