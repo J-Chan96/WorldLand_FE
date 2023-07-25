@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Decentralized, EVM, Energy, Security } from 'assets/main/Main';
 
 const ContainerData = styled.div`
   width: 100%;
@@ -13,26 +14,29 @@ const Head = styled.div`
   font-weight: bold;
   font-size: calc(20px + 2vmin);
   margin: 0 auto;
-  padding-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
 const Section = styled.div`
   width: 80%;
   display: flex;
-  /* align-items: center; */
-  /* margin-left: 110px; */
+  flex-direction: column;
   margin: 0 auto;
   gap: 32px;
-  /* align-self: stretch; */
+`;
+
+const Core = styled.div`
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
 `;
 
 const Content = styled.div`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: flex-start; */
   gap: 16px;
-  flex: 1 0 0;
+  flex: 0.5;
+  /* padding-top: 150px; */
 `;
 
 const Body1 = styled.div`
@@ -76,36 +80,48 @@ function MainData() {
     <ContainerData>
       <Head>Core Features</Head>
       <Section>
-        <Content>
-          <Body1>EVM Compatibility</Body1>
-          <Child>
-            Worldland is fully compatible with EVM, allowing all dApps and smart contracts on EVM to operate.
-            <br />
-            Experience your Ethereum dApp in a new way on Worldland.
-          </Child>
-        </Content>
-        <Content>
-          <Body2>PQ Security</Body2>
-          <Child>
-            Worldland's ECCPoW consensus algorithm utilizes coding theory to ensure robust security against attacks from
-            quantum computers
-          </Child>
-        </Content>
-        <Content>
-          <Body3>Energy Efficiency</Body3>
-          <Child>
-            Worldland's Green VCA technology significantly reduces energy consumption in the mining process by randomly
-            selecting miners.
-          </Child>
-        </Content>
-        <Content>
-          <Body4>Decentralized</Body4>
-          <Child>
-            The existing Proof of Work (POW) system faces issues of centralization due to ASIC devices. However,
-            Worldland's network based on ECCPow reduces the efficiency of ASICS, defending the blockchain from
-            centralization by ASIC devices
-          </Child>
-        </Content>
+        <Core>
+          <EVM />
+          <Content>
+            <Body1>EVM Compatibility</Body1>
+            <Child>
+              Worldland is fully compatible with EVM, allowing all dApps and smart contracts on EVM to operate.
+              <br />
+              Experience your Ethereum dApp in a new way on Worldland.
+            </Child>
+          </Content>
+        </Core>
+        <Core>
+          <Content>
+            <Body2>PQ Security</Body2>
+            <Child>
+              Worldland's ECCPoW consensus algorithm utilizes coding theory to ensure robust security against attacks
+              from quantum computers
+            </Child>
+          </Content>
+          <Security />
+        </Core>
+        <Core>
+          <Energy />
+          <Content>
+            <Body3>Energy Efficiency</Body3>
+            <Child>
+              Worldland's Green VCA technology significantly reduces energy consumption in the mining process by
+              randomly selecting miners.
+            </Child>
+          </Content>
+        </Core>
+        <Core>
+          <Content>
+            <Body4>Decentralized</Body4>
+            <Child>
+              The existing Proof of Work (POW) system faces issues of centralization due to ASIC devices. However,
+              Worldland's network based on ECCPow reduces the efficiency of ASICS, defending the blockchain from
+              centralization by ASIC devices
+            </Child>
+          </Content>
+          <Decentralized />
+        </Core>
       </Section>
     </ContainerData>
   );

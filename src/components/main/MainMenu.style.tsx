@@ -3,14 +3,8 @@ import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 const Menu = styled.div`
   display: flex;
-  /* padding-left: 50px; */
-  /* justify-content: center; */
-  /* width: 100%; */
-  /* width: auto; */
   height: 25px;
   align-items: center;
-  /* margin: 0 auto; */
-  /* margin-left: 400px; */
 
   @media (max-width: 768px) {
     display: none;

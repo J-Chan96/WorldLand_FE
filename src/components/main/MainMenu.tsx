@@ -16,6 +16,7 @@ import {
 } from './MainMenu.style';
 import React, { useState } from 'react';
 import { Twitter, Discord } from 'assets/header/Header';
+import { EVM } from 'assets/main/Main';
 
 const MainMenu = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -125,7 +126,7 @@ const MainMenu = () => {
         </CommunityDropdown>
       </MenuItem>
       <Contack data-isactive={activeMenu === 'Contact'} onClick={() => handleMenuClick('Contact')}>
-        Contack Us
+        Contact Us
       </Contack>
     </Menu>
   );
