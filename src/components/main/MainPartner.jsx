@@ -1,7 +1,7 @@
-import gg56 from '../../assets/Main/images/gg56.png';
-import AIICPG from '../../assets/Main/images/AIICPG.png';
-import gist from '../../assets/Main/images/gist.svg';
-import consensys from '../../assets/Main/images/consensys.svg';
+import gg56 from '../../assets/main/images/gg56.png';
+import AIICPG from '../../assets/main/images/AIICPG.png';
+import gist from '../../assets/main/images/gist.svg';
+import consensys from '../../assets/main/images/consensys.svg';
 import { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4 } from './MainPartner.style';
 
 const MainPartner = () => {
