@@ -1,7 +1,7 @@
-const DesignPrinciple = () => {
+const DesignPrinciples = () => {
   return (
     <>
-      <h1>Design principles</h1>
+      <h1>Design Principles</h1>
       <p>
         The WorldLand platform is designed with simplicity, decentralization, and security as its core principles. It
         aims to address the issues of re-centralization and scalability without compromising on decentralization or
@@ -26,14 +26,19 @@ const DesignPrinciple = () => {
       <br />
       <ul>
         <li>M1. PQ Secure Encryption and Consensus</li>
+        <br />
         <li>M2. Energy Consumption Efficiency (ECE)</li>
+        <br />
         <li>M3. Byzantine Fault Tolerance (1/2)</li>
+        <br />
         <li>M4. Unchangeable Currency Issuance Schedule</li>
+        <br />
         <li>M5. Block Creation Time (average 10 seconds)</li>
+        <br />
         <li>M6. Block Size (1 Mbyte)</li>
       </ul>
     </>
   );
 };
 
-export default DesignPrinciple;
+export default DesignPrinciples;

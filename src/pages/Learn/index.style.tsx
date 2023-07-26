@@ -1,12 +1,19 @@
 import { styled } from 'styled-components';
+import { maxQuery } from 'utils/breakpoints';
 
 const Content = styled.section`
-  padding-top: 100px;
-  display: flex;
+  padding-top: 150px;
+  display: inline-flex;
+
   justify-content: center;
   align-items: flex-start;
 
   gap: 40px;
+
+  ${maxQuery.tablet} {
+    flex-flow: column wrap;
+    margin: 0 24px;
+  }
 `;
 
 const Post = styled.article`
@@ -50,6 +57,15 @@ const Post = styled.article`
 
   strong {
     font-weight: 700;
+  }
+
+  ${maxQuery.tablet} {
+    font-size: 14px;
+
+    h1 {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 `;
 

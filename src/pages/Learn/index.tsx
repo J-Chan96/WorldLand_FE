@@ -1,9 +1,9 @@
-import Nav from 'components/Learn/LearnNav';
+import Nav from 'components/learn/LearnNav';
 import AppHeader from 'components/layout/AppHeader';
 import { Container } from 'style/layout';
 import { Content, Post } from './index.style';
 import { Outlet } from 'react-router-dom';
-import LearnFooter from 'components/Learn/LearnFooter';
+import LearnFooter from 'components/learn/LearnFooter';
 
 const Learn = () => {
   return (

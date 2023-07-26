@@ -30,9 +30,9 @@ const Tokenomics = () => {
           as long as the WorldLand network exists, serving as a medium of exchange and value within the ecosystem.
         </li>
         <li>
-          Token Supply: To maximize the initial network effect, WLC coins are supplied to the network through four
-          half-lives over eight years after the Genesis block. Following the initial halving, the token supply
-          experiences stable and predictable growth through a 4% inflation rate.
+          <strong>Token Supply:</strong> To maximize the initial network effect, WLC coins are supplied to the network
+          through four half-lives over eight years after the Genesis block. Following the initial halving, the token
+          supply experiences stable and predictable growth through a 4% inflation rate.
         </li>
         <li>
           <strong>Foundation Decentralization</strong>: The WorldLand Foundation plays a role in the initial stages but

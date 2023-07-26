@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'WLFont', sans-serif;
     background-image: ${({ theme }) =>
       `linear-gradient(to bottom, ${theme.colors.black} 0%, ${theme.colors.gray900} 100%)`};
+    font-size: 14px;
   }
 
   :root {

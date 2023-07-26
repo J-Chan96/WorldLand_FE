@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { maxQuery } from 'utils/breakpoints';
 
 interface ContainerProps {
   $size: number;
@@ -31,6 +32,38 @@ const Nav = styled.nav<ContainerProps>`
       & :hover {
         color: #f4f4f4;
       }
+    }
+  }
+
+  ${maxQuery.tablet} {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 32px;
+    flex-direction: row;
+
+    ul {
+      flex-direction: row;
+      overflow-x: auto;
+
+      li {
+        flex-direction: row;
+        align-items: center;
+        flex: none;
+
+        a {
+          margin-bottom: 35px;
+          padding-left: 0;
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #f4f4f4;
+      border-radius: 20px;
     }
   }
 `;

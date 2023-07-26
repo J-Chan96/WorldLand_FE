@@ -29,7 +29,7 @@ export const learnMenus = [
   { menuType: 'subMenu', path: `${PATH.LEARN_ASIC_RESISTENCE}`, value: 'Asic resistence' },
   { menuType: 'subMenu', path: `${PATH.LEARN_PQ_SECURITY}`, value: 'PQ Security' },
   { menuType: 'subMenu', path: `${PATH.LEARN_GREEN_VCA}`, value: 'Green VCA' },
-  { menuType: 'menu', path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, value: 'Design Principle' },
+  { menuType: 'menu', path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, value: 'Design Principles' },
   { menuType: 'menu', path: `${PATH.LEARN_HOW_WORKS}`, value: 'How works' },
   { menuType: 'menu', path: `${PATH.LEARN_TOKENOMICS}`, value: 'Tokenomics' },
   { menuType: 'menu', path: `${PATH.LEARN_GOVERNANCE}`, value: 'Governance' },

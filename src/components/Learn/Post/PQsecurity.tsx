@@ -4,7 +4,7 @@ const PQsecurity = () => {
       <h1>
         Safeguarding Decentralization
         <br />
-        in the Age of Quantum Computing
+        In the age of Quantum Computing
       </h1>
       <p>
         WorldLand incorporates code theory to enhance resistance against quantum computer attacks. Quantum computers

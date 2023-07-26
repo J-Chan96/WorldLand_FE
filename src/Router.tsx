@@ -1,17 +1,17 @@
 import Main from 'pages/Main';
 import Learn from 'pages/Learn';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Charter from 'components/Learn/Post/Charter';
+import Charter from 'components/learn/Post/Charter';
 import { PATH } from 'constants/path';
-import Overview from 'components/Learn/Post/Overview';
-import EccPow from 'components/Learn/Post/ECCPoW';
-import ASICResistance from 'components/Learn/Post/ASICResistance';
-import PQsecurity from 'components/Learn/Post/PQsecurity';
-import GreenVCA from 'components/Learn/Post/GreenVCA';
-import DesignPrinciple from 'components/Learn/Post/DesignPrinciple';
-import Tokenomics from 'components/Learn/Post/Tokenomics';
-import HowWorks from 'components/Learn/Post/HowWorks';
-import Governance from 'components/Learn/Post/Governance';
+import Overview from 'components/learn/Post/Overview';
+import EccPow from 'components/learn/Post/ECCPoW';
+import ASICResistance from 'components/learn/Post/ASICResistance';
+import PQsecurity from 'components/learn/Post/PQsecurity';
+import GreenVCA from 'components/learn/Post/GreenVCA';
+import DesignPrinciples from 'components/learn/Post/DesignPrinciples';
+import Tokenomics from 'components/learn/Post/Tokenomics';
+import HowWorks from 'components/learn/Post/HowWorks';
+import Governance from 'components/learn/Post/Governance';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -26,7 +26,7 @@ const Router = () => {
         { path: `${PATH.LEARN_ASIC_RESISTENCE}`, element: <ASICResistance /> },
         { path: `${PATH.LEARN_PQ_SECURITY}`, element: <PQsecurity /> },
         { path: `${PATH.LEARN_GREEN_VCA}`, element: <GreenVCA /> },
-        { path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, element: <DesignPrinciple /> },
+        { path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, element: <DesignPrinciples /> },
         { path: `${PATH.LEARN_HOW_WORKS}`, element: <HowWorks /> },
         { path: `${PATH.LEARN_TOKENOMICS}`, element: <Tokenomics /> },
         { path: `${PATH.LEARN_GOVERNANCE}`, element: <Governance /> },

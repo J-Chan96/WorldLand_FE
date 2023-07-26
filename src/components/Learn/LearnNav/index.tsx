@@ -35,7 +35,6 @@ const LearnNav = ({ menus = learnMenus }) => {
           );
         })}
       </ul>
-      );
     </Nav>
   );
 };
