@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import HamburgerBtn from 'components/main/HamburgerBtn';
 import MainMenu from 'components/main/MainMenu';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div``;
 
@@ -28,6 +29,7 @@ const Header = styled.header`
 `;
 const Logo = styled.div`
   margin-left: 100px;
+  color: rgba(255, 255, 255, 0.95);
 
   @media (max-width: 768px) {
     margin-left: 0px;
@@ -38,7 +40,9 @@ function AppHeader() {
   return (
     <Container>
       <Header>
-        <Logo>Logo</Logo>
+        <Link to={'/'}>
+          <Logo>Logo</Logo>
+        </Link>
         <MainMenu />
         <HamburgerBtn />
       </Header>
