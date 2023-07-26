@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { Menu, Nav, SubMenu } from './index.style';
 
 const LearnNav = ({ menus = learnMenus }) => {
+  const excludedValues = ['About WorldLand', 'Technology'];
+
   const location = useLocation();
 
   return (
@@ -16,9 +18,7 @@ const LearnNav = ({ menus = learnMenus }) => {
                   <Menu
                     key={menu.menuType}
                     to={menu.path}
-                    isActive={
-                      menu.value === 'About WorldLand' || 'Technology' ? false : location.pathname === menu.path
-                    }
+                    isActive={!excludedValues.includes(menu.value) && location.pathname === menu.path}
                   >
                     {menu.value}
                   </Menu>
