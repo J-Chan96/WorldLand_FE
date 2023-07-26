@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, LinkProps } from 'react-router-dom';
 import { maxQuery } from 'utils/breakpoints';
 
 interface ContainerProps {
@@ -68,11 +68,11 @@ const Nav = styled.nav<ContainerProps>`
   }
 `;
 
-const Menu = styled(Link)<{ isActive: boolean }>`
+const Menu = styled(Link)<{ active: string }>`
   ${(props) => {
-    const { isActive, theme } = props;
-    const color = isActive ? theme.colors.white : theme.colors.white900;
-    const textUnderline = isActive ? 'underline' : '';
+    const { active, theme } = props;
+    const color = active === 'true' ? theme.colors.white : theme.colors.white900;
+    const textUnderline = active === 'true' ? 'underline' : '';
 
     return `
       color: ${color};
@@ -82,11 +82,11 @@ const Menu = styled(Link)<{ isActive: boolean }>`
   }}
 `;
 
-const SubMenu = styled(Link)<{ isActive: boolean }>`
+const SubMenu = styled(Link)<{ active: string }>`
   ${(props) => {
-    const { isActive, theme } = props;
-    const color = isActive ? theme.colors.white : theme.colors.white800;
-    const textUnderline = isActive ? 'underline' : '';
+    const { active, theme } = props;
+    const color = active === 'true' ? theme.colors.white : theme.colors.white800;
+    const textUnderline = active === 'true' ? 'underline' : '';
 
     return `
       color: ${color};
