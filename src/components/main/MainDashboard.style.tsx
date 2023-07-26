@@ -1,21 +1,16 @@
 import styled from 'styled-components';
 
 const DashboardContainer = styled.div`
+  position: relative; /* Add this to allow absolute positioning of the video and text */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  align-items: top;
+  height: 100vh;
   min-height: 600px;
   width: 100%;
   background-color: black;
-  /* background-image: radial-gradient(
-    circle farthest-side at 60% 75%,
-    #ffffff -100%,
-    rgba(0, 30, 66, 1.5) 25%,
-    rgba(10, 17, 20, 2) 100%
-  ); */
   overflow: hidden;
+
   @media (max-width: 768px) {
     background-position: center;
     background-size: cover;
@@ -25,6 +20,29 @@ const DashboardContainer = styled.div`
     align-items: center;
     padding-top: 20px;
   }
+`;
+
+const VideoContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* 숨길 컨트롤 요소들을 선택하여 스타일을 적용합니다. */
+  video::-webkit-media-controls-panel,
+  video::-webkit-media-controls-overlay-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    opacity: 0;
+  }
+`;
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const ContentContainer = styled.div`
@@ -39,37 +57,14 @@ const ContentContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-
-  @media (max-width: 768px) {
-    flex: none;
-    margin-top: 20px;
-    margin-left: 0;
-    order: 2;
-  }
-`;
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  @media (max-width: 768px) {
-    max-width: 100%;
-    max-height: 300px;
-    order: 1;
-  }
-`;
-
 const TextContainer = styled.div`
   display: flex;
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  width: 40%;
+  width: 80%;
   height: auto;
+  z-index: 1; /* Add this to ensure the text is above the video */
 
   @media (max-width: 768px) {
     width: 100%;
@@ -81,10 +76,15 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.h1`
+  text-align: center;
   margin-bottom: 30px;
-  color: #f3f4f6;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 38px;
+  color: #f4f4f4;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 57px; /* 150% */
+  text-transform: capitalize;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -92,10 +92,14 @@ const Text = styled.h1`
 `;
 
 const SubText = styled.p`
-  color: #b3bacb;
+  text-align: left;
   margin-top: 35px;
-  font-weight: 400;
-  font-size: 22.4px;
+  color: #aaa;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 33px; /* 150% */
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
@@ -105,7 +109,7 @@ const SubText = styled.p`
 const ButtonContainer = styled.div`
   display: flex;
   gap: 10px;
-  justify-content: flex-start; /* 버튼을 왼쪽으로 정렬합니다. */
+  justify-content: center;
   order: 1;
   margin-top: 20px;
 
@@ -118,17 +122,15 @@ const ButtonContainer = styled.div`
 `;
 
 const LearnBtn = styled.button`
-  margin: 0px;
+  /* margin: 0px;
   width: 90px;
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Avenir', system-ui, sans-serif;
   -webkit-box-align: center;
   background-color: #f4f4f4;
-
   border: none;
   color: black;
-
   cursor: pointer;
   display: inline-flex;
   font-weight: 600;
@@ -139,7 +141,13 @@ const LearnBtn = styled.button`
   padding: 0px, 24px;
   white-space: nowrap;
   border-radius: 4px;
-  align-items: center;
+  align-items: center; */
+  display: flex;
+  padding: 12px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  background: #f4f4f4;
 
   &:hover {
     background-color: #a7a7a7;
@@ -147,34 +155,49 @@ const LearnBtn = styled.button`
 `;
 
 const DocsBtn = styled.button`
-  padding: 0px 24px;
-  white-space: nowrap;
-  width: fit-content;
-  font-family: 'Avenir', system-ui, sans-serif;
-  background-color: transparent;
-  border: 1px solid currentcolor;
-  color: #f4f4f4;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  height: 44px;
-  cursor: pointer;
+  display: flex;
+  padding: 12px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  border: 1px solid #f4f4f4;
 
   &:hover {
-    background-color: transparent;
-    color: #a7a7a7;
+    background-color: #2d2d2d;
   }
+`;
+
+const LearnText = styled.span`
+  color: #060606;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: capitalize;
+`;
+
+const DocsText = styled.span`
+  color: #f4f4f4;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  text-transform: capitalize;
 `;
 
 export {
   DashboardContainer,
+  VideoContainer,
+  Video,
   ContentContainer,
-  ImageContainer,
-  Image,
   TextContainer,
   Text,
   SubText,
   ButtonContainer,
   DocsBtn,
   LearnBtn,
+  LearnText,
+  DocsText,
 };

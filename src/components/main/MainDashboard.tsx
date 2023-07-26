@@ -1,14 +1,16 @@
 import {
   DashboardContainer,
+  VideoContainer,
+  Video,
   ContentContainer,
-  ImageContainer,
-  Image,
   TextContainer,
   Text,
   SubText,
   ButtonContainer,
   DocsBtn,
   LearnBtn,
+  LearnText,
+  DocsText,
 } from './MainDashboard.style';
 
 const MainDashboard = () => {
@@ -24,16 +26,20 @@ const MainDashboard = () => {
             </SubText>
           </Text>
           <ButtonContainer>
-            <LearnBtn>Learn</LearnBtn>
-            <DocsBtn>Docs</DocsBtn>
+            <LearnBtn>
+              <LearnText>Learn</LearnText>
+            </LearnBtn>
+            <DocsBtn>
+              <DocsText>Docs</DocsText>
+            </DocsBtn>
           </ButtonContainer>
         </TextContainer>
-        <ImageContainer>
-          <Image
-            src="https://messari.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdark.8aed0521.png&w=640&q=90"
-            alt="Worldland"
-          />
-        </ImageContainer>
+        <VideoContainer>
+          <Video autoPlay loop muted>
+            <source src="/videos/MainVideo.mp4" />
+            Your browser does not support the video tag.
+          </Video>
+        </VideoContainer>
       </ContentContainer>
     </DashboardContainer>
   );
