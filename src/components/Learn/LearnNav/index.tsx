@@ -4,34 +4,29 @@ import { Menu, Nav, SubMenu } from './index.style';
 
 const LearnNav = ({ menus = learnMenus }) => {
   const excludedValues = ['About WorldLand', 'Technology'];
-
   const location = useLocation();
 
   return (
     <Nav $size={121}>
       <ul>
-        {menus.map((menu) => {
+        {menus.map((menu, index) => {
           return (
-            <>
-              {menu.menuType === 'menu' && (
-                <li>
-                  <Menu
-                    key={menu.menuType}
-                    to={menu.path}
-                    isActive={!excludedValues.includes(menu.value) && location.pathname === menu.path}
-                  >
-                    {menu.value}
-                  </Menu>
-                </li>
+            <li key={`${menu.menuType}_${index}`}>
+              {menu.menuType === 'menu' ? (
+                <Menu
+                  to={menu.path}
+                  active={
+                    excludedValues.includes(menu.value) ? 'false' : location.pathname === menu.path ? 'true' : 'false'
+                  }
+                >
+                  {menu.value}
+                </Menu>
+              ) : (
+                <SubMenu to={menu.path} active={location.pathname === menu.path ? 'true' : 'false'}>
+                  {menu.value}
+                </SubMenu>
               )}
-              {menu.menuType === 'subMenu' && (
-                <li>
-                  <SubMenu key={menu.menuType} to={menu.path} isActive={location.pathname === menu.path}>
-                    {menu.value}
-                  </SubMenu>
-                </li>
-              )}
-            </>
+            </li>
           );
         })}
       </ul>
