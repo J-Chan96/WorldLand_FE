@@ -13,6 +13,7 @@ const Content = styled.section`
   ${maxQuery.tablet} {
     flex-flow: column wrap;
     margin: 0 24px;
+    padding-top: 100px;
   }
 `;
 
@@ -65,6 +66,10 @@ const Post = styled.article`
     h1 {
       font-size: 20px;
       line-height: 30px;
+    }
+
+    h3 {
+      font-size: 16px;
     }
   }
 `;
