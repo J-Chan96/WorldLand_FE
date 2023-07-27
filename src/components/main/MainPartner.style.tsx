@@ -1,4 +1,6 @@
+import { theme } from 'style/theme';
 import styled from 'styled-components';
+import { maxQuery } from 'utils/breakpoints';
 
 const PartnerContainer = styled.div`
   display: flex;
@@ -9,7 +11,7 @@ const PartnerContainer = styled.div`
   padding: 20px; /* Added padding for all screen sizes */
 
   /* Media query for screens with a maximum width of 600px */
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     padding: 10px; /* Adjust the padding for smaller screens */
   }
 `;
@@ -26,14 +28,28 @@ const Contact1 = styled.div`
 const IconWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
   margin-top: 150px; /* Initial margin-top for the icons */
 
+  svg {
+    color: ${theme.colors.white800};
+    height: 24px;
+  }
+
   /* Media query for screens with a maximum width of 600px */
-  @media (max-width: 600px) {
-    margin-top: 100px; /* Adjust the margin-top for smaller screens */
-    flex-direction: column; /* Stack the icons vertically */
+  ${maxQuery.tablet} {
+    margin: 100px 0; /* Adjust the margin-top for smaller screens */
+    flex-direction: row; /* Stack the icons vertically */
     align-items: center; /* Center the icons horizontally */
+    gap: 32px;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+
+    svg {
+      height: 32px;
+      width: auto;
+    }
   }
 `;
 

@@ -13,6 +13,7 @@ import {
 } from 'react-icons/ai';
 import { BiMenu } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { maxQuery } from 'utils/breakpoints';
 
 interface MenuProps {
   isHamburgerOpen: boolean;
@@ -39,7 +40,8 @@ const StyledHeader = styled.header`
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  @media (max-width: 768px) {
+
+  ${maxQuery.tablet} {
     flex-direction: row;
     position: fixed;
     width: 100vw;
@@ -49,7 +51,7 @@ const StyledHeader = styled.header`
 `;
 
 const Logo = styled.div`
-  @media (min-width: 768px) {
+  ${maxQuery.tablet} {
     /* justify-content: left; */
     /* margin-left: 50px; */
   }
@@ -60,7 +62,7 @@ const Menu = styled.nav<MenuProps>`
   height: 25px;
   align-items: center;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: ${(props) => (props.isHamburgerOpen ? 'flex' : 'none')};
     flex-direction: column;
     position: fixed;
@@ -171,7 +173,7 @@ const Divider = styled.div`
 const HamburgerIcon = styled(BiMenu)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;
@@ -186,7 +188,7 @@ const HamburgerIcon = styled(BiMenu)`
 const HamburgerOutIcon = styled(AiOutlineClose)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;

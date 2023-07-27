@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { Decentralized, EVM, Energy, Security } from 'assets/main/Main_core';
+import { DecentralizedIcon, EnergyEfficiencyIcon, EvmCompatibilityIcon, PqSecurityIcon } from 'assets';
+import { maxQuery } from 'utils/breakpoints';
 
 const ContainerData = styled.div`
   width: 100%;
   background-color: black;
-  color: white;
+  color: #f4f4f4;
   overflow: hidden;
 `;
 
@@ -15,6 +16,10 @@ const Head = styled.div`
   font-size: calc(20px + 2vmin);
   margin: 0 auto;
   margin-bottom: 20px;
+
+  ${maxQuery.tablet} {
+    font-size: 1.4rem;
+  }
 `;
 
 const Section = styled.div`
@@ -23,49 +28,56 @@ const Section = styled.div`
   flex-direction: column;
   margin: 0 auto;
   gap: 32px;
+
+  ${maxQuery.tablet} {
+    gap: 40px;
+
+    div:nth-child(2n) {
+      flex-direction: column-reverse;
+    }
+  }
 `;
 
 const Core = styled.div`
   display: flex;
-  width: 90%;
+  /* width: 90%; */
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+
+  ${maxQuery.tablet} {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin-top: 0;
+
+    svg {
+      max-width: 40vw;
+    }
+  }
 `;
 
 const Content = styled.div`
   gap: 16px;
   flex: 0.5;
   /* padding-top: 150px; */
+
+  ${maxQuery.tablet} {
+    justify-content: center;
+  }
 `;
 
-const Body1 = styled.div`
-  border-left: 2px solid rgb(31, 207, 241);
-  padding-left: 15px;
+const Body = styled.div`
+  display: flex;
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 1.5rem;
-`;
-const Body2 = styled.div`
-  border-left: 2px solid #e9c311;
-  padding-left: 15px;
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-`;
-const Body3 = styled.div`
-  border-left: 2px solid #5a2995;
-  padding-left: 15px;
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-`;
-const Body4 = styled.div`
-  border-left: 2px solid rgb(25, 251, 155);
-  padding-left: 15px;
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+
+  ${maxQuery.tablet} {
+    justify-content: center;
+    font-size: 1.2rem;
+  }
 `;
 
 const Child = styled.div`
@@ -73,6 +85,11 @@ const Child = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+
+  ${maxQuery.tablet} {
+    text-align: center;
+    font-size: 14px;
+  }
 `;
 
 function MainData() {
@@ -81,9 +98,9 @@ function MainData() {
       <Head>Core Features</Head>
       <Section>
         <Core>
-          <EVM />
+          <EvmCompatibilityIcon />
           <Content>
-            <Body1>EVM Compatibility</Body1>
+            <Body>EVM Compatibility</Body>
             <Child>
               Worldland is fully compatible with EVM, allowing all dApps and smart contracts on EVM to operate.
               <br />
@@ -93,18 +110,18 @@ function MainData() {
         </Core>
         <Core>
           <Content>
-            <Body2>PQ Security</Body2>
+            <Body>PQ Security</Body>
             <Child>
               Worldland's ECCPoW consensus algorithm utilizes coding theory to ensure robust security against attacks
               from quantum computers
             </Child>
           </Content>
-          <Security />
+          <PqSecurityIcon />
         </Core>
         <Core>
-          <Energy />
+          <EnergyEfficiencyIcon />
           <Content>
-            <Body3>Energy Efficiency</Body3>
+            <Body>Energy Efficiency</Body>
             <Child>
               Worldland's Green VCA technology significantly reduces energy consumption in the mining process by
               randomly selecting miners.
@@ -113,14 +130,14 @@ function MainData() {
         </Core>
         <Core>
           <Content>
-            <Body4>Decentralized</Body4>
+            <Body>Decentralized</Body>
             <Child>
               The existing Proof of Work (POW) system faces issues of centralization due to ASIC devices. However,
               Worldland's network based on ECCPow reduces the efficiency of ASICS, defending the blockchain from
               centralization by ASIC devices
             </Child>
           </Content>
-          <Decentralized />
+          <DecentralizedIcon />
         </Core>
       </Section>
     </ContainerData>

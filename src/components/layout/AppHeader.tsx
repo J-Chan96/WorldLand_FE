@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import HamburgerBtn from 'components/main/HamburgerBtn';
 import MainMenu from 'components/main/MainMenu';
 import { Link } from 'react-router-dom';
-
-const Container = styled.div``;
+import { maxQuery } from 'utils/breakpoints';
 
 const Header = styled.header`
   height: 65px;
@@ -19,7 +18,8 @@ const Header = styled.header`
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
   border-bottom: 1px solid #4c4c4c;
-  @media (max-width: 768px) {
+
+  ${maxQuery.tablet} {
     flex-direction: row;
     position: fixed;
     width: 100vw;
@@ -32,22 +32,20 @@ const Logo = styled.div`
   margin-left: 100px;
   color: rgba(255, 255, 255, 0.95);
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     margin-left: 0px;
   }
 `;
 
 function AppHeader() {
   return (
-    <Container>
-      <Header>
-        <Link to={'/'}>
-          <Logo>Logo</Logo>
-        </Link>
-        <MainMenu />
-        <HamburgerBtn />
-      </Header>
-    </Container>
+    <Header>
+      <Link to={'/'}>
+        <Logo>Logo</Logo>
+      </Link>
+      <MainMenu />
+      <HamburgerBtn />
+    </Header>
   );
 }
 

@@ -1,4 +1,6 @@
+import { theme } from 'style/theme';
 import styled from 'styled-components';
+import { maxQuery } from 'utils/breakpoints';
 
 const DashboardContainer = styled.div`
   position: relative; /* Add this to allow absolute positioning of the video and text */
@@ -11,7 +13,7 @@ const DashboardContainer = styled.div`
   background-color: black;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     background-position: center;
     background-size: cover;
     display: flex;
@@ -52,7 +54,7 @@ const ContentContainer = styled.div`
   width: 80%;
   height: 80vh;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     flex-direction: column;
   }
 `;
@@ -66,7 +68,7 @@ const TextContainer = styled.div`
   height: auto;
   z-index: 1; /* Add this to ensure the text is above the video */
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     width: 100%;
     padding: 0 20px;
     text-align: center;
@@ -80,14 +82,15 @@ const Text = styled.h1`
   margin-bottom: 30px;
   font-size: 38px;
   color: #f4f4f4;
-  font-family: Inter;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   line-height: 57px; /* 150% */
   text-transform: capitalize;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.5);
   }
 `;
 
@@ -95,62 +98,55 @@ const SubText = styled.p`
   text-align: left;
   margin-top: 35px;
   color: #aaa;
-  font-family: Inter;
+  font-family: 'Inter';
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
   line-height: 33px; /* 150% */
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     font-size: 0.8rem;
+    line-height: calc(0.8rem * 1.5);
   }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
   order: 1;
   margin-top: 20px;
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
+  ${maxQuery.tablet} {
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
   }
 `;
 
 const LearnBtn = styled.button`
-  /* margin: 0px;
-  width: 90px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: 'Avenir', system-ui, sans-serif;
-  -webkit-box-align: center;
-  background-color: #f4f4f4;
-  border: none;
-  color: black;
-  cursor: pointer;
-  display: inline-flex;
-  font-weight: 600;
-  height: 44px;
-  line-height: 1;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding: 0px, 24px;
-  white-space: nowrap;
-  border-radius: 4px;
-  align-items: center; */
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
-  align-items: flex-start;
   border-radius: 6px;
   background: #f4f4f4;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
 
   &:hover {
-    background-color: #a7a7a7;
+    background-color: ${theme.colors.white800};
+    color: ${theme.colors.white};
+    transition:
+      color 0.3s,
+      background 0.3s;
   }
 `;
 
@@ -158,33 +154,21 @@ const DocsBtn = styled.button`
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
-  align-items: flex-start;
   border-radius: 6px;
   border: 1px solid #f4f4f4;
-
-  &:hover {
-    background-color: #2d2d2d;
-  }
-`;
-
-const LearnText = styled.span`
-  color: #060606;
-  font-family: Inter;
+  color: #f4f4f4;
+  font-family: 'Inter';
   font-size: 16px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
-  text-transform: capitalize;
-`;
 
-const DocsText = styled.span`
-  color: #f4f4f4;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 150% */
-  text-transform: capitalize;
+  &:hover {
+    background-color: ${theme.colors.white800};
+    border: 1px solid ${theme.colors.white800};
+    transition:
+      background 0.3s,
+      border 0.3s;
+  }
 `;
 
 export {
@@ -198,6 +182,4 @@ export {
   ButtonContainer,
   DocsBtn,
   LearnBtn,
-  LearnText,
-  DocsText,
 };
