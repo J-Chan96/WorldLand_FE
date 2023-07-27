@@ -1,4 +1,6 @@
+import { theme } from 'style/theme';
 import styled from 'styled-components';
+import { maxQuery } from 'utils/breakpoints';
 
 const PartnerContainer = styled.div`
   display: flex;
@@ -9,7 +11,7 @@ const PartnerContainer = styled.div`
   padding: 20px; /* Added padding for all screen sizes */
 
   /* Media query for screens with a maximum width of 600px */
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     padding: 10px; /* Adjust the padding for smaller screens */
   }
 `;
@@ -26,35 +28,72 @@ const Contact1 = styled.div`
 const IconWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
   margin-top: 150px; /* Initial margin-top for the icons */
 
+  svg {
+    color: ${theme.colors.white800};
+    height: 24px;
+  }
+
   /* Media query for screens with a maximum width of 600px */
-  @media (max-width: 600px) {
-    margin-top: 100px; /* Adjust the margin-top for smaller screens */
-    flex-direction: column; /* Stack the icons vertically */
+  ${maxQuery.tablet} {
+    margin: 100px 0; /* Adjust the margin-top for smaller screens */
+    flex-direction: row; /* Stack the icons vertically */
     align-items: center; /* Center the icons horizontally */
+    gap: 32px;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+
+    svg {
+      height: 32px;
+      width: auto;
+    }
   }
 `;
 
 const Icon = styled.img`
   height: auto;
-  width: 70px;
+  width: 25px;
 `;
 
 const Icon2 = styled.img`
   height: auto;
-  width: 200px;
+  width: 100px;
 `;
 
 const Icon3 = styled.img`
   height: auto;
-  width: 120px;
+  width: 70px;
 `;
 
 const Icon4 = styled.img`
   height: auto;
-  width: 150px;
+  width: 80px;
 `;
 
-export { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4 };
+const Icon5 = styled.img`
+  height: auto;
+  width: 80px;
+`;
+const Icon6 = styled.img`
+  height: auto;
+  width: 80px;
+`;
+const Icon7 = styled.img`
+  height: auto;
+  width: 70px;
+`;
+
+const Icon8 = styled.img`
+  height: auto;
+  width: 25px;
+`;
+
+const Icon9 = styled.img`
+  height: auto;
+  width: 52px;
+`;
+
+export { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9 };

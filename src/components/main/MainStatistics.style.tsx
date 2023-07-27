@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { maxQuery } from 'utils/breakpoints';
 
 const StatisticsContainer = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const StatisticsContainer = styled.div`
   background-color: black;
   overflow: hidden;
 
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     padding: 20px;
   }
 `;
@@ -22,9 +23,10 @@ const StatisticsDetails = styled.div`
   justify-content: space-between;
   font-size: 1.5em;
 
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     flex-direction: column;
     align-items: center;
+    gap: 40px;
   }
 `;
 
@@ -42,7 +44,7 @@ const StatisticsDetail = styled.div`
   -webkit-text-fill-color: transparent;
   color: transparent;
 
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     font-size: calc(20px + 2vmin);
     margin-bottom: 10px;
   }
@@ -58,7 +60,7 @@ const StatisticsDetail2 = styled.div`
   -webkit-text-fill-color: transparent;
   color: transparent;
 
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     font-size: calc(20px + 2vmin);
     margin-bottom: 10px;
   }
@@ -74,7 +76,7 @@ const StatisticsDetail3 = styled.div`
   -webkit-text-fill-color: transparent;
   color: transparent;
 
-  @media (max-width: 600px) {
+  ${maxQuery.tablet} {
     font-size: calc(20px + 2vmin);
     margin-bottom: 10px;
   }

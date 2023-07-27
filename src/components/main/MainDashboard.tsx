@@ -9,8 +9,6 @@ import {
   ButtonContainer,
   DocsBtn,
   LearnBtn,
-  LearnText,
-  DocsText,
 } from './MainDashboard.style';
 
 const MainDashboard = () => {
@@ -26,12 +24,8 @@ const MainDashboard = () => {
             </SubText>
           </Text>
           <ButtonContainer>
-            <LearnBtn>
-              <LearnText>Learn</LearnText>
-            </LearnBtn>
-            <DocsBtn>
-              <DocsText>Docs</DocsText>
-            </DocsBtn>
+            <LearnBtn>Learn</LearnBtn>
+            <DocsBtn>Docs</DocsBtn>
           </ButtonContainer>
         </TextContainer>
         <VideoContainer>

@@ -56,21 +56,21 @@ const MainMenu = () => {
         <Dropdown data-isvisible={activeMenu === 'User'}>
           <User>
             <div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
                 <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./testing-eth-ecc">
                   <Strong>Start Mining</Strong>
                 </SpaceLink>
                 <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./install-and-run-geth">
                   <Strong>Node operator</Strong>
                 </SpaceLink>
-                <SpaceLink href="/">
-                  <Strong>Bridge</Strong>
-                </SpaceLink>
               </div>
             </div>
             <Divider></Divider>
             <div>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <SpaceLink href="/">
+                  <Strong>Bridge</Strong>
+                </SpaceLink>
                 <SpaceLink href="http://52.79.231.150/">
                   <Strong>Scan</Strong>
                 </SpaceLink>

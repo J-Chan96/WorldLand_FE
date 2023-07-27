@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { maxQuery } from 'utils/breakpoints';
 
 const Menu = styled.div`
   display: flex;
   height: 25px;
   align-items: center;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: none;
   }
 `;
@@ -40,10 +41,12 @@ const Dropdown = styled.div`
   transform: translateY(${(props: any) => (props['data-isvisible'] ? '0' : '-10px')});
   opacity: ${(props: any) => (props['data-isvisible'] ? '1' : '0')};
   visibility: ${(props: any) => (props['data-isvisible'] ? 'visible' : 'hidden')};
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border: 1px solid #858895;
+  // hsla(0, 0%, 100%, 0.1)
   padding: 25px;
   white-space: nowrap;
   backdrop-filter: blur(10px);
+  z-index: 2;
 `;
 
 const CommunityDropdown = styled(Dropdown)`
@@ -124,13 +127,9 @@ const Contack = styled.div`
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  color: #848895;
+  color: white;
+  text-decoration: underline;
   cursor: pointer;
-
-  &:hover {
-    color: white;
-    text-decoration: underline;
-  }
 `;
 
 export {

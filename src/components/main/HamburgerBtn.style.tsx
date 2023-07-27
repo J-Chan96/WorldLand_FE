@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiMenu } from 'react-icons/bi';
+import { maxQuery } from 'utils/breakpoints';
 
 interface MenuListProps {
   isopen: string;
@@ -9,7 +10,7 @@ interface MenuListProps {
 const MenuList = styled.ul<MenuListProps>`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: ${(props) => (props.isopen === 'true' ? 'block' : 'none')};
     font-size: 1.1rem;
     /* margin-left: 30px; */
@@ -21,7 +22,7 @@ const MenuList = styled.ul<MenuListProps>`
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #12161f;
+    background-color: black;
     z-index: 2;
     list-style: none;
     /* 나머지 스타일링 */
@@ -71,7 +72,8 @@ const Button = styled.button<{ isSelected?: boolean }>`
 const Dropdown = styled.div`
   background: black;
   padding: 25px 25px 15px 25px;
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border: 1px solid #848895;
+  // hsla(0, 0%, 100%, 0.1)
   border-radius: 12px;
   margin-right: 70px;
   .user-menu {
@@ -105,7 +107,7 @@ const Dropdown = styled.div`
 const HamburgerIcon = styled(BiMenu)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;
@@ -120,7 +122,7 @@ const HamburgerIcon = styled(BiMenu)`
 const HamburgerOutIcon = styled(AiOutlineClose)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;
