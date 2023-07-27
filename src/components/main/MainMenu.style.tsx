@@ -40,7 +40,8 @@ const Dropdown = styled.div`
   transform: translateY(${(props: any) => (props['data-isvisible'] ? '0' : '-10px')});
   opacity: ${(props: any) => (props['data-isvisible'] ? '1' : '0')};
   visibility: ${(props: any) => (props['data-isvisible'] ? 'visible' : 'hidden')};
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border: 1px solid #858895;
+  // hsla(0, 0%, 100%, 0.1)
   padding: 25px;
   white-space: nowrap;
   backdrop-filter: blur(10px);

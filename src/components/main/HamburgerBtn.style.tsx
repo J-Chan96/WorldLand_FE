@@ -71,7 +71,7 @@ const Button = styled.button<{ isSelected?: boolean }>`
 const Dropdown = styled.div`
   background: black;
   padding: 25px 25px 15px 25px;
-  border: 1px solid white;
+  border: 1px solid #848895;
   // hsla(0, 0%, 100%, 0.1)
   border-radius: 12px;
   margin-right: 70px;
