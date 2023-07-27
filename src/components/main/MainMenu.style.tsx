@@ -44,6 +44,7 @@ const Dropdown = styled.div`
   padding: 25px;
   white-space: nowrap;
   backdrop-filter: blur(10px);
+  z-index: 2;
 `;
 
 const CommunityDropdown = styled(Dropdown)`

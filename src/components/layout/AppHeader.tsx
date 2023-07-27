@@ -25,6 +25,7 @@ const Header = styled.header`
     width: 100vw;
     justify-content: start;
     padding-left: 40px;
+    z-index: 2;
   }
 `;
 const Logo = styled.div`
