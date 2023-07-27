@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiMenu } from 'react-icons/bi';
+import { maxQuery } from 'utils/breakpoints';
 
 interface MenuListProps {
   isopen: string;
@@ -9,7 +10,7 @@ interface MenuListProps {
 const MenuList = styled.ul<MenuListProps>`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: ${(props) => (props.isopen === 'true' ? 'block' : 'none')};
     font-size: 1.1rem;
     /* margin-left: 30px; */
@@ -106,7 +107,7 @@ const Dropdown = styled.div`
 const HamburgerIcon = styled(BiMenu)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;
@@ -121,7 +122,7 @@ const HamburgerIcon = styled(BiMenu)`
 const HamburgerOutIcon = styled(AiOutlineClose)`
   display: none;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: block;
     position: absolute;
     top: 15px;

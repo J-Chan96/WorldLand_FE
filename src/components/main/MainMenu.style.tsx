@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { maxQuery } from 'utils/breakpoints';
 
 const Menu = styled.div`
   display: flex;
   height: 25px;
   align-items: center;
 
-  @media (max-width: 768px) {
+  ${maxQuery.tablet} {
     display: none;
   }
 `;

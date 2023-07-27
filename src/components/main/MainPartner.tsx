@@ -21,6 +21,7 @@ import {
   Icon8,
   Icon9,
 } from './MainPartner.style';
+import { AicaIcon, Gg56Icon, GistIcon } from 'assets';
 
 const MainPartner = () => {
   return (
@@ -28,9 +29,12 @@ const MainPartner = () => {
       <Contact1>
         <IconWrap>
           {/* Add your icons here */}
-          <Icon src={gg56} alt="Icon 1" />
-          <Icon2 src={AIICPG} alt="Icon 2" />
-          <Icon3 src={gist} alt="Icon 3" />
+          {/* <Icon src={gg56} alt="Icon 1" /> */}
+          <Gg56Icon />
+          {/* <Icon2 src={AIICPG} alt="Icon 2" /> */}
+          <AicaIcon />
+          {/* <Icon3 src={gist} alt="Icon 3" /> */}
+          <GistIcon />
           <Icon4 src={consensys} alt="Icon 4" />
           <Icon5 src={msit} alt="Icon 5" />
           <Icon6 src={ADD} alt="Icon 6" />
