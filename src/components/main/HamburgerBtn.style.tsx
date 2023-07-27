@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiMenu } from 'react-icons/bi';
+import { theme } from 'style/theme';
 import { maxQuery } from 'utils/breakpoints';
 
 interface MenuListProps {
@@ -9,15 +10,16 @@ interface MenuListProps {
 
 const MenuList = styled.ul<MenuListProps>`
   display: none;
+  font-family: 'Inter';
 
   ${maxQuery.tablet} {
     display: ${(props) => (props.isopen === 'true' ? 'block' : 'none')};
     font-size: 1.1rem;
     /* margin-left: 30px; */
     /* transition: all 0.3s ease-in-out; */
-    padding-left: 40px;
+    /* padding-left: 40px; */
     position: absolute;
-    top: 45px;
+    top: 64px;
     right: 0;
     bottom: 0;
     width: 100vw;
@@ -40,7 +42,6 @@ const Button = styled.button<{ isSelected?: boolean }>`
   justify-content: space-between;
   width: 100%;
   color: ${(props) => (props.isSelected ? 'white' : '#848895')};
-  background: none;
   padding: 1.3rem 0;
   border: none;
   font-weight: 800;
@@ -60,12 +61,23 @@ const Button = styled.button<{ isSelected?: boolean }>`
     transition: color 0.3s ease-in-out;
 
     &:hover {
-      color: white;
+      color: ${theme.colors.white};
     }
   }
 
   &:hover {
-    color: white;
+    color: ${theme.colors.white};
+  }
+
+  ${maxQuery.tablet} {
+    padding: 1.3rem 20px;
+    background-color: ${(props) => (props.isSelected ? `${theme.colors.black800}` : 'transparent')};
+    box-shadow: ${(props) => (props.isSelected ? '0 0 24px rgba(255, 255, 255, 0.1)' : 'none')};
+    z-index: 3;
+
+    .icon {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -76,6 +88,7 @@ const Dropdown = styled.div`
   // hsla(0, 0%, 100%, 0.1)
   border-radius: 12px;
   margin-right: 70px;
+
   .user-menu {
     display: flex;
     flex-direction: column;
@@ -91,6 +104,7 @@ const Dropdown = styled.div`
       border-color 0.3s ease-in-out;
     text-decoration: none;
     color: white;
+
     &:hover {
       background-color: #1e1e1e;
     }
@@ -101,6 +115,29 @@ const Dropdown = styled.div`
     height: 2px;
     margin: 2.5rem --1.625rem;
     margin-bottom: 15px;
+  }
+
+  ${maxQuery.tablet} {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    .user-menu .user {
+      padding: 20px;
+      background-color: rgba(28, 28, 30, 0.6);
+      border-radius: 0;
+
+      &:hover {
+      }
+    }
+
+    .divider {
+      display: none;
+      margin: 0;
+    }
   }
 `;
 

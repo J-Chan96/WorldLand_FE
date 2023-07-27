@@ -3,6 +3,7 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon } from './HamburgerBtn.style';
 import { MenuIcon } from 'assets';
 import { CloseIcon } from 'assets/header/CloseIcon';
+import { theme } from 'style/theme';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -29,7 +30,11 @@ const HamburgerBtn = () => {
 
   return (
     <div>
-      {isHamburgerOpen ? <CloseIcon onClick={toggleHamburgerMenu} /> : <MenuIcon onClick={toggleHamburgerMenu} />}
+      {isHamburgerOpen ? (
+        <CloseIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
+      ) : (
+        <MenuIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
+      )}
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
