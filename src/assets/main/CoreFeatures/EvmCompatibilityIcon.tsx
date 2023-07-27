@@ -6,16 +6,16 @@ export const EvmCompatibilityIcon = ({ style }: AssetsProps) => {
       <path
         d="M200.595 9.12048L85.3793 197.474L201.62 269.223L311.641 197.474L200.595 9.12048Z"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M85.3793 225.671L201.841 386.3L311.641 225.671L201.841 291.705L85.3793 225.671Z"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

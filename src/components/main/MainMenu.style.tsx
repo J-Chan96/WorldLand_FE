@@ -127,13 +127,9 @@ const Contack = styled.div`
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
-  color: #848895;
+  color: white;
+  text-decoration: underline;
   cursor: pointer;
-
-  &:hover {
-    color: white;
-    text-decoration: underline;
-  }
 `;
 
 export {
