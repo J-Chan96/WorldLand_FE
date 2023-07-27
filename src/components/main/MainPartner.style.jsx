@@ -39,22 +39,45 @@ const IconWrap = styled.div`
 
 const Icon = styled.img`
   height: auto;
-  width: 70px;
+  width: 25px;
 `;
 
 const Icon2 = styled.img`
   height: auto;
-  width: 200px;
+  width: 100px;
 `;
 
 const Icon3 = styled.img`
   height: auto;
-  width: 120px;
+  width: 70px;
 `;
 
 const Icon4 = styled.img`
   height: auto;
-  width: 150px;
+  width: 80px;
 `;
 
-export { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4 };
+const Icon5 = styled.img`
+  height: auto;
+  width: 80px;
+`;
+const Icon6 = styled.img`
+  height: auto;
+  width: 80px;
+`;
+const Icon7 = styled.img`
+  height: auto;
+  width: 70px;
+`;
+
+const Icon8 = styled.img`
+  height: auto;
+  width: 25px;
+`;
+
+const Icon9 = styled.img`
+  height: auto;
+  width: 52px;
+`;
+
+export { PartnerContainer, Contact1, IconWrap, Icon, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9 };
