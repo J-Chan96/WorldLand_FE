@@ -1,3 +1,6 @@
+// Header
+export { MenuIcon } from './header/MenuIcon';
+
 // MainData
 export { EvmCompatibilityIcon } from './main/CoreFeatures/EvmCompatibilityIcon';
 export { PqSecurityIcon } from './main/CoreFeatures/PqSecurityIcon';

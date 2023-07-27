@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon } from './HamburgerBtn.style';
+import { MenuIcon } from 'assets';
+import { CloseIcon } from 'assets/header/CloseIcon';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -27,11 +29,7 @@ const HamburgerBtn = () => {
 
   return (
     <div>
-      {isHamburgerOpen ? (
-        <HamburgerOutIcon onClick={toggleHamburgerMenu} />
-      ) : (
-        <HamburgerIcon onClick={toggleHamburgerMenu} />
-      )}
+      {isHamburgerOpen ? <CloseIcon onClick={toggleHamburgerMenu} /> : <MenuIcon onClick={toggleHamburgerMenu} />}
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
