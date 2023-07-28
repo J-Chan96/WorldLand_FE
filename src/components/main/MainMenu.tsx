@@ -71,10 +71,10 @@ const MainMenu = () => {
                 <SpaceLink href="/">
                   <Strong>Bridge</Strong>
                 </SpaceLink>
-                <SpaceLink href="http://52.79.231.150/">
+                <SpaceLink target="_blank" href="http://52.79.231.150/">
                   <Strong>Scan</Strong>
                 </SpaceLink>
-                <SpaceLink href="/">
+                <SpaceLink href="/swap">
                   <Strong>Swap</Strong>
                 </SpaceLink>
               </div>

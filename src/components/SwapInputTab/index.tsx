@@ -26,15 +26,19 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 450px;
-
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #999999;
+    
     ul {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
 
         li {
             list-style-type: none;
+            color: #ffffff;
         }
     }
 
@@ -44,10 +48,13 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
         width: 100%;
+        input {
+            width: 100%;
+        }
     }
 
     button {
-        
+
     }
 
 `

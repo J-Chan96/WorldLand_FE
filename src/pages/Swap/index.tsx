@@ -12,5 +12,9 @@ const Swap = () => {
 export default Swap
 
 const Container = styled.section`
-
-`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to bottom, #1c233e, #06080c);
+    height: 100vh;
+`;

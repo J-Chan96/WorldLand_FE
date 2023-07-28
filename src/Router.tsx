@@ -33,6 +33,7 @@ const Router = () => {
         { path: `${PATH.LEARN_GOVERNANCE}`, element: <Governance /> },
       ],
     },
+    { path: `${PATH.SWAP}`, element: <Swap /> }
   ]);
 
   return <RouterProvider router={router} />;
