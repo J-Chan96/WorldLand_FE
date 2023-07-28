@@ -1,5 +1,6 @@
 // Header
 export { MenuIcon } from './header/MenuIcon';
+export { CloseIcon } from './header/CloseIcon';
 
 // MainData
 export { EvmCompatibilityIcon } from './main/CoreFeatures/EvmCompatibilityIcon';

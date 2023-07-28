@@ -8,6 +8,18 @@ interface MenuListProps {
   isopen: string;
 }
 
+const HamburgerBtnWrapper = styled.nav`
+  svg {
+    display: none;
+  }
+
+  ${maxQuery.tablet} {
+    svg {
+      display: flex;
+    }
+  }
+`;
+
 const MenuList = styled.ul<MenuListProps>`
   display: none;
   font-family: 'Inter';
@@ -88,6 +100,7 @@ const Dropdown = styled.div`
   // hsla(0, 0%, 100%, 0.1)
   border-radius: 12px;
   margin-right: 70px;
+  z-index: 100;
 
   .user-menu {
     display: flex;
@@ -171,4 +184,4 @@ const HamburgerOutIcon = styled(AiOutlineClose)`
   }
 `;
 
-export { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon };
+export { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon, HamburgerBtnWrapper };

@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon } from './HamburgerBtn.style';
-import { MenuIcon } from 'assets';
-import { CloseIcon } from 'assets/header/CloseIcon';
+import {
+  MenuList,
+  Li,
+  Button,
+  Dropdown,
+  HamburgerIcon,
+  HamburgerOutIcon,
+  HamburgerBtnWrapper,
+} from './HamburgerBtn.style';
+import { CloseIcon, MenuIcon } from 'assets';
 import { theme } from 'style/theme';
 
 const HamburgerBtn = () => {
@@ -29,7 +36,7 @@ const HamburgerBtn = () => {
   };
 
   return (
-    <div>
+    <HamburgerBtnWrapper>
       {isHamburgerOpen ? (
         <CloseIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
       ) : (
@@ -115,7 +122,7 @@ const HamburgerBtn = () => {
           )}
         </Li>
       </MenuList>
-    </div>
+    </HamburgerBtnWrapper>
   );
 };
 

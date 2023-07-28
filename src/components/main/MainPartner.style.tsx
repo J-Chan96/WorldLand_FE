@@ -34,7 +34,7 @@ const IconWrap = styled.div`
 
   svg {
     color: ${theme.colors.white800};
-    height: 24px;
+    height: 28px;
   }
 
   /* Media query for screens with a maximum width of 600px */
