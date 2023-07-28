@@ -29,7 +29,7 @@ const MainDashboard = () => {
           </ButtonContainer>
         </TextContainer>
         <VideoContainer>
-          <Video autoPlay loop muted>
+          <Video autoPlay loop muted playsInline>
             <source src="/videos/MainVideo.mp4" />
             Your browser does not support the video tag.
           </Video>
