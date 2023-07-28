@@ -27,10 +27,11 @@ const Container = styled.div`
     flex-direction: column;
     width: 100%;
     max-width: 350px;
-    border: 1px solid #999999;
+    border: 1px solid #2e374f;
     border-radius: 10px;
     padding: 10px;
     gap: 10px;
+    background-color: #0f1421;
 
     ul {
         display: flex;
