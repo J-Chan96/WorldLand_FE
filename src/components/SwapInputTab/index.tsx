@@ -1,13 +1,16 @@
 import styled from "styled-components"
 
-const SwapInputTab = () => {
+const SwapInputTab = ({ input }: SwapInputType) => {
     return (
         <Container>
-            <div>
-                {/* Swap */}
-                {/* Buy     Setting */}
-            </div>
-            <div>
+            <ul>
+                <li>Swap</li>
+                <li>Buy</li>
+            </ul>
+            <ul>
+                <li>Setting</li>
+            </ul>
+            <div className="input-wrap">
                 <input type="text" />
                 <input type="text" />
             </div>
@@ -19,5 +22,32 @@ const SwapInputTab = () => {
 export default SwapInputTab
 
 const Container = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 450px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
+    .input-wrap {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    button {
+        
+    }
 
 `
