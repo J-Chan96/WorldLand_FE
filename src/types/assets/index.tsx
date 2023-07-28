@@ -1,5 +1,11 @@
+import { MouseEventHandler } from 'react';
+
 interface AssetsProps {
   style?: React.CSSProperties;
 }
 
-export type { AssetsProps };
+interface HeaderIconProps extends AssetsProps {
+  onClick: MouseEventHandler<SVGSVGElement>;
+}
+
+export type { AssetsProps, HeaderIconProps };

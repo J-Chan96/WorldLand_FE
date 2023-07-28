@@ -25,6 +25,11 @@ const MainMenu = () => {
   const handleMenuClick = (menu: any) => {
     setActiveMenu(activeMenu === menu ? null : menu);
   };
+
+  const handleLinkClick = (message: string) => {
+    alert(message);
+  };
+
   return (
     <Menu>
       <MenuItem data-isactive={activeMenu === 'Learn'} onClick={() => handleMenuClick('Learn')}>
@@ -57,10 +62,10 @@ const MainMenu = () => {
           <User>
             <div>
               <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
-                <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./testing-eth-ecc">
+                <SpaceLink href="https://docs.worldland.foundation/miner/start-mining">
                   <Strong>Start Mining</Strong>
                 </SpaceLink>
-                <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./install-and-run-geth">
+                <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
                   <Strong>Node operator</Strong>
                 </SpaceLink>
               </div>
@@ -68,13 +73,13 @@ const MainMenu = () => {
             <Divider></Divider>
             <div>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <SpaceLink href="/">
+                <SpaceLink onClick={() => handleLinkClick('서비스 준비중입니다.')}>
                   <Strong>Bridge</Strong>
                 </SpaceLink>
-                <SpaceLink href="http://52.79.231.150/">
+                <SpaceLink href="http://scan.worldland.foundation/" target="_blank">
                   <Strong>Scan</Strong>
                 </SpaceLink>
-                <SpaceLink href="/">
+                <SpaceLink href="/" onClick={() => handleLinkClick('서비스 준비중입니다. ')}>
                   <Strong>Swap</Strong>
                 </SpaceLink>
               </div>
@@ -92,7 +97,7 @@ const MainMenu = () => {
           <Network>
             <div>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <SpaceLink href="https://ethworldland.gitbook.io/ethereum-worldland/use/how-to-connect-wallet-to-worldland-network">
+                <SpaceLink href="https://docs.worldland.foundation/">
                   <Strong>Docs</Strong>
                 </SpaceLink>
                 <SpaceLink href="https://github.com/cryptoecc/ECCPoW">
@@ -111,7 +116,7 @@ const MainMenu = () => {
         Community
         <CommunityDropdown className="community" data-isvisible={activeMenu === 'Community'}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <SpaceLink href="/">
+            <SpaceLink>
               <Strong>Help Center</Strong>
             </SpaceLink>
             <SpaceLink href="/">

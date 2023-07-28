@@ -24,8 +24,8 @@ const MainDashboard = () => {
             </SubText>
           </Text>
           <ButtonContainer>
-            <LearnBtn>Learn</LearnBtn>
-            <DocsBtn>Docs</DocsBtn>
+            <LearnBtn to="https://worldland.foundation/learn">Learn</LearnBtn>
+            <DocsBtn to="https://docs.worldland.foundation/">Docs</DocsBtn>
           </ButtonContainer>
         </TextContainer>
         <VideoContainer>

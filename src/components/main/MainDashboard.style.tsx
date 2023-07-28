@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { theme } from 'style/theme';
 import styled from 'styled-components';
 import { maxQuery } from 'utils/breakpoints';
@@ -130,7 +131,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const LearnBtn = styled.button`
+const LearnBtn = styled(Link)`
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
@@ -140,6 +141,7 @@ const LearnBtn = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+  text-decoration: none; /* Add this to remove underline */
 
   &:hover {
     background-color: ${theme.colors.white800};
@@ -150,7 +152,7 @@ const LearnBtn = styled.button`
   }
 `;
 
-const DocsBtn = styled.button`
+const DocsBtn = styled(Link)`
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
@@ -161,6 +163,7 @@ const DocsBtn = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+  text-decoration: none; /* Add this to remove underline */
 
   &:hover {
     background-color: ${theme.colors.white800};

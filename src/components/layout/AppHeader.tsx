@@ -22,10 +22,14 @@ const Header = styled.header`
   ${maxQuery.tablet} {
     flex-direction: row;
     position: fixed;
-    width: 100vw;
-    justify-content: start;
-    padding-left: 40px;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: space-between;
     z-index: 2;
+
+    svg {
+      cursor: pointer;
+    }
   }
 `;
 const Logo = styled.div`
@@ -33,7 +37,7 @@ const Logo = styled.div`
   color: rgba(255, 255, 255, 0.95);
 
   ${maxQuery.tablet} {
-    margin-left: 0px;
+    margin-left: 0;
   }
 `;
 

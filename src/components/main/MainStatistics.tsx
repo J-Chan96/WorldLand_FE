@@ -50,7 +50,7 @@ function MainStatistics() {
     fetchBlockData();
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchBlockData]);
 
   useEffect(() => {
     // Fetch Active Accounts every 5 seconds
@@ -104,7 +104,7 @@ function MainStatistics() {
           <StatisticsDetail2>
             <CountUp end={activeNodes} duration={0.5} />
           </StatisticsDetail2>
-          <DetailDescription>Active Accounts</DetailDescription>
+          <DetailDescription>Validator Nodes</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>

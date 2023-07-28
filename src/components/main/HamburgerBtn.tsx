@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { MenuList, Li, Button, Dropdown, HamburgerIcon, HamburgerOutIcon } from './HamburgerBtn.style';
+import {
+  MenuList,
+  Li,
+  Button,
+  Dropdown,
+  HamburgerIcon,
+  HamburgerOutIcon,
+  HamburgerBtnWrapper,
+} from './HamburgerBtn.style';
+import { CloseIcon, MenuIcon } from 'assets';
+import { theme } from 'style/theme';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -26,11 +36,11 @@ const HamburgerBtn = () => {
   };
 
   return (
-    <div>
+    <HamburgerBtnWrapper>
       {isHamburgerOpen ? (
-        <HamburgerOutIcon onClick={toggleHamburgerMenu} />
+        <CloseIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
       ) : (
-        <HamburgerIcon onClick={toggleHamburgerMenu} />
+        <MenuIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
       )}
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
@@ -112,7 +122,7 @@ const HamburgerBtn = () => {
           )}
         </Li>
       </MenuList>
-    </div>
+    </HamburgerBtnWrapper>
   );
 };
 
