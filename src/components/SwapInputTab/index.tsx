@@ -6,13 +6,12 @@ const SwapInputTab = ({ input }: SwapInputType) => {
             <ul>
                 <li>Swap</li>
                 <li>Buy</li>
+                <li className="last-index">Setting</li>
             </ul>
-            <ul>
-                <li>Setting</li>
-            </ul>
+
             <div className="input-wrap">
-                <input type="text" />
-                <input type="text" />
+                <input type="text" placeholder="0.0" />
+                <input type="text" placeholder="0.0" />
             </div>
             <button>Swap / Connect Wallet</button>
         </Container>
@@ -27,18 +26,26 @@ const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     border: 1px solid #999999;
-    
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+
     ul {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
-
+        gap: 10px;
+        margin: 0 20px;
         li {
             list-style-type: none;
             color: #ffffff;
+        }
+        .last-index {
+            text-align: right;
+            width: 100%;
         }
     }
 
@@ -48,13 +55,20 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
         width: 100%;
+        gap: 5px;
         input {
             width: 100%;
+            background-color: #263354;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 24px;
         }
     }
 
     button {
-
+        color: #ffffff;
     }
 
 `
