@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { theme } from 'style/theme';
 import { maxQuery } from 'utils/breakpoints';
 
 const Menu = styled.div`
@@ -40,7 +41,7 @@ const Dropdown = styled.div`
   position: absolute;
   background-color: black;
   font-size: 14px;
-  color: white;
+  color: ${theme.colors.white};
   top: calc(100% + 1rem);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);

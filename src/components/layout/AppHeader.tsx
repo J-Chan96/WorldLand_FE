@@ -20,7 +20,7 @@ const Header = styled.header`
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  border-bottom: 1px solid #4c4c4c;
+  border-bottom: 1px solid ${theme.colors.black700};
 
   ${maxQuery.tablet} {
     flex-direction: row;

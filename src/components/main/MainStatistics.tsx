@@ -92,19 +92,19 @@ function MainStatistics() {
           <StatisticsDetail>
             <CountUp end={time} duration={0.5} decimals={1} formattingFn={formatValue} />
           </StatisticsDetail>
-          <DetailDescription>Average Block Time</DetailDescription>
+          <DetailDescription>Block Numbers</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
             <CountUp end={totalBlocks} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Total Blocks</DetailDescription>
+          <DetailDescription>Total Transactions</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Validator Nodes</DetailDescription>
+          <DetailDescription>Wallet addresses</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
