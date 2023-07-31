@@ -6,8 +6,6 @@ import {
   StatisticsContainer,
   StatisticsDetails,
   StatisticsDetail,
-  StatisticsDetail2,
-  StatisticsDetail3,
   DetailDescription,
   StatisticContainer,
 } from './MainStatistics.style';
@@ -92,19 +90,19 @@ function MainStatistics() {
           <StatisticsDetail>
             <CountUp end={time} duration={0.5} decimals={1} formattingFn={formatValue} />
           </StatisticsDetail>
-          <DetailDescription>Block Numbers</DetailDescription>
+          <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
             <CountUp end={totalBlocks} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Total Transactions</DetailDescription>
+          <DetailDescription>Block Numbers</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Wallet addresses</DetailDescription>
+          <DetailDescription>Total Accounts</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
