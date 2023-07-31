@@ -3,11 +3,13 @@ import HamburgerBtn from 'components/main/HamburgerBtn';
 import MainMenu from 'components/main/MainMenu';
 import { Link } from 'react-router-dom';
 import { maxQuery } from 'utils/breakpoints';
+import WorldLandLogo from 'assets/header/WorldLandLogo';
+import { theme } from 'style/theme';
 
 const Header = styled.header`
   height: 65px;
   background: black;
-  font-size: 18px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.95);
   font-weight: bold;
   display: flex;
@@ -32,9 +34,9 @@ const Header = styled.header`
     }
   }
 `;
-const Logo = styled.div`
-  margin-left: 100px;
-  color: rgba(255, 255, 255, 0.95);
+const LogoWrapper = styled.div`
+  /* margin-left: 100px; */
+  color: ${theme.colors.white};
 
   ${maxQuery.tablet} {
     margin-left: 0;
@@ -45,7 +47,9 @@ function AppHeader() {
   return (
     <Header>
       <Link to={'/'}>
-        <Logo>Logo</Logo>
+        <LogoWrapper>
+          <WorldLandLogo />
+        </LogoWrapper>
       </Link>
       <MainMenu />
       <HamburgerBtn />

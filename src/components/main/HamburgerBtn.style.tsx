@@ -9,14 +9,10 @@ interface MenuListProps {
 }
 
 const HamburgerBtnWrapper = styled.nav`
-  svg {
-    display: none;
-  }
+  display: none;
 
   ${maxQuery.tablet} {
-    svg {
-      display: flex;
-    }
+    display: flex;
   }
 `;
 

@@ -4,6 +4,9 @@ import { maxQuery } from 'utils/breakpoints';
 
 const Menu = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 366px;
+  gap: 40px;
   height: 25px;
   align-items: center;
 
@@ -12,8 +15,15 @@ const Menu = styled.div`
   }
 `;
 
+const MenuItemWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+`;
+
 const MenuItem = styled.div<{ isSelected?: boolean }>`
-  margin: 0px 25px;
+  /* margin: 0px 25px; */
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
@@ -122,9 +132,9 @@ const Divider = styled.div`
 `;
 
 const Contack = styled.div`
-  margin: 0px 25px;
+  /* margin: 0px 25px; */
   /* padding: 0px 25px; */
-  position: relative;
+  /* position: relative; */
   transition: color 0.3s ease-in-out;
   align-items: center;
   color: white;
@@ -134,6 +144,7 @@ const Contack = styled.div`
 
 export {
   Menu,
+  MenuItemWrapper,
   Dropdown,
   MenuItem,
   CommunityDropdown,
