@@ -66,7 +66,7 @@ const TextContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1280px;
   height: auto;
   z-index: 1; /* Add this to ensure the text is above the video */
   padding: 0 40px;
