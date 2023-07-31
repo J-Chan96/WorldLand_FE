@@ -73,6 +73,12 @@ const Button = styled.button<{ isSelected?: boolean }>`
     }
   }
 
+  .contact {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   &:hover {
     color: ${theme.colors.white};
   }
