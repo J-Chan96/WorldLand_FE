@@ -17,6 +17,10 @@ const HamburgerBtnWrapper = styled.nav`
 
   ${maxQuery.tablet} {
     display: flex;
+
+    svg {
+      display: flex;
+    }
   }
 `;
 
