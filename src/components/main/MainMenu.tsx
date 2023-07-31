@@ -64,11 +64,11 @@ const MainMenu = () => {
             <User>
               <div>
                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
-                  <SpaceLink href="https://docs.worldland.foundation/miner/start-mining">
-                    <Strong>Start Mining</Strong>
+                  <SpaceLink href="https://docs.worldland.foundation/user/wallet">
+                    <Strong>Connect Worldland</Strong>
                   </SpaceLink>
                   <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
-                    <Strong>Node operator</Strong>
+                    <Strong>Run Node</Strong>
                   </SpaceLink>
                 </div>
               </div>
@@ -118,16 +118,13 @@ const MainMenu = () => {
           Community
           <CommunityDropdown className="community" data-isvisible={activeMenu === 'Community'}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <SpaceLink href="https://dao.worldland.space/#/worldlandtest.eth">
-                <Strong>DAO</Strong>
-              </SpaceLink>
               <SpaceLink>
                 <Strong>Help Center</Strong>
               </SpaceLink>
               <SpaceLink href="/">
                 <Strong>
                   <Twitter />
-                  Twitter
+                  {'   '}Twitter
                 </Strong>
               </SpaceLink>
               <SpaceLink href="/">
