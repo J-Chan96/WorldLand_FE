@@ -64,11 +64,11 @@ const MainMenu = () => {
             <User>
               <div>
                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
-                  <SpaceLink href="https://docs.worldland.foundation/miner/start-mining">
-                    <Strong>Start Mining</Strong>
+                  <SpaceLink href="https://docs.worldland.foundation/user/wallet">
+                    <Strong>Connect Worldland</Strong>
                   </SpaceLink>
                   <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
-                    <Strong>Node operator</Strong>
+                    <Strong>Run node</Strong>
                   </SpaceLink>
                 </div>
               </div>
