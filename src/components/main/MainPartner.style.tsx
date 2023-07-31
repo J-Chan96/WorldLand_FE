@@ -46,8 +46,9 @@ const IconWrap = styled.div`
     flex: 1 0 0;
     flex-wrap: wrap;
 
-    svg {
-      height: 32px;
+    svg,
+    img {
+      height: 24px;
       width: auto;
     }
   }
