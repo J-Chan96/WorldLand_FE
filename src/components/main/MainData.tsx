@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import { DecentralizedIcon, EnergyEfficiencyIcon, EvmCompatibilityIcon, PqSecurityIcon } from 'assets';
 import { maxQuery } from 'utils/breakpoints';
+import { theme } from 'style/theme';
 
 const ContainerData = styled.div`
   font-family: 'Inter';
   width: 100%;
-  background-color: black;
-  color: #f4f4f4;
+  background-color: transparent;
+  color: ${theme.colors.white};
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
 `;
 
 const Head = styled.div`
-  width: 80%;
+  width: 100%;
   height: 50px;
   font-weight: bold;
   font-size: calc(20px + 2vmin);

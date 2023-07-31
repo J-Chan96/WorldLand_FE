@@ -6,8 +6,6 @@ import {
   StatisticsContainer,
   StatisticsDetails,
   StatisticsDetail,
-  StatisticsDetail2,
-  StatisticsDetail3,
   DetailDescription,
   StatisticContainer,
 } from './MainStatistics.style';
@@ -98,13 +96,13 @@ function MainStatistics() {
           <StatisticsDetail>
             <CountUp end={totalBlocks} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Total Blocks</DetailDescription>
+          <DetailDescription>Block Numbers</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Validator Nodes</DetailDescription>
+          <DetailDescription>Total Accounts</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
