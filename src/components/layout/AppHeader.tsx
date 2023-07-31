@@ -39,6 +39,10 @@ const LogoWrapper = styled.div`
   /* margin-left: 100px; */
   color: ${theme.colors.white};
 
+  svg {
+    height: 26px;
+  }
+
   ${maxQuery.tablet} {
     margin-left: 0;
 
