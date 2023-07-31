@@ -14,7 +14,7 @@ const Head = styled.div`
   width: 80%;
   height: 50px;
   font-weight: bold;
-  font-size: calc(20px + 2vmin);
+  font-size: 48px;
   margin: 0 auto;
   margin-bottom: 20px;
 
@@ -71,7 +71,7 @@ const Content = styled.div`
 
 const Body = styled.div`
   display: flex;
-  font-size: 25px;
+  font-size: 88px;
   font-weight: 700;
   margin-bottom: 1.5rem;
 
@@ -83,7 +83,7 @@ const Body = styled.div`
 
 const Child = styled.div`
   color: #aaa;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 24px;
 
