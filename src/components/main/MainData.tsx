@@ -11,14 +11,13 @@ const ContainerData = styled.div`
   overflow: hidden;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 120px 40px;
 `;
 
 const Head = styled.div`
   width: 100%;
-  height: 50px;
   font-weight: bold;
-  font-size: calc(20px + 2vmin);
+  font-size: 32px;
   margin: 0 auto;
   margin-bottom: 20px;
 

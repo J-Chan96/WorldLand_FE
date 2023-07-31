@@ -7,7 +7,7 @@ const PartnerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: stretch;
-  background-color: black;
+  background-color: transparent;
   padding: 20px; /* Added padding for all screen sizes */
 
   /* Media query for screens with a maximum width of 600px */
