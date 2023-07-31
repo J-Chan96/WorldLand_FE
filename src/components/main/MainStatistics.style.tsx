@@ -47,37 +47,37 @@ const StatisticsDetail = styled.div`
   }
 `;
 
-const StatisticsDetail2 = styled.div`
-  text-align: center;
-  font-size: calc(40px + 3vmin);
+// const StatisticsDetail2 = styled.div`
+//   text-align: center;
+//   font-size: calc(40px + 3vmin);
 
-  background: linear-gradient(100.93deg, #1fcff1 15.61%, #234cb6 41.38%, rgba(35, 76, 182, 0.5) 79.94%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+//   background: linear-gradient(100.93deg, #1fcff1 15.61%, #234cb6 41.38%, rgba(35, 76, 182, 0.5) 79.94%);
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   color: transparent;
 
-  ${maxQuery.tablet} {
-    font-size: calc(20px + 2vmin);
-    margin-bottom: 10px;
-  }
-`;
+//   ${maxQuery.tablet} {
+//     font-size: calc(20px + 2vmin);
+//     margin-bottom: 10px;
+//   }
+// `;
 
-const StatisticsDetail3 = styled.div`
-  text-align: center;
-  font-size: calc(40px + 3vmin);
+// const StatisticsDetail3 = styled.div`
+//   text-align: center;
+//   font-size: calc(40px + 3vmin);
 
-  background: linear-gradient(97.65deg, #19fb9b 11.36%, #199890 54.3%, #005f59 100.78%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+//   background: linear-gradient(97.65deg, #19fb9b 11.36%, #199890 54.3%, #005f59 100.78%);
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   color: transparent;
 
-  ${maxQuery.tablet} {
-    font-size: calc(20px + 2vmin);
-    margin-bottom: 10px;
-  }
-`;
+//   ${maxQuery.tablet} {
+//     font-size: calc(20px + 2vmin);
+//     margin-bottom: 10px;
+//   }
+// `;
 
 const DetailDescription = styled.div`
   text-align: center;
@@ -94,12 +94,4 @@ const StatisticContainer = styled.div`
   gap: 16px;
 `;
 
-export {
-  StatisticsContainer,
-  StatisticsDetails,
-  StatisticsDetail,
-  StatisticsDetail2,
-  StatisticsDetail3,
-  DetailDescription,
-  StatisticContainer,
-};
+export { StatisticsContainer, StatisticsDetails, StatisticsDetail, DetailDescription, StatisticContainer };
