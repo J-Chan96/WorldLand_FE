@@ -5,7 +5,6 @@ import { maxQuery } from 'utils/breakpoints';
 const PartnerContainer = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1280px;
   padding: 40px 0px;
   justify-content: center;
   align-items: center;
