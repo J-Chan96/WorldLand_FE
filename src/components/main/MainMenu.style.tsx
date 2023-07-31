@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import { theme } from 'style/theme';
 import { maxQuery } from 'utils/breakpoints';
 
@@ -86,6 +87,22 @@ const Learn = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  padding: 5px 30px 5px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  line-height: 25px;
+
+  &:hover {
+    background-color: #1e1e1e;
+    font-weight: bold;
+  }
+`;
+
 const SpaceLink = styled.a`
   text-decoration: none;
   padding: 5px 30px 5px 5px;
@@ -106,6 +123,9 @@ const Strong = styled.div`
   color: white;
   font-weight: bold;
   padding: 0 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   /* padding-top: 2px; */
 `;
 
@@ -158,4 +178,5 @@ export {
   User,
   Divider,
   Contack,
+  StyledLink,
 };
