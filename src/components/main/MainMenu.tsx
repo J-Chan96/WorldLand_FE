@@ -118,7 +118,7 @@ const MainMenu = () => {
           Community
           <CommunityDropdown className="community" data-isvisible={activeMenu === 'Community'}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <SpaceLink>
+              <SpaceLink href="https://dao.worldland.space/#/worldlandtest.eth">
                 <Strong>DAO</Strong>
               </SpaceLink>
               <SpaceLink>
