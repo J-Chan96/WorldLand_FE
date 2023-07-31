@@ -38,6 +38,10 @@ const HamburgerBtn = () => {
     }));
   };
 
+  const handleLinkClick = (message: string) => {
+    alert(message);
+  };
+
   return (
     <HamburgerBtnWrapper>
       {isHamburgerOpen ? (
@@ -61,26 +65,24 @@ const HamburgerBtn = () => {
           {menuState.user && (
             <Dropdown data-isvisible={menuState.user}>
               <div className="user-menu">
-                <a
-                  href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./testing-eth-ecc"
-                  className="user"
-                >
+                <a href="https://docs.worldland.foundation/miner/start-mining" className="user">
                   Start Mining
                 </a>
-                <a
-                  href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./install-and-run-geth"
-                  className="user"
-                >
+                <a href="https://docs.worldland.foundation/miner/install-and-run-geth" className="user">
                   Node Operator
                 </a>
-                <div className="user">Bridge</div>
+                <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
+                  Bridge
+                </div>
               </div>
               <div className="divider"></div>
               <div className="user-menu">
-                <a href="http://52.79.231.150/" className="user">
+                <a href="http://scan.worldland.foundation/" className="user">
                   Scan
                 </a>
-                <div className="user">Swap</div>
+                <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
+                  Swap
+                </div>
               </div>
             </Dropdown>
           )}
