@@ -127,7 +127,7 @@ const MainMenu = () => {
               <SpaceLink href="/">
                 <Strong>
                   <Twitter />
-                  {'   '}Twitter
+                  Twitter
                 </Strong>
               </SpaceLink>
               <SpaceLink href="/">

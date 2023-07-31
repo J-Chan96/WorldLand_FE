@@ -95,15 +95,15 @@ function MainStatistics() {
           <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail3>
+          <StatisticsDetail>
             <CountUp end={totalBlocks} duration={0.5} />
-          </StatisticsDetail3>
+          </StatisticsDetail>
           <DetailDescription>Total Blocks</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail2>
+          <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
-          </StatisticsDetail2>
+          </StatisticsDetail>
           <DetailDescription>Validator Nodes</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>

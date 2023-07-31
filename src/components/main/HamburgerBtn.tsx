@@ -20,19 +20,21 @@ const HamburgerBtn = () => {
     user: false,
     developer: false,
     community: false,
+    contactUs: false,
   });
 
   const toggleHamburgerMenu = () => {
     setHamburgerOpen(!isHamburgerOpen);
   };
 
-  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community') => {
+  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community' | 'contactUs') => {
     setMenuState((prevState) => ({
       ...prevState,
       learn: menuName === 'learn' ? !prevState.learn : false,
       user: menuName === 'user' ? !prevState.user : false,
       developer: menuName === 'developer' ? !prevState.developer : false,
       community: menuName === 'community' ? !prevState.community : false,
+      contactUs: menuName === 'contactUs' ? !prevState.contactUs : false,
     }));
   };
 
@@ -50,7 +52,7 @@ const HamburgerBtn = () => {
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
-            <Link to={'/learn'} className="learn">
+            <Link className="learn" to="/learn">
               Learn
             </Link>
           </Button>
@@ -125,8 +127,8 @@ const HamburgerBtn = () => {
           )}
         </Li>
         <Li>
-          <Button>
-            <div className="contact">Contact Us</div>
+          <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => toggleSubMenu('contactUs')}>
+            Contact Us
           </Button>
         </Li>
       </MenuList>

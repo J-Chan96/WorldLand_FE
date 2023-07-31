@@ -1,7 +1,9 @@
+import { theme } from 'style/theme';
 import styled from 'styled-components';
 import { maxQuery } from 'utils/breakpoints';
 
 const StatisticsContainer = styled.div`
+  font-family: 'Inter';
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -32,13 +34,8 @@ const StatisticsDetails = styled.div`
 
 const StatisticsDetail = styled.div`
   text-align: center;
-  font-size: calc(40px + 3vmin);
-  background: linear-gradient(
-    101.11deg,
-    rgb(240, 135, 255, 1) 14.47%,
-    rgb(240, 101, 206, 0.8) 39.43%,
-    rgba(240, 81, 206, 0.6) 76.77%
-  );
+  font-size: 91px;
+  background: ${theme.colors.white};
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,8 +82,8 @@ const StatisticsDetail3 = styled.div`
 const DetailDescription = styled.div`
   text-align: center;
   font-size: 14px;
-  font-family: 'Dsemi', monospace;
-  color: #c4c4c4;
+  /* font-family: 'Dsemi', monospace; */
+  color: ${theme.colors.white800};
 `;
 
 const StatisticContainer = styled.div`
@@ -94,6 +91,7 @@ const StatisticContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
 `;
 
 export {

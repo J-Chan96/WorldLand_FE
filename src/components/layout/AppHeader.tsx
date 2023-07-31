@@ -3,10 +3,11 @@ import HamburgerBtn from 'components/main/HamburgerBtn';
 import MainMenu from 'components/main/MainMenu';
 import { Link } from 'react-router-dom';
 import { maxQuery } from 'utils/breakpoints';
-import WorldLandLogo from 'assets/header/WorldLandLogo';
 import { theme } from 'style/theme';
+import { WorldLandLogo } from 'assets';
 
 const Header = styled.header`
+  font-family: 'Inter';
   height: 65px;
   background: black;
   font-size: 14px;
@@ -38,8 +39,16 @@ const LogoWrapper = styled.div`
   /* margin-left: 100px; */
   color: ${theme.colors.white};
 
+  svg {
+    height: 26px;
+  }
+
   ${maxQuery.tablet} {
     margin-left: 0;
+
+    svg {
+      height: 12px;
+    }
   }
 `;
 
