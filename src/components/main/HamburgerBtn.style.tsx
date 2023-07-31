@@ -11,6 +11,10 @@ interface MenuListProps {
 const HamburgerBtnWrapper = styled.nav`
   display: none;
 
+  svg {
+    display: none;
+  }
+
   ${maxQuery.tablet} {
     display: flex;
   }

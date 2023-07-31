@@ -7,6 +7,7 @@ import WorldLandLogo from 'assets/header/WorldLandLogo';
 import { theme } from 'style/theme';
 
 const Header = styled.header`
+  font-family: 'Inter';
   height: 65px;
   background: black;
   font-size: 14px;

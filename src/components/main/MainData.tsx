@@ -3,6 +3,7 @@ import { DecentralizedIcon, EnergyEfficiencyIcon, EvmCompatibilityIcon, PqSecuri
 import { maxQuery } from 'utils/breakpoints';
 
 const ContainerData = styled.div`
+  font-family: 'Inter';
   width: 100%;
   background-color: black;
   color: #f4f4f4;

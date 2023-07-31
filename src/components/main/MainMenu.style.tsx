@@ -6,7 +6,7 @@ const Menu = styled.div`
   display: flex;
   width: 100%;
   max-width: 366px;
-  gap: 40px;
+  justify-content: space-between;
   height: 25px;
   align-items: center;
 
@@ -39,7 +39,7 @@ const Dropdown = styled.div`
   display: block;
   position: absolute;
   background-color: black;
-  font-size: 1rem;
+  font-size: 14px;
   color: white;
   top: calc(100% + 1rem);
   border-radius: 12px;
