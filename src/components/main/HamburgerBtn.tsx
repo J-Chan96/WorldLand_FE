@@ -11,6 +11,7 @@ import {
 } from './HamburgerBtn.style';
 import { CloseIcon, MenuIcon } from 'assets';
 import { theme } from 'style/theme';
+import { Link } from 'react-router-dom';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -19,19 +20,21 @@ const HamburgerBtn = () => {
     user: false,
     developer: false,
     community: false,
+    contactUs: false,
   });
 
   const toggleHamburgerMenu = () => {
     setHamburgerOpen(!isHamburgerOpen);
   };
 
-  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community') => {
+  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community' | 'contactUs') => {
     setMenuState((prevState) => ({
       ...prevState,
       learn: menuName === 'learn' ? !prevState.learn : false,
       user: menuName === 'user' ? !prevState.user : false,
       developer: menuName === 'developer' ? !prevState.developer : false,
       community: menuName === 'community' ? !prevState.community : false,
+      contactUs: menuName === 'contactUs' ? !prevState.contactUs : false,
     }));
   };
 
@@ -45,9 +48,9 @@ const HamburgerBtn = () => {
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
-            <a href="https://www.worldland.space/Learn/" className="learn">
+            <Link className="learn" to="/learn">
               Learn
-            </a>
+            </Link>
           </Button>
         </Li>
         <Li>
@@ -120,6 +123,11 @@ const HamburgerBtn = () => {
               </div>
             </Dropdown>
           )}
+        </Li>
+        <Li>
+          <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => toggleSubMenu('contactUs')}>
+            Contact Us
+          </Button>
         </Li>
       </MenuList>
     </HamburgerBtnWrapper>
