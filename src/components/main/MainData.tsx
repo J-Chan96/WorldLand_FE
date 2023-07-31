@@ -12,6 +12,10 @@ const ContainerData = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 120px 40px;
+
+  ${maxQuery.tablet} {
+    padding: 60px 20px;
+  }
 `;
 
 const Head = styled.div`

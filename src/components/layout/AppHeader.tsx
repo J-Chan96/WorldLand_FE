@@ -24,7 +24,6 @@ const HeaderWrapper = styled.header`
     flex-direction: row;
     position: fixed;
     width: 100%;
-    padding: 0 20px;
     justify-content: space-between;
     z-index: 2;
 
@@ -41,6 +40,10 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${maxQuery.tablet} {
+    padding: 0 20px;
+  }
 `;
 
 const LogoWrapper = styled.div`

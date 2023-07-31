@@ -8,11 +8,11 @@ const PartnerContainer = styled.div`
   align-items: center;
   align-self: stretch;
   background-color: transparent;
-  padding: 20px; /* Added padding for all screen sizes */
+  padding: 0 40px; /* Added padding for all screen sizes */
 
   /* Media query for screens with a maximum width of 600px */
   ${maxQuery.tablet} {
-    padding: 10px; /* Adjust the padding for smaller screens */
+    padding: 0 20px; /* Adjust the padding for smaller screens */
   }
 `;
 
@@ -23,6 +23,10 @@ const Contact1 = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  ${maxQuery.tablet} {
+    width: 100%;
+  }
 `;
 
 const IconWrap = styled.div`
