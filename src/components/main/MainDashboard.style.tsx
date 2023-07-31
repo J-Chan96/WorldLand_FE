@@ -11,7 +11,7 @@ const DashboardContainer = styled.div`
   height: 100vh;
   min-height: 600px;
   width: 100%;
-  background-color: black;
+  background-color: transparent;
   overflow: hidden;
 
   ${maxQuery.tablet} {
@@ -52,8 +52,8 @@ const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 80%;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
 
   ${maxQuery.tablet} {
     flex-direction: column;
@@ -65,9 +65,11 @@ const TextContainer = styled.div`
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  max-width: 1000px;
   height: auto;
   z-index: 1; /* Add this to ensure the text is above the video */
+  padding: 0 40px;
 
   ${maxQuery.tablet} {
     width: 100%;
@@ -78,11 +80,11 @@ const TextContainer = styled.div`
   }
 `;
 
-const Text = styled.h1`
+const Text = styled.div`
   text-align: center;
   margin-bottom: 30px;
   font-size: 38px;
-  color: #f4f4f4;
+  color: ${theme.colors.white};
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;

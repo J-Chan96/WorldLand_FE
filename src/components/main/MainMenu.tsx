@@ -68,7 +68,7 @@ const MainMenu = () => {
                     <Strong>Connect Worldland</Strong>
                   </SpaceLink>
                   <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
-                    <Strong>Run Node</Strong>
+                    <Strong>Run node</Strong>
                   </SpaceLink>
                 </div>
               </div>
