@@ -102,7 +102,7 @@ const MainMenu = () => {
                   <SpaceLink href="https://docs.worldland.foundation/">
                     <Strong>Docs</Strong>
                   </SpaceLink>
-                  <SpaceLink href="https://github.com/cryptoecc/ECCPoW">
+                  <SpaceLink href="https://github.com/cryptoecc/ETH-ECC">
                     <Strong>GitHub</Strong>
                   </SpaceLink>
                 </div>
