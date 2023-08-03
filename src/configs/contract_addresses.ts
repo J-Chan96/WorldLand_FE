@@ -1,5 +1,3 @@
-import { ADDRESS_TYPE } from 'types/main';
-
 export const eth_addresses: ADDRESS_TYPE = {
   wrappedETH_address_BRIDGE: '0xf365e247f2E23e572d20be3101520ecBF7ae1a09',
   bridge_contract: '0x066669F4376c558041D1292DDE8eEa449429a920',
