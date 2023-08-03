@@ -1,0 +1,3 @@
+interface SwapInputType {
+  input: string;
+}

@@ -1,5 +1,6 @@
 import Main from 'pages/Main';
 import Learn from 'pages/Learn';
+import Swap from 'pages/Swap';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Charter from 'components/learn/Post/Charter';
 import { PATH } from 'constants/path';
@@ -32,6 +33,7 @@ const Router = () => {
         { path: `${PATH.LEARN_GOVERNANCE}`, element: <Governance /> },
       ],
     },
+    { path: `${PATH.SWAP}`, element: <Swap /> }
   ]);
 
   return <RouterProvider router={router} />;
