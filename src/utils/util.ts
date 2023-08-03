@@ -1,5 +1,7 @@
-export const from_wei = (val) => Web3.utils.fromWei('' + val, 'ether');
-export const to_wei = (val) => Web3.utils.toWei('' + val, 'ether');
+const Web3 = require('web3');
+
+export const from_wei = (val: string) => Web3.utils.fromWei('' + val, 'ether');
+export const to_wei = (val: string) => Web3.utils.toWei('' + val, 'ether');
 
 export function putCommaAtPrice(data: number | string, precision: number | string) {
   let str;

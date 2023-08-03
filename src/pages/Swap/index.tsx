@@ -5,6 +5,7 @@ import { chainIds } from "configs/services/chainIds";
 import { useAccount, useNetwork, useSwitchNetwork, useBalance, useContractWrite, useWaitForTransaction, useContractRead } from "wagmi";
 import { MAP_STR_ABI } from "configs/abis";
 import { wld_addresses } from "configs/contract_addresses";
+import { to_wei } from "utils/util";
 
 const Swap = () => {
     const { address, isConnected } = useAccount();
