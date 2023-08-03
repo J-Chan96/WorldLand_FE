@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useWeb3Modal } from '@web3modal/react';
 import styled from 'styled-components';
 import { theme } from 'style/theme';
+import Web3 from 'web3';
 
 interface Web3ConnectButtonProps {
   onAccountConnected: (account: string) => void;
@@ -9,15 +10,14 @@ interface Web3ConnectButtonProps {
 
 const StyledButton = styled.button`
   display: flex;
-  padding: 6px 18px;
+  padding: 6px 15px;
   flex-direction: column;
   border-radius: 6px;
   border: 1px solid #f4f4f4;
   color: #f4f4f4;
   font-family: 'Inter';
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 24px;
+  font-size: 14px;
+  font-weight: bold;
   text-decoration: none; /* Add this to remove underline */
   cursor: pointer;
 
@@ -29,26 +29,43 @@ const StyledButton = styled.button`
       border 0.3s;
   }
 `;
+
+const TruncatedTextButton = styled(StyledButton)`
+  span {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
+
 // window.open(`https://metamask.app.link/dapp/${window.location.host}`)
 const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnected }) => {
   const [connectedAccount, setConnectedAccount] = useState<string | null>(null);
+  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+
   const { isOpen, open } = useWeb3Modal();
+  const userAgent = window.navigator.userAgent;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  const web3 = new Web3(window.ethereum);
+
+  const getAccounts = async () => {
+    const accounts = await web3.eth.getAccounts();
+    setConnectedAccount(accounts[0]);
+  };
 
   const handleOpenMetamaskLink = () => {
-    const userAgent = window.navigator.userAgent;
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-
     if (isMobile) {
       window.open(`dapp://${window.location.host}`);
-    } else {
-      return;
     }
   };
 
   const handleConnect = async () => {
     if (!isOpen) {
       await open();
+      await getAccounts();
+      localStorage.setItem('connectedAccount', connectedAccount || '');
     } else {
       // 이미 연결된 계정 정보가 있을 경우 로그아웃 처리
       localStorage.removeItem('connectedAccount');
@@ -59,28 +76,43 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   useEffect(() => {
     // 계정 정보가 변경될 때마다 로컬 스토리지에 저장
-    localStorage.setItem('connectedAccount', connectedAccount || '');
+    if (window.ethereum) {
+      window.ethereum.on('accountsChanged', function (accounts: string[]) {
+        localStorage.setItem('connectedAccount', accounts[0]);
+        setConnectedAccount(accounts[0]);
+      });
+    }
   }, [connectedAccount]);
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 로컬 스토리지에서 계정 정보 불러오기
     const storedAccount = localStorage.getItem('connectedAccount');
-
     if (storedAccount) {
       setConnectedAccount(storedAccount);
     }
   }, []);
 
+  useEffect(() => {
+    // Connect 유무에 따른 버튼 visible
+    const wagmiConnect = localStorage.getItem('wagmi.connected');
+    if (wagmiConnect) {
+      setIsButtonVisible(true);
+    } else {
+      setIsButtonVisible(false);
+      localStorage.setItem('connectedAccount', '');
+    }
+  }, [localStorage.getItem('wagmi.connected')]);
+
   return (
     <div>
-      {connectedAccount ? (
-        <p>Connected Account: {connectedAccount}</p>
+      {isMobile ? (
+        <StyledButton onClick={handleOpenMetamaskLink} />
+      ) : isButtonVisible ? (
+        <TruncatedTextButton onClick={handleConnect}>
+          <span>{connectedAccount}</span>
+        </TruncatedTextButton>
       ) : (
-        <StyledButton onClick={handleConnect}>
-          <a href="#" onClick={handleOpenMetamaskLink} style={{ textDecoration: 'none', color: 'inherit' }}>
-            Connect
-          </a>
-        </StyledButton>
+        <StyledButton onClick={handleConnect}>Connect</StyledButton>
       )}
     </div>
   );

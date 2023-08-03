@@ -80,7 +80,7 @@ function AppHeader() {
             throw new Error('Function not implemented.');
           }}
         />
-        <AddNetworkButton />
+        {/* <AddNetworkButton /> */}
         <HamburgerBtn />
       </Header>
     </HeaderWrapper>
