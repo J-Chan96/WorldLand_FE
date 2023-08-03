@@ -29,10 +29,15 @@ const StyledButton = styled.button`
       border 0.3s;
   }
 `;
-
+// window.open(`https://metamask.app.link/dapp/${window.location.host}`)
 const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnected }) => {
   const [connectedAccount, setConnectedAccount] = useState<string | null>(null);
   const { isOpen, open } = useWeb3Modal();
+
+  const handleOpenMetamaskLink = () => {
+    // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
+    window.open(`dapp://${window.location.host}`);
+  };
 
   const handleConnect = async () => {
     if (!isOpen) {
@@ -63,7 +68,11 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       {connectedAccount ? (
         <p>Connected Account: {connectedAccount}</p>
       ) : (
-        <StyledButton onClick={handleConnect}>Connect</StyledButton>
+        <StyledButton onClick={handleConnect}>
+          <a href="#" onClick={handleOpenMetamaskLink} style={{ textDecoration: 'none', color: 'inherit' }}>
+            Connect
+          </a>
+        </StyledButton>
       )}
     </div>
   );
