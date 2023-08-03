@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { theme } from 'style/theme';
 import { maxQuery } from 'utils/breakpoints';
 
 const Menu = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 366px;
+  justify-content: space-between;
   height: 25px;
   align-items: center;
 
@@ -12,8 +17,15 @@ const Menu = styled.div`
   }
 `;
 
+const MenuItemWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+`;
+
 const MenuItem = styled.div<{ isSelected?: boolean }>`
-  margin: 0px 25px;
+  /* margin: 0px 25px; */
   position: relative;
   transition: color 0.3s ease-in-out;
   align-items: center;
@@ -29,8 +41,8 @@ const Dropdown = styled.div`
   display: block;
   position: absolute;
   background-color: black;
-  font-size: 1rem;
-  color: white;
+  font-size: 14px;
+  color: ${theme.colors.white};
   top: calc(100% + 1rem);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
@@ -75,6 +87,22 @@ const Learn = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  padding: 5px 30px 5px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  line-height: 25px;
+
+  &:hover {
+    background-color: #1e1e1e;
+    font-weight: bold;
+  }
+`;
+
 const SpaceLink = styled.a`
   text-decoration: none;
   padding: 5px 30px 5px 5px;
@@ -95,6 +123,9 @@ const Strong = styled.div`
   color: white;
   font-weight: bold;
   padding: 0 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   /* padding-top: 2px; */
 `;
 
@@ -122,9 +153,9 @@ const Divider = styled.div`
 `;
 
 const Contack = styled.div`
-  margin: 0px 25px;
+  /* margin: 0px 25px; */
   /* padding: 0px 25px; */
-  position: relative;
+  /* position: relative; */
   transition: color 0.3s ease-in-out;
   align-items: center;
   color: white;
@@ -134,6 +165,7 @@ const Contack = styled.div`
 
 export {
   Menu,
+  MenuItemWrapper,
   Dropdown,
   MenuItem,
   CommunityDropdown,
@@ -146,4 +178,5 @@ export {
   User,
   Divider,
   Contack,
+  StyledLink,
 };

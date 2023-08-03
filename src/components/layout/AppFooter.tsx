@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   align-self: stretch;
-  background-color: black;
+  background-color: transparent;
 
   ${maxQuery.tablet} {
     padding-top: 0;
@@ -87,7 +87,7 @@ const Icon = styled.img`
 const CopyrightText = styled.p`
   color: #aaa;
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

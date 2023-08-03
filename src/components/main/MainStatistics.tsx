@@ -6,8 +6,6 @@ import {
   StatisticsContainer,
   StatisticsDetails,
   StatisticsDetail,
-  StatisticsDetail2,
-  StatisticsDetail3,
   DetailDescription,
   StatisticContainer,
 } from './MainStatistics.style';
@@ -50,7 +48,7 @@ function MainStatistics() {
     fetchBlockData();
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchBlockData]);
 
   useEffect(() => {
     // Fetch Active Accounts every 5 seconds
@@ -95,16 +93,16 @@ function MainStatistics() {
           <DetailDescription>Average Block Time</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail3>
+          <StatisticsDetail>
             <CountUp end={totalBlocks} duration={0.5} />
-          </StatisticsDetail3>
-          <DetailDescription>Total Blocks</DetailDescription>
+          </StatisticsDetail>
+          <DetailDescription>Block Numbers</DetailDescription>
         </StatisticContainer>
         <StatisticContainer>
-          <StatisticsDetail2>
+          <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
-          </StatisticsDetail2>
-          <DetailDescription>Active Accounts</DetailDescription>
+          </StatisticsDetail>
+          <DetailDescription>Total Accounts</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>

@@ -4,25 +4,31 @@ import { maxQuery } from 'utils/breakpoints';
 
 const PartnerContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  padding: 40px 0px;
+  justify-content: center;
   align-items: center;
-  align-self: stretch;
-  background-color: black;
-  padding: 20px; /* Added padding for all screen sizes */
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
 
   /* Media query for screens with a maximum width of 600px */
   ${maxQuery.tablet} {
-    padding: 10px; /* Adjust the padding for smaller screens */
+    padding: 20px; /* Adjust the padding for smaller screens */
   }
 `;
 
 const Contact1 = styled.div`
   display: flex;
-  height: auto;
-  width: 80%;
+  /* height: auto; */
+  width: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  ${maxQuery.tablet} {
+    width: 100%;
+  }
 `;
 
 const IconWrap = styled.div`
@@ -30,7 +36,7 @@ const IconWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
-  margin-top: 150px; /* Initial margin-top for the icons */
+  flex-wrap: wrap;
 
   svg {
     color: ${theme.colors.white800};
@@ -46,8 +52,9 @@ const IconWrap = styled.div`
     flex: 1 0 0;
     flex-wrap: wrap;
 
-    svg {
-      height: 32px;
+    svg,
+    img {
+      height: 24px;
       width: auto;
     }
   }

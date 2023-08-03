@@ -1,4 +1,5 @@
 // Header
+export { WorldLandLogo } from './header/WorldLandLogo';
 export { MenuIcon } from './header/MenuIcon';
 export { CloseIcon } from './header/CloseIcon';
 

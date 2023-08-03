@@ -11,6 +11,7 @@ import {
 } from './HamburgerBtn.style';
 import { CloseIcon, MenuIcon } from 'assets';
 import { theme } from 'style/theme';
+import { Link } from 'react-router-dom';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -19,20 +20,26 @@ const HamburgerBtn = () => {
     user: false,
     developer: false,
     community: false,
+    contactUs: false,
   });
 
   const toggleHamburgerMenu = () => {
     setHamburgerOpen(!isHamburgerOpen);
   };
 
-  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community') => {
+  const toggleSubMenu = (menuName: 'learn' | 'user' | 'developer' | 'community' | 'contactUs') => {
     setMenuState((prevState) => ({
       ...prevState,
       learn: menuName === 'learn' ? !prevState.learn : false,
       user: menuName === 'user' ? !prevState.user : false,
       developer: menuName === 'developer' ? !prevState.developer : false,
       community: menuName === 'community' ? !prevState.community : false,
+      contactUs: menuName === 'contactUs' ? !prevState.contactUs : false,
     }));
+  };
+
+  const handleLinkClick = (message: string) => {
+    alert(message);
   };
 
   return (
@@ -45,9 +52,9 @@ const HamburgerBtn = () => {
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
-            <a href="https://www.worldland.space/Learn/" className="learn">
+            <Link className="learn" to="/learn">
               Learn
-            </a>
+            </Link>
           </Button>
         </Li>
         <Li>
@@ -58,26 +65,24 @@ const HamburgerBtn = () => {
           {menuState.user && (
             <Dropdown data-isvisible={menuState.user}>
               <div className="user-menu">
-                <a
-                  href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./testing-eth-ecc"
-                  className="user"
-                >
+                <a href="https://docs.worldland.foundation/miner/start-mining" className="user">
                   Start Mining
                 </a>
-                <a
-                  href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node./install-and-run-geth"
-                  className="user"
-                >
+                <a href="https://docs.worldland.foundation/miner/install-and-run-geth" className="user">
                   Node Operator
                 </a>
-                <div className="user">Bridge</div>
+                <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
+                  Bridge
+                </div>
               </div>
               <div className="divider"></div>
               <div className="user-menu">
-                <a href="http://52.79.231.150/" className="user">
+                <a href="http://scan.worldland.foundation/" className="user">
                   Scan
                 </a>
-                <div className="user">Swap</div>
+                <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
+                  Swap
+                </div>
               </div>
             </Dropdown>
           )}
@@ -120,6 +125,11 @@ const HamburgerBtn = () => {
               </div>
             </Dropdown>
           )}
+        </Li>
+        <Li>
+          <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => toggleSubMenu('contactUs')}>
+            Contact Us
+          </Button>
         </Li>
       </MenuList>
     </HamburgerBtnWrapper>

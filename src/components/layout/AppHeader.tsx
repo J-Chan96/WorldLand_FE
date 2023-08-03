@@ -3,27 +3,27 @@ import HamburgerBtn from 'components/main/HamburgerBtn';
 import MainMenu from 'components/main/MainMenu';
 import { Link } from 'react-router-dom';
 import { maxQuery } from 'utils/breakpoints';
+import { theme } from 'style/theme';
+import { WorldLandLogo } from 'assets';
 
-const Header = styled.header`
+const HeaderWrapper = styled.header`
+  font-family: 'Inter';
   height: 65px;
-  background: black;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.95);
+  background: ${theme.colors.black};
+  font-size: 14px;
+  color: ${theme.colors.white};
   font-weight: bold;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  box-shadow:
-    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px,
-    rgba(0, 0, 0, 0.3) 0px 1px 2px;
   user-select: none;
-  border-bottom: 1px solid #4c4c4c;
+  border-bottom: 1px solid ${theme.colors.black700};
+  width: 100%;
 
   ${maxQuery.tablet} {
     flex-direction: row;
     position: fixed;
     width: 100%;
-    padding: 0 20px;
     justify-content: space-between;
     z-index: 2;
 
@@ -32,24 +32,50 @@ const Header = styled.header`
     }
   }
 `;
-const Logo = styled.div`
-  margin-left: 100px;
-  color: rgba(255, 255, 255, 0.95);
+
+const Header = styled.div`
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${maxQuery.tablet} {
+    padding: 0 20px;
+  }
+`;
+
+const LogoWrapper = styled.div`
+  /* margin-left: 100px; */
+  color: ${theme.colors.white};
+
+  svg {
+    height: 26px;
+  }
 
   ${maxQuery.tablet} {
     margin-left: 0;
+
+    svg {
+      height: 12px;
+    }
   }
 `;
 
 function AppHeader() {
   return (
-    <Header>
-      <Link to={'/'}>
-        <Logo>Logo</Logo>
-      </Link>
-      <MainMenu />
-      <HamburgerBtn />
-    </Header>
+    <HeaderWrapper>
+      <Header>
+        <Link to={'/'}>
+          <LogoWrapper>
+            <WorldLandLogo />
+          </LogoWrapper>
+        </Link>
+        <MainMenu />
+        <HamburgerBtn />
+      </Header>
+    </HeaderWrapper>
   );
 }
 

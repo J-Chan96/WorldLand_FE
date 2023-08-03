@@ -1,19 +1,27 @@
 import styled from 'styled-components';
 import { DecentralizedIcon, EnergyEfficiencyIcon, EvmCompatibilityIcon, PqSecurityIcon } from 'assets';
 import { maxQuery } from 'utils/breakpoints';
+import { theme } from 'style/theme';
 
 const ContainerData = styled.div`
+  font-family: 'Inter';
   width: 100%;
-  background-color: black;
-  color: #f4f4f4;
+  background-color: transparent;
+  color: ${theme.colors.white};
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 40px;
+
+  ${maxQuery.tablet} {
+    padding: 60px 20px;
+  }
 `;
 
 const Head = styled.div`
-  width: 80%;
-  height: 50px;
+  width: 100%;
   font-weight: bold;
-  font-size: calc(20px + 2vmin);
+  font-size: 48px;
   margin: 0 auto;
   margin-bottom: 20px;
 
@@ -70,7 +78,7 @@ const Content = styled.div`
 
 const Body = styled.div`
   display: flex;
-  font-size: 25px;
+  font-size: 88px;
   font-weight: 700;
   margin-bottom: 1.5rem;
 
@@ -82,7 +90,7 @@ const Body = styled.div`
 
 const Child = styled.div`
   color: #aaa;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 24px;
 

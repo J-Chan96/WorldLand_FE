@@ -9,11 +9,15 @@ interface MenuListProps {
 }
 
 const HamburgerBtnWrapper = styled.nav`
+  display: none;
+
   svg {
     display: none;
   }
 
   ${maxQuery.tablet} {
+    display: flex;
+
     svg {
       display: flex;
     }
@@ -75,6 +79,12 @@ const Button = styled.button<{ isSelected?: boolean }>`
     &:hover {
       color: ${theme.colors.white};
     }
+  }
+
+  .contact {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   &:hover {

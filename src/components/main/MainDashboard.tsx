@@ -24,12 +24,12 @@ const MainDashboard = () => {
             </SubText>
           </Text>
           <ButtonContainer>
-            <LearnBtn>Learn</LearnBtn>
-            <DocsBtn>Docs</DocsBtn>
+            <LearnBtn to="https://worldland.foundation/learn">Learn</LearnBtn>
+            <DocsBtn to="https://docs.worldland.foundation/">Docs</DocsBtn>
           </ButtonContainer>
         </TextContainer>
         <VideoContainer>
-          <Video autoPlay loop muted>
+          <Video autoPlay loop muted playsInline>
             <source src="/videos/MainVideo.mp4" />
             Your browser does not support the video tag.
           </Video>

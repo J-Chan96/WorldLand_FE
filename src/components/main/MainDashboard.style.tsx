@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { theme } from 'style/theme';
 import styled from 'styled-components';
 import { maxQuery } from 'utils/breakpoints';
@@ -10,7 +11,7 @@ const DashboardContainer = styled.div`
   height: 100vh;
   min-height: 600px;
   width: 100%;
-  background-color: black;
+  background-color: transparent;
   overflow: hidden;
 
   ${maxQuery.tablet} {
@@ -51,8 +52,8 @@ const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 80%;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
 
   ${maxQuery.tablet} {
     flex-direction: column;
@@ -64,9 +65,11 @@ const TextContainer = styled.div`
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  max-width: 1280px;
   height: auto;
   z-index: 1; /* Add this to ensure the text is above the video */
+  padding: 0 40px;
 
   ${maxQuery.tablet} {
     width: 100%;
@@ -77,11 +80,11 @@ const TextContainer = styled.div`
   }
 `;
 
-const Text = styled.h1`
+const Text = styled.div`
   text-align: center;
   margin-bottom: 30px;
   font-size: 38px;
-  color: #f4f4f4;
+  color: ${theme.colors.white};
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -130,7 +133,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const LearnBtn = styled.button`
+const LearnBtn = styled(Link)`
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
@@ -140,6 +143,7 @@ const LearnBtn = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+  text-decoration: none; /* Add this to remove underline */
 
   &:hover {
     background-color: ${theme.colors.white800};
@@ -150,7 +154,7 @@ const LearnBtn = styled.button`
   }
 `;
 
-const DocsBtn = styled.button`
+const DocsBtn = styled(Link)`
   display: flex;
   padding: 12px 24px;
   flex-direction: column;
@@ -161,6 +165,7 @@ const DocsBtn = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+  text-decoration: none; /* Add this to remove underline */
 
   &:hover {
     background-color: ${theme.colors.white800};
