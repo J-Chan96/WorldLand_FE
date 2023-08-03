@@ -35,8 +35,15 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   const { isOpen, open } = useWeb3Modal();
 
   const handleOpenMetamaskLink = () => {
+    const userAgent = window.navigator.userAgent;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-    window.open(`dapp://${window.location.host}`);
+
+    if (isMobile) {
+      window.open(`dapp://${window.location.host}`);
+    } else {
+      return;
+    }
   };
 
   const handleConnect = async () => {
@@ -58,6 +65,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   useEffect(() => {
     // 컴포넌트가 마운트될 때 로컬 스토리지에서 계정 정보 불러오기
     const storedAccount = localStorage.getItem('connectedAccount');
+
     if (storedAccount) {
       setConnectedAccount(storedAccount);
     }
