@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { maxQuery } from 'utils/breakpoints';
 import { theme } from 'style/theme';
 import { WorldLandLogo } from 'assets';
-import Web3ConnectButton from 'components/Web3Button';
+import Web3ConnectButton from 'components/web3/Web3Button';
+import AddNetworkButton from 'components/web3/AddNetworkButton';
 
 const HeaderWrapper = styled.header`
   font-family: 'Inter';
@@ -79,6 +80,7 @@ function AppHeader() {
             throw new Error('Function not implemented.');
           }}
         />
+        <AddNetworkButton />
         <HamburgerBtn />
       </Header>
     </HeaderWrapper>
