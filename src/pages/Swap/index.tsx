@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SwapInputTab from "components/SwapInputTab"
 import { styled } from "styled-components"
+import TokenModal from "components/TokenModal";
+import Backdrop from "components/Backdrop";
 // import { chainIds } from "configs/services/chainIds";
 // import { useAccount, useNetwork, useSwitchNetwork, useBalance, useContractWrite, useWaitForTransaction, useContractRead } from "wagmi";
 // import { MAP_STR_ABI } from "configs/abis";
@@ -8,6 +10,7 @@ import { styled } from "styled-components"
 // import { to_wei } from "utils/util";
 
 const Swap = () => {
+    const [modal, setModal] = useState<boolean>(true);
     // const { address, isConnected } = useAccount();
     // const [amount, setAmount] = useState<string>("");
     // const [currentTxHash, setCurrentTxHash] = useState<`0x${string}` | undefined>();
@@ -99,8 +102,11 @@ const Swap = () => {
 
     return (
         <Container>
-            <SwapInputTab input="1.0" />
-            <Button />
+            <SwapInputTab input="0" />
+            {modal && <>
+                <Backdrop />
+                <TokenModal />
+            </>}
         </Container>
     )
 }
@@ -111,11 +117,10 @@ const Container = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    background:linear-gradient(to bottom, #1c233e, #06080c);
+    flex-direction: column;
+    background:linear-gradient(to bottom, #121423, #06080c);
     height: 100vh;
+    position: relative;
 `;
 
-const Button = styled.button`
-width: 100%;
-`;
 
