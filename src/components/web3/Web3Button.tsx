@@ -3,6 +3,9 @@ import { useWeb3Modal } from '@web3modal/react';
 import styled from 'styled-components';
 import { theme } from 'style/theme';
 import Web3 from 'web3';
+import { useAccount } from 'wagmi';
+import { InjectedConnector } from 'wagmi/connectors/injected';
+import { connect } from '@wagmi/core';
 
 interface Web3ConnectButtonProps {
   onAccountConnected: (account: string) => void;
@@ -43,16 +46,18 @@ const TruncatedTextButton = styled(StyledButton)`
 const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnected }) => {
   const [connectedAccount, setConnectedAccount] = useState<string | null>(null);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+  const { address, isConnected } = useAccount();
 
-  const { isOpen, open } = useWeb3Modal();
+  const { open, close } = useWeb3Modal();
   const userAgent = window.navigator.userAgent;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
   const web3 = new Web3(window.ethereum);
 
-  const getAccounts = async () => {
-    const accounts = await web3.eth.getAccounts();
-    setConnectedAccount(accounts[0]);
-  };
+  // const getAccounts = async () => {
+  //   // const accounts = await web3.eth.getAccounts();
+  //   // setConnectedAccount(accounts[0]);
+  //   useAccount();
+  // };
 
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
@@ -61,18 +66,21 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
     }
   };
 
-  const handleConnect = async () => {
-    if (!isOpen) {
-      await open();
-      await getAccounts();
-      localStorage.setItem('connectedAccount', connectedAccount || '');
-    } else {
-      // 이미 연결된 계정 정보가 있을 경우 로그아웃 처리
-      localStorage.removeItem('connectedAccount');
-      setConnectedAccount(null); // 상태 초기화
-      onAccountConnected(''); // 타입 단언을 사용하여 빈 문자열로 변환
-    }
-  };
+  // const handleConnect = async () => {
+  //   if (!isOpen) {
+  //     await open();
+  //     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  //     console.log(accounts);
+
+  //     await getAccounts();
+  //     localStorage.setItem('connectedAccount', connectedAccount || '');
+  //   } else {
+  //     // 이미 연결된 계정 정보가 있을 경우 로그아웃 처리
+  //     // localStorage.removeItem('connectedAccount');
+  //     // setConnectedAccount(null); // 상태 초기화
+  //     // onAccountConnected(''); // 타입 단언을 사용하여 빈 문자열로 변환
+  //   }
+  // };
 
   useEffect(() => {
     // 계정 정보가 변경될 때마다 로컬 스토리지에 저장
@@ -105,15 +113,22 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   return (
     <div>
-      {isMobile ? (
-        <StyledButton onClick={handleOpenMetamaskLink} />
+      {/* {isMobile ? (
+        <StyledButton onClick={handleOpenMetamaskLink}>Connect </StyledButton>
       ) : isButtonVisible ? (
         <TruncatedTextButton onClick={handleConnect}>
           <span>{connectedAccount}</span>
         </TruncatedTextButton>
+      ) : ( */}
+      {isConnected ? (
+        <TruncatedTextButton onClick={() => open()}>
+          <span>{address}</span>
+        </TruncatedTextButton>
       ) : (
-        <StyledButton onClick={handleConnect}>Connect</StyledButton>
+        <StyledButton onClick={() => open()}>Connect</StyledButton>
       )}
+
+      {/* )} */}
     </div>
   );
 };

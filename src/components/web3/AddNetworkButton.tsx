@@ -1,4 +1,27 @@
 import React from 'react';
+import styled from '@emotion/styled';
+import { theme } from 'style/theme';
+
+const NetworkButton = styled.button`
+  padding: 6px 15px;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #f4f4f4;
+  color: #f4f4f4;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none; /* Add this to remove underline */
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${theme.colors.white400};
+    border: 1px solid ${theme.colors.white800};
+    transition:
+      background 0.3s,
+      border 0.3s;
+  }
+`;
 
 const AddNetworkButton = () => {
   const addNetwork = async () => {
@@ -31,8 +54,8 @@ const AddNetworkButton = () => {
   };
 
   return (
-    <div style={{ color: 'red', backgroundColor: 'white' }}>
-      <button onClick={addNetwork}>Connect to Worldland</button>
+    <div>
+      <NetworkButton onClick={addNetwork}>Connect Network</NetworkButton>
     </div>
   );
 };
