@@ -18,6 +18,7 @@ import {
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Discord } from 'assets/header/Header';
+import AddNetworkButton from 'components/web3/AddNetworkButton';
 // import { EVM } from 'assets/main/Main_core';
 
 const MainMenu = () => {
@@ -70,6 +71,7 @@ const MainMenu = () => {
                   <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
                     <Strong>Run node</Strong>
                   </SpaceLink>
+                  <AddNetworkButton />
                 </div>
               </div>
               <Divider></Divider>
@@ -105,6 +107,7 @@ const MainMenu = () => {
                   <SpaceLink href="https://github.com/cryptoecc/ETH-ECC">
                     <Strong>GitHub</Strong>
                   </SpaceLink>
+                  <AddNetworkButton />
                 </div>
               </div>
             </Network>
