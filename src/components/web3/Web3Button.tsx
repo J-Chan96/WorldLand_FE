@@ -46,12 +46,12 @@ const TruncatedTextButton = styled(StyledButton)`
 const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnected }) => {
   const [connectedAccount, setConnectedAccount] = useState<string | null>(null);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState(true);
   const { address, isConnected } = useAccount();
 
   const { open, close } = useWeb3Modal();
   const userAgent = window.navigator.userAgent;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-  const web3 = new Web3(window.ethereum);
 
   // const getAccounts = async () => {
   //   // const accounts = await web3.eth.getAccounts();
@@ -61,9 +61,13 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-    console.log(window.location.pathname);
+    let newWindow = `dapp://${window.location.host}`;
     if (isMobile) {
       window.open(`dapp://${window.location.host}`);
+    }
+    if (window.location.host === newWindow) {
+      setShowButton(false);
+      // return <StyledButton onClick={() => open()}>Connect</StyledButton>;
     }
   };
 
@@ -121,7 +125,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
           <span>{connectedAccount}</span>
         </TruncatedTextButton>
       ) : ( */}
-      {isMobile ? (
+      {isMobile && showButton ? (
         <StyledButton onClick={handleOpenMetamaskLink}>Go to Metamask</StyledButton>
       ) : isConnected ? (
         <TruncatedTextButton onClick={() => open()}>
