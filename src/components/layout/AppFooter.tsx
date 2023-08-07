@@ -64,8 +64,8 @@ const Logo = styled.img`
   /* background:
     url(<path-to-image>),
     lightgray 50% / cover no-repeat; */
-  /* background-color: black;
-  width: 100px; */
+  /* background-color: black; */
+  width: 200px;
 
   ${maxQuery.tablet} {
     width: 160px;
