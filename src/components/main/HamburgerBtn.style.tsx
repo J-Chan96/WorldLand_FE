@@ -127,6 +127,7 @@ const Dropdown = styled.div`
       border-color 0.3s ease-in-out;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 
     &:hover {
       background-color: #1e1e1e;

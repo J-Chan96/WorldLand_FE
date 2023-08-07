@@ -12,6 +12,8 @@ import {
 import { CloseIcon, MenuIcon } from 'assets';
 import { theme } from 'style/theme';
 import { Link } from 'react-router-dom';
+import AddNetworkButton from 'components/web3/AddNetworkButton';
+import styled from '@emotion/styled';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -40,6 +42,45 @@ const HamburgerBtn = () => {
 
   const handleLinkClick = (message: string) => {
     alert(message);
+  };
+
+  const NetworkButton = styled.a``;
+
+  const AddNetworkButton = () => {
+    const addNetwork = async () => {
+      if (window.ethereum && window.ethereum.request) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId: '0x67', // Polygon의 체인 ID
+                chainName: 'Seoul Mainnet',
+                nativeCurrency: {
+                  name: 'WLC',
+                  symbol: 'WLC',
+                  decimals: 18,
+                },
+                rpcUrls: ['https://seoul.worldland.foundation/'],
+              },
+            ],
+          });
+          console.log('Successfully added Worldland network to MetaMask.');
+        } catch (error) {
+          console.error('Failed to add Worldland network to MetaMask:', error);
+          // 사용자가 요청을 거부한 경우나, 다른 이유로 요청이 실패한 경우를 처리합니다.
+        }
+      } else {
+        console.log('Metamask is not installed');
+        // 메타마스크가 설치되어 있지 않은 경우를 처리합니다.
+      }
+    };
+
+    return (
+      <NetworkButton onClick={addNetwork} className="user">
+        Connect Network
+      </NetworkButton>
+    );
   };
 
   return (
@@ -71,6 +112,7 @@ const HamburgerBtn = () => {
                 <a href="https://docs.worldland.foundation/miner/install-and-run-geth" className="user">
                   Node Operator
                 </a>
+                <AddNetworkButton />
                 <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
                   Bridge
                 </div>
