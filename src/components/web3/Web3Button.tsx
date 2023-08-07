@@ -75,18 +75,10 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   const userAgent = window.navigator.userAgent;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-  // const getAccounts = async () => {
-  //   // const accounts = await web3.eth.getAccounts();
-  //   // setConnectedAccount(accounts[0]);
-  //   useAccount();
-  // };
-
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-    if (isMobile && showButton === 'true') {
-      setShowButton('false');
-      let newWindow = window.open(`dapp://${window.location.host}`, showButton);
-      newWindow!.myData = { message: showButton };
+    if (isMobile) {
+      window.open(`dapp://${window.location.host}`);
     }
   };
 
@@ -137,10 +129,10 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   return (
     <div>
-      {isMobile && showButton === 'true' ? (
+      {isMobile && !isConnected ? (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <MobileButton onClick={handleOpenMetamaskLink}>Metamask</MobileButton>
-          {/* <MobileButton onClick={() => open()}>Connect</MobileButton> */}
+          <MobileButton onClick={() => open()}>Connect</MobileButton>
         </div>
       ) : isConnected ? (
         <TruncatedTextButton onClick={() => open()}>
