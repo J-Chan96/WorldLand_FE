@@ -61,6 +61,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
+    console.log(window.location.pathname);
     if (isMobile) {
       window.open(`dapp://${window.location.host}`);
     }
@@ -120,13 +121,16 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
           <span>{connectedAccount}</span>
         </TruncatedTextButton>
       ) : ( */}
-      {isConnected ? (
+      {isMobile ? (
+        <StyledButton onClick={handleOpenMetamaskLink}>Go to Metamask</StyledButton>
+      ) : isConnected ? (
         <TruncatedTextButton onClick={() => open()}>
           <span>{address}</span>
         </TruncatedTextButton>
       ) : (
         <StyledButton onClick={() => open()}>Connect</StyledButton>
       )}
+
       {/* )} */}
     </div>
   );
