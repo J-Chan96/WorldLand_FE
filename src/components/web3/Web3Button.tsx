@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useWeb3Modal } from '@web3modal/react';
+import { useWeb3Modal, Web3NetworkSwitch } from '@web3modal/react';
 import styled from 'styled-components';
 import { theme } from 'style/theme';
 import Web3 from 'web3';
@@ -127,7 +127,6 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       ) : (
         <StyledButton onClick={() => open()}>Connect</StyledButton>
       )}
-
       {/* )} */}
     </div>
   );
