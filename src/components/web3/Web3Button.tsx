@@ -42,11 +42,33 @@ const TruncatedTextButton = styled(StyledButton)`
   }
 `;
 
+const MobileButton = styled.button`
+  display: flex;
+  padding: 6px 15px;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #f4f4f4;
+  color: #f4f4f4;
+  font-family: 'Inter';
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none; /* Add this to remove underline */
+  cursor: pointer;
+  margin-right: 10px;
+  &:hover {
+    background-color: ${theme.colors.white400};
+    border: 1px solid ${theme.colors.white800};
+    transition:
+      background 0.3s,
+      border 0.3s;
+  }
+`;
+
 // window.open(`https://metamask.app.link/dapp/${window.location.host}`)
 const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnected }) => {
   const [connectedAccount, setConnectedAccount] = useState<string | null>(null);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
-  const [showButton, setShowButton] = useState(true);
+  const [showButton, setShowButton] = useState('true');
   const { address, isConnected } = useAccount();
 
   const { open, close } = useWeb3Modal();
@@ -61,13 +83,10 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-    let newWindow = `dapp://${window.location.host}`;
-    if (isMobile) {
-      window.open(`dapp://${window.location.host}`);
-    }
-    if (window.location.host === newWindow) {
-      setShowButton(false);
-      // return <StyledButton onClick={() => open()}>Connect</StyledButton>;
+    if (isMobile && showButton === 'true') {
+      setShowButton('false');
+      let newWindow = window.open(`dapp://${window.location.host}`, showButton);
+      newWindow!.myData = { message: showButton };
     }
   };
 
@@ -118,15 +137,11 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
 
   return (
     <div>
-      {/* {isMobile ? (
-        <StyledButton onClick={handleOpenMetamaskLink}>Connect </StyledButton>
-      ) : isButtonVisible ? (
-        <TruncatedTextButton onClick={handleConnect}>
-          <span>{connectedAccount}</span>
-        </TruncatedTextButton>
-      ) : ( */}
-      {isMobile && showButton ? (
-        <StyledButton onClick={handleOpenMetamaskLink}>Go to Metamask</StyledButton>
+      {isMobile && showButton === 'true' ? (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <MobileButton onClick={handleOpenMetamaskLink}>Metamask</MobileButton>
+          {/* <MobileButton onClick={() => open()}>Connect</MobileButton> */}
+        </div>
       ) : isConnected ? (
         <TruncatedTextButton onClick={() => open()}>
           <span>{address}</span>
@@ -134,8 +149,6 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       ) : (
         <StyledButton onClick={() => open()}>Connect</StyledButton>
       )}
-
-      {/* )} */}
     </div>
   );
 };
