@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import twitter from '../../assets/footer/icons/twitter.svg';
-import discord from '../../assets/footer/icons/discord.svg';
-import youtube from '../../assets/footer/icons/youtube.svg';
-import github from '../../assets/footer/icons/github.svg';
+// import twitter from '../../assets/footer/icons/twitter.svg';
+// import discord from '../../assets/footer/icons/discord.svg';
+// import youtube from '../../assets/footer/icons/youtube.svg';
+// import github from '../../assets/footer/icons/github.svg';
 import logo from '../../assets/footer/images/Logo.svg';
 import { maxQuery } from 'utils/breakpoints';
 import { theme } from 'style/theme';
@@ -72,17 +72,17 @@ const Logo = styled.img`
   }
 `;
 
-const IconWrap = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-`;
+// const IconWrap = styled.div`
+//   display: flex;
+//   align-items: flex-start;
+//   gap: 16px;
+// `;
 
-const Icon = styled.img`
-  width: 32px;
-  height: 32px;
-  /* Style for the icon images */
-`;
+// const Icon = styled.img`
+//   width: 32px;
+//   height: 32px;
+//   /* Style for the icon images */
+// `;
 
 const CopyrightText = styled.p`
   color: #aaa;
@@ -121,5 +121,3 @@ const AppFooter = () => {
 };
 
 export default AppFooter;
-
-// 과기부 // 국방과학연구소 // 한국연구재단 // IITP // 광주광역시청 //
