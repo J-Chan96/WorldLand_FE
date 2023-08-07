@@ -9,7 +9,7 @@ import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum, mainnet, polygon } from 'wagmi/chains';
-import { worldland } from 'utils/wagmi';
+import { worldland, chainImages } from 'utils/wagmi';
 
 const chains = [worldland, arbitrum, mainnet, polygon];
 const projectId = '90f6c51de51a4046732827e944ba4958';
@@ -32,6 +32,11 @@ root.render(
         <App />
       </ThemeProvider>
     </WagmiConfig>
-    <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+    <Web3Modal
+      projectId={projectId}
+      ethereumClient={ethereumClient}
+      // chainImages={chainImages}
+      defaultChain={worldland}
+    />
   </>,
 );

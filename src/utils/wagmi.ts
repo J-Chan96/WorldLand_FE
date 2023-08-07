@@ -20,5 +20,5 @@ export const worldland = {
 } as const satisfies Chain;
 
 export const chainImages = {
-  103: 'https://lv-storage1.s3.amazonaws.com/LiberVance_Logo.svg',
+  103: 'https://lv-storage1.s3.amazonaws.com/logo_2.svg',
 };
