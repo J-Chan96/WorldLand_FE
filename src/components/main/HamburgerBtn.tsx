@@ -123,10 +123,20 @@ const HamburgerBtn = () => {
                 >
                   Connect Worldland
                 </a>
-                <a href="https://docs.worldland.foundation/miner/start-mining" className="user">
+                <a
+                  href="https://docs.worldland.foundation/miner/start-mining"
+                  className="user"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Start Mining
                 </a>
-                <a href="https://docs.worldland.foundation/miner/install-and-run-geth" className="user">
+                <a
+                  href="https://docs.worldland.foundation/miner/install-and-run-geth"
+                  className="user"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Node Operator
                 </a>
                 <AddNetworkButton />
@@ -136,7 +146,7 @@ const HamburgerBtn = () => {
               </div>
               <div className="divider"></div>
               <div className="user-menu">
-                <a href="http://scan.worldland.foundation/" className="user">
+                <a href="http://scan.worldland.foundation/" className="user" target="_blank" rel="noopener noreferrer">
                   Scan
                 </a>
                 <div className="user" onClick={() => handleLinkClick('서비스 준비중입니다.')}>
@@ -157,10 +167,12 @@ const HamburgerBtn = () => {
                 <a
                   href="https://ethworldland.gitbook.io/ethereum-worldland/participate/how-to-start-a-worldland-node."
                   className="user"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Docs
                 </a>
-                <a href="https://github.com/cryptoecc" className="user">
+                <a href="https://github.com/cryptoecc" className="user" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </a>
               </div>
@@ -175,7 +187,12 @@ const HamburgerBtn = () => {
           {menuState.community && (
             <Dropdown>
               <div className="user-menu">
-                <a href="https://dao.worldland.space/#/worldlandtest.eth" className="user">
+                <a
+                  href="https://dao.worldland.space/#/worldlandtest.eth"
+                  className="user"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   DAO
                 </a>
                 <div className="user">Help Center</div>
@@ -185,11 +202,11 @@ const HamburgerBtn = () => {
             </Dropdown>
           )}
         </Li>
-        <Li>
+        {/* <Li>
           <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => Eventpath()}>
             Event
           </Button>
-        </Li>
+        </Li> */}
       </MenuList>
     </HamburgerBtnWrapper>
   );
