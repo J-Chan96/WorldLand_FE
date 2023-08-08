@@ -32,6 +32,10 @@ const MainMenu = () => {
     alert(message);
   };
 
+  const Eventpath = () => {
+    window.open('https://open.kakao.com/o/gK0OM0zf', '_blank');
+  };
+
   return (
     <Menu>
       <MenuItemWrapper>
@@ -64,8 +68,12 @@ const MainMenu = () => {
           <Dropdown data-isvisible={activeMenu === 'User'}>
             <User>
               <div>
-                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
-                  <SpaceLink href="https://docs.worldland.foundation/user/wallet">
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <SpaceLink
+                    href="https://docs.worldland.foundation/user/wallet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Strong>Connect Worldland</Strong>
                   </SpaceLink>
                   <SpaceLink href="https://docs.worldland.foundation/miner/install-and-run-geth">
@@ -142,8 +150,8 @@ const MainMenu = () => {
           </CommunityDropdown>
         </MenuItem>
       </MenuItemWrapper>
-      <Contack data-isactive={activeMenu === 'Contact'} onClick={() => handleMenuClick('Contact')}>
-        Contact Us
+      <Contack data-isactive={activeMenu === 'Contact'} onClick={() => Eventpath()}>
+        Event
       </Contack>
     </Menu>
   );
