@@ -1,12 +1,12 @@
-import WlcSupplyScheduleImage from 'assets/learn/post/tokenomics/wlcSupplySchedule.png';
+import WlcSupplyScheduleImage from 'assets/learn/post/coinomics/wlcSupplySchedule.png';
 
-const Tokenomics = () => {
+const Coinomics = () => {
   return (
     <>
-      <h1>WorldLand Tokenomics</h1>
+      <h1>WorldLand Coinomics</h1>
       <p>
-        Tokenomics of WorldLand involves the issuance and utilization of the mainnet coin WLC to support the development
-        ecosystem of dApps and the operation of the mainnet. Here are the key aspects of WorldLand's tokenomics:
+        Coinomics of WorldLand involves the issuance and utilization of the mainnet coin WLC to support the development
+        ecosystem of dApps and the operation of the mainnet. Here are the key aspects of WorldLand's coinomics:
       </p>
       <img src={WlcSupplyScheduleImage} alt="WlcSupplyScheduleImage" />
       <ol>
@@ -43,11 +43,11 @@ const Tokenomics = () => {
       </ol>
       <br />
       <p>
-        By implementing these tokenomics principles, WorldLand aims to incentivize participation, ensure a stable token
+        By implementing these coinomics principles, WorldLand aims to incentivize participation, ensure a stable token
         supply, and foster a decentralized and sustainable development ecosystem for dApps on its platform.
       </p>
     </>
   );
 };
 
-export default Tokenomics;
+export default Coinomics;

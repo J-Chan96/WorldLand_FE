@@ -9,7 +9,7 @@ import ASICResistance from 'components/learn/Post/ASICResistance';
 import PQsecurity from 'components/learn/Post/PQsecurity';
 import GreenVCA from 'components/learn/Post/GreenVCA';
 import DesignPrinciples from 'components/learn/Post/DesignPrinciples';
-import Tokenomics from 'components/learn/Post/Tokenomics';
+import Coinomics from 'components/learn/Post/Coinomics';
 import HowWorks from 'components/learn/Post/HowWorks';
 import Governance from 'components/learn/Post/Governance';
 
@@ -28,7 +28,7 @@ const Router = () => {
         { path: `${PATH.LEARN_GREEN_VCA}`, element: <GreenVCA /> },
         { path: `${PATH.LEARN_DESIGN_PRINCIPLE}`, element: <DesignPrinciples /> },
         { path: `${PATH.LEARN_HOW_WORKS}`, element: <HowWorks /> },
-        { path: `${PATH.LEARN_TOKENOMICS}`, element: <Tokenomics /> },
+        { path: `${PATH.LEARN_COINOMICS}`, element: <Coinomics /> },
         { path: `${PATH.LEARN_GOVERNANCE}`, element: <Governance /> },
       ],
     },
