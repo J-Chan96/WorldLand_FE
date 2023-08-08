@@ -132,7 +132,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       {isMobile && !isConnected ? (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <MobileButton onClick={handleOpenMetamaskLink}>Metamask</MobileButton>
-          <MobileButton onClick={() => open()}>Connect</MobileButton>
+          {/* <MobileButton onClick={() => open()}>Connect</MobileButton> */}
         </div>
       ) : isConnected ? (
         <TruncatedTextButton onClick={() => open()}>

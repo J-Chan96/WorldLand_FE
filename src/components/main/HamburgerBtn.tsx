@@ -12,8 +12,8 @@ import {
 import { CloseIcon, MenuIcon } from 'assets';
 import { theme } from 'style/theme';
 import { Link } from 'react-router-dom';
-import AddNetworkButton from 'components/web3/AddNetworkButton';
 import styled from '@emotion/styled';
+import { useWeb3Modal, Web3NetworkSwitch } from '@web3modal/react';
 
 const HamburgerBtn = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
@@ -24,6 +24,8 @@ const HamburgerBtn = () => {
     community: false,
     contactUs: false,
   });
+
+  const { open, close } = useWeb3Modal();
 
   const toggleHamburgerMenu = () => {
     setHamburgerOpen(!isHamburgerOpen);
@@ -78,9 +80,13 @@ const HamburgerBtn = () => {
 
     return (
       <NetworkButton onClick={addNetwork} className="user">
-        Connect Network
+        Add to Wallet
       </NetworkButton>
     );
+  };
+
+  const Eventpath = () => {
+    window.open('https://open.kakao.com/o/gK0OM0zf', '_blank');
   };
 
   return (
@@ -91,6 +97,9 @@ const HamburgerBtn = () => {
         <MenuIcon onClick={toggleHamburgerMenu} style={{ color: `${theme.colors.white}` }} />
       )}
       <MenuList isopen={isHamburgerOpen ? 'true' : 'false'}>
+        <Li>
+          <Button onClick={() => open()}>Connect</Button>
+        </Li>
         <Li>
           <Button isSelected={menuState.learn ? true : undefined} onClick={() => toggleSubMenu('learn')}>
             <Link className="learn" to="/learn">
@@ -106,6 +115,14 @@ const HamburgerBtn = () => {
           {menuState.user && (
             <Dropdown data-isvisible={menuState.user}>
               <div className="user-menu">
+                <a
+                  href="https://docs.worldland.foundation/user/wallet"
+                  className="user"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Connect Worldland
+                </a>
                 <a href="https://docs.worldland.foundation/miner/start-mining" className="user">
                   Start Mining
                 </a>
@@ -169,8 +186,8 @@ const HamburgerBtn = () => {
           )}
         </Li>
         <Li>
-          <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => toggleSubMenu('contactUs')}>
-            Contact Us
+          <Button isSelected={menuState.contactUs ? true : undefined} onClick={() => Eventpath()}>
+            Event
           </Button>
         </Li>
       </MenuList>
