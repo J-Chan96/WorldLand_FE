@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { AiOutlineSetting } from "react-icons/ai";
+import { IoMdSettings } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 import { crypto_list } from "data";
 
@@ -10,7 +10,7 @@ const SwapInputTab = ({ input }: SwapInputType) => {
                 <li>Swap</li>
                 <li>Buy</li>
                 <li className="last-index">
-                    <AiOutlineSetting color="#53596E" size={25} />
+                    <IoMdSettings color="#53596E" size={25} />
                 </li>
             </ul>
 
@@ -99,7 +99,7 @@ const Container = styled.div`
             background-color: #131A2A;
             border-radius: 10px;
             padding: 20px;
-            height: 90px;
+            height: 120px;
 
             .input-and-label {
                 display: flex;
