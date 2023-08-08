@@ -78,7 +78,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
     if (isMobile) {
-      window.open(`dapp://${window.location.host}`);
+      window.open(`https://metamask.app.link/dapp/${window.location.host}`);
     }
   };
 

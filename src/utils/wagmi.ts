@@ -2,7 +2,7 @@ import { Chain } from 'wagmi';
 
 export const worldland = {
   id: 103,
-  name: 'Seoul Mainnet',
+  name: 'Worldland',
   network: 'worldland',
   nativeCurrency: {
     decimals: 18,
