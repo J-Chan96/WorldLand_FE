@@ -59,7 +59,7 @@ const Button = styled.button<{ isSelected?: boolean }>`
   width: 100%;
   color: ${(props) => (props.isSelected ? 'white' : '#848895')};
   padding: 1.3rem 0;
-  border: none;
+  /* border: none; */
   font-weight: 800;
   font-size: 15px;
   transition: color 0.3s ease-in-out;

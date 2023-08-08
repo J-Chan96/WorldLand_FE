@@ -8,7 +8,7 @@ export const PATH = {
   LEARN_GREEN_VCA: '/learn/green-vca',
   LEARN_DESIGN_PRINCIPLE: '/learn/design-principle',
   LEARN_HOW_WORKS: '/learn/how-works',
-  LEARN_TOKENOMICS: '/learn/tokenomics',
+  LEARN_COINOMICS: '/learn/coinomics',
   LEARN_GOVERNANCE: '/learn/governance',
   LEARN_FAQ: '/learn/faq',
   SWAP: '/swap',
