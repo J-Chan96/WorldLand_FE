@@ -10,7 +10,7 @@ import Backdrop from "components/Backdrop";
 // import { to_wei } from "utils/util";
 
 const Swap = () => {
-    const [modal, setModal] = useState<boolean>(true);
+    const [modal, setModal] = useState<boolean>(false);
     // const { address, isConnected } = useAccount();
     // const [amount, setAmount] = useState<string>("");
     // const [currentTxHash, setCurrentTxHash] = useState<`0x${string}` | undefined>();

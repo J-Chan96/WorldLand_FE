@@ -12,13 +12,23 @@ export const crypto_list = [
   },
   {
     symbol: 'WETH',
-    title: 'WRAPPED ETHER',
+    title: 'Wrapped Ether',
     icon: wETH_logo,
   },
   {
     symbol: 'AAVE',
     title: 'Aave',
     icon: aave_logo,
+  },
+  {
+    symbol: 'DAI',
+    title: 'Dai',
+    icon: dai_logo,
+  },
+  {
+    symbol: 'USDC',
+    title: 'USDC',
+    icon: usdc_logo,
   },
   {
     symbol: 'DAI',

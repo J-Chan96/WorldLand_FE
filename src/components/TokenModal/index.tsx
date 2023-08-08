@@ -8,7 +8,7 @@ const TokenModal = () => {
         <Container>
             <section className="first-block">
                 <p>Select a token</p>
-                <CgClose color="#ffffff" size={20} />
+                <CgClose color="#ffffff" size={25} />
             </section>
             <div className="input-hold">
                 <AiOutlineSearch color="#ffffff" size={25} />
@@ -22,6 +22,20 @@ const TokenModal = () => {
                     </li>
                 ))}
             </ul>
+            <ul className="crypto-select-list">
+                {crypto_list.map((el, i) => (
+                    <li key={i}>
+                        <div className="list-item">
+                            <img src={el.icon} alt={el.title} />
+                            <div className="title-wrap">
+                                <p className="title">{el.title}</p>
+                                <p className="symbol">{el.symbol}</p>
+                            </div>
+                        </div>
+                        <p className="balance">0</p>
+                    </li>
+                ))}
+            </ul>
         </Container>
     )
 }
@@ -31,9 +45,8 @@ export default TokenModal
 const Container = styled.section`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    padding: 15px;
     border: 1px solid #2e374f;
     border-radius: 15px;
     background-color: #0E111C;
@@ -42,13 +55,18 @@ const Container = styled.section`
     width: 100%;
     max-width: 400px;
     gap: 10px;
+    font-weight: 700;
+    height: 100%;
+    max-height: 600px;
     font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 0 0 0;
 
     .first-block {
         display: inherit;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding: 15px;
         p {
             font-weight: 600;
             font-size: 18px;
@@ -60,9 +78,11 @@ const Container = styled.section`
         align-items: center;
         justify-content: center;
         gap: 8px;
+        margin: 0 15px;
         width: 100%;
-        padding: 10px;
-        background-color: #0E111C;
+        max-width: 95%;
+        padding: 7px 10px;
+        background-color: #131a2a;
         border-radius: 10px;
         border: 1px solid #2e374f;
         input {
@@ -70,13 +90,16 @@ const Container = styled.section`
             border: none;
             outline: none;
             width: 100%;
-            color: #2e374f;
+            color: #ffffff;
             font-size: 18px;
-            
         }
         input::placeholder {
-            color: #2e374f;            
+            color: #363f59;
+            font-weight: 700;
         }
+    }
+    .input-hold:hover {
+        background-color: #0E111C;
     }
 
     .often-selected-crypto {
@@ -85,6 +108,7 @@ const Container = styled.section`
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 10px;
+        margin: 15px;
 
         li {
             display: inherit;
@@ -108,6 +132,61 @@ const Container = styled.section`
             background-color: #212839;
             border: 1px solid #3d65be;
         }
+    }
+    .crypto-select-list {
+        display: inherit;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        border-top: 1px solid #2e374f;
+        width: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 11 */
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 15px;
+            cursor: pointer;
+            .list-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style-type: none;
+                color: #ffffff;
+                font-size: 14px;
+                gap: 10px;
+
+                .title-wrap {
+                    display: inherit;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .symbol {
+                        color: #2e374f;
+                    }
+                }
+    
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            .balance {
+                color: #ffffff;
+            }
+        }
+        li:hover {
+            background-color: #181d29;
+        }
+    }
+    .crypto-select-list::-webkit-scrollbar {
+        display: none;
     }
     
 `;
