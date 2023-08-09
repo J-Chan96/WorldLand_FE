@@ -8,7 +8,6 @@ import { InjectedConnector } from 'wagmi/connectors/injected';
 import { connect } from '@wagmi/core';
 import { worldland } from 'utils/wagmi';
 
-
 interface Web3ConnectButtonProps {
   onAccountConnected: (account: string) => void;
 }
@@ -76,15 +75,14 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   const userAgent = window.navigator.userAgent;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-
   const handleOpenMetamaskLink = () => {
     // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
     if (isMobile) {
       if (window.ethereum) {
         handleEthereum();
       } else {
-        // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-        window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
+        window.open(`https://metamask.app.link/dapp/${window.location.host}`);
+        // window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
         window.addEventListener('ethereum#initialized', handleEthereum, {
           once: true,
         });
@@ -102,9 +100,9 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       console.log('Ethereum successfully detected!');
       setTimeout(() => {
         open();
-      }, 3000)
+      }, 3000);
     } else {
-      alert("Please install Metamask!")
+      // alert("Please install Metamask!")
     }
   }
 
