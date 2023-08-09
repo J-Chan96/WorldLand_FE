@@ -104,7 +104,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       const interval = setInterval(() => {
         open();
       }, 3000)
-      if (address) {
+      if (isConnected) {
         clearInterval(interval);
       }
       // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
