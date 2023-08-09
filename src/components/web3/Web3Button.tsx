@@ -83,8 +83,8 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       if (window.ethereum) {
         handleEthereum();
       } else {
-        window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-        // window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
+        // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
+        window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
         window.addEventListener('ethereum#initialized', handleEthereum, {
           once: true,
         });
@@ -100,31 +100,24 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
     const { ethereum } = window;
     if (ethereum && ethereum.isMetaMask) {
       console.log('Ethereum successfully detected!');
-      console.log({ address })
-      const interval = setInterval(() => {
+      setTimeout(() => {
         open();
       }, 3000)
-      if (address) {
-        clearInterval(interval);
-      }
-      // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      // setAddress(accounts[0]);
     } else {
-      // console.log('Please install MetaMask!');
-      // alert("Please install Metamask!")
+      alert("Please install Metamask!")
     }
   }
 
   useEffect(() => {
     // 계정 정보가 변경될 때마다 로컬 스토리지에 저장
     handleEthereum();
-    if (window.ethereum) {
-      window.ethereum.on('accountsChanged', function (accounts: string[]) {
-        localStorage.setItem('connectedAccount', accounts[0]);
-        setConnectedAccount(accounts[0]);
-      });
-    }
-  }, [connectedAccount]);
+    // if (window.ethereum) {
+    //   window.ethereum.on('accountsChanged', function (accounts: string[]) {
+    //     localStorage.setItem('connectedAccount', accounts[0]);
+    //     setConnectedAccount(accounts[0]);
+    //   });
+    // }
+  }, []);
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 로컬 스토리지에서 계정 정보 불러오기
