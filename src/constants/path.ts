@@ -11,4 +11,5 @@ export const PATH = {
   LEARN_COINOMICS: '/learn/coinomics',
   LEARN_GOVERNANCE: '/learn/governance',
   LEARN_FAQ: '/learn/faq',
+  SWAP: '/swap',
 };
