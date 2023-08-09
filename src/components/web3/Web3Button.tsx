@@ -83,8 +83,8 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
       if (window.ethereum) {
         handleEthereum();
       } else {
-        window.open(`https://metamask.app.link/dapp/${window.location.host}`);
-        // window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
+        // window.open(`https://metamask.app.link/dapp/${window.location.host}`);
+        window.open(`https://metamask.app.link/dapp/192.168.100.31.sslip.io:4001`);
         window.addEventListener('ethereum#initialized', handleEthereum, {
           once: true,
         });
@@ -100,18 +100,11 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
     const { ethereum } = window;
     if (ethereum && ethereum.isMetaMask) {
       console.log('Ethereum successfully detected!');
-      console.log({ address })
-      const interval = setInterval(() => {
+      setTimeout(() => {
         open();
       }, 3000)
-      if (isConnected) {
-        clearInterval(interval);
-      }
-      // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      // setAddress(accounts[0]);
     } else {
-      // console.log('Please install MetaMask!');
-      // alert("Please install Metamask!")
+      alert("Please install Metamask!")
     }
   }
 
