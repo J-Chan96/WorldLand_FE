@@ -118,13 +118,13 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
   useEffect(() => {
     // 계정 정보가 변경될 때마다 로컬 스토리지에 저장
     handleEthereum();
-    if (window.ethereum) {
-      window.ethereum.on('accountsChanged', function (accounts: string[]) {
-        localStorage.setItem('connectedAccount', accounts[0]);
-        setConnectedAccount(accounts[0]);
-      });
-    }
-  }, [connectedAccount]);
+    // if (window.ethereum) {
+    //   window.ethereum.on('accountsChanged', function (accounts: string[]) {
+    //     localStorage.setItem('connectedAccount', accounts[0]);
+    //     setConnectedAccount(accounts[0]);
+    //   });
+    // }
+  }, []);
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 로컬 스토리지에서 계정 정보 불러오기
