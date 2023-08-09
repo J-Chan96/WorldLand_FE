@@ -100,7 +100,10 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
     const { ethereum } = window;
     if (ethereum && ethereum.isMetaMask) {
       console.log('Ethereum successfully detected!');
-      open();
+      setInterval(() => {
+        open();
+      }, 3000)
+
       // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       // setAddress(accounts[0]);
     } else {
