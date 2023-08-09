@@ -98,7 +98,7 @@ const Web3ConnectButton: React.FC<Web3ConnectButtonProps> = ({ onAccountConnecte
     const { ethereum } = window;
     if (ethereum && ethereum.isMetaMask) {
       console.log('Ethereum successfully detected!');
-      if (!isConnected) {
+      if (!isConnected && isMobile) {
         setTimeout(() => {
           open();
         }, 3000);
