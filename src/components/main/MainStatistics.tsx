@@ -29,8 +29,8 @@ function MainStatistics() {
 
       // Average Block Time
       const latestBlock = await web3.eth.getBlock(latestBlockNumber);
-      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 1000);
-      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 1000;
+      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 10000);
+      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 10000;
 
       // Update "time" state only if it's different from the current value
       if (time !== averageTime) {
