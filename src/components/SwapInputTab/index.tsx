@@ -3,7 +3,7 @@ import { IoMdSettings } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 import { crypto_list } from "data";
 
-const SwapInputTab = ({ input }: SwapInputType) => {
+const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
     return (
         <Container>
             <ul>
@@ -20,7 +20,7 @@ const SwapInputTab = ({ input }: SwapInputType) => {
                         <label htmlFor="pay">You pay</label>
                         <input id="pay" type="text" placeholder="0" />
                     </div>
-                    <div className="selected-coin">
+                    <div onClick={() => open(true)} className="selected-coin">
                         <img src={crypto_list[0]["icon"]} alt={crypto_list[0]["title"]} />
                         <p>{crypto_list[0]["symbol"]}</p>
                         <BiChevronDown color="#ffffff" size={25} />
@@ -31,7 +31,7 @@ const SwapInputTab = ({ input }: SwapInputType) => {
                         <label htmlFor="receive">You receive</label>
                         <input id="receive" type="text" placeholder="0" />
                     </div>
-                    <div className="selected-coin-2nd blue-bgd">
+                    <div onClick={() => open(true)} className="selected-coin-2nd blue-bgd">
                         {/* <img src={crypto_list[2]["icon"]} alt={crypto_list[2]["title"]} /> */}
                         {/* <p>{crypto_list[2]["symbol"]}</p> */}
                         <p>Select token</p>

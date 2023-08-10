@@ -11,6 +11,8 @@ import Backdrop from "components/Backdrop";
 
 const Swap = () => {
     const [modal, setModal] = useState<boolean>(false);
+    const [payCrypto, setPayCrypto] = useState({})
+    const [receiveCrypto, setReceiveCrypto] = useState({})
     // const { address, isConnected } = useAccount();
     // const [amount, setAmount] = useState<string>("");
     // const [currentTxHash, setCurrentTxHash] = useState<`0x${string}` | undefined>();
@@ -102,10 +104,10 @@ const Swap = () => {
 
     return (
         <Container>
-            <SwapInputTab input="0" />
+            <SwapInputTab open={setModal} input="0" />
             {modal && <>
                 <Backdrop />
-                <TokenModal />
+                <TokenModal close={setModal} />
             </>}
         </Container>
     )

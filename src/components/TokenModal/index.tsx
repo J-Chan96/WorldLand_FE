@@ -3,12 +3,14 @@ import { CgClose } from "react-icons/cg";
 import { AiOutlineSearch } from "react-icons/ai";
 import { crypto_list } from "data";
 
-const TokenModal = () => {
+
+
+const TokenModal = ({ close }: TokenModalProps) => {
     return (
         <Container>
             <section className="first-block">
                 <p>Select a token</p>
-                <CgClose color="#ffffff" size={25} />
+                <CgClose onClick={() => close(false)} className="close-btn" color="#ffffff" size={25} />
             </section>
             <div className="input-hold">
                 <AiOutlineSearch color="#ffffff" size={25} />
@@ -71,6 +73,9 @@ const Container = styled.section`
             font-weight: 600;
             font-size: 18px;
             color: #ffffff;
+        }
+        .close-btn {
+            cursor: pointer;
         }
     }
     .input-hold {
