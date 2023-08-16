@@ -15,6 +15,11 @@ export declare global {
     close: Function;
   }
 
+  interface BackdropProps {
+    close?: Function;
+    intensity: number;
+  }
+
   interface selectedCrypto {}
 
   type ADDRESS_TYPE = {

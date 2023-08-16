@@ -66,6 +66,7 @@ const Container = styled.div`
     background-color: #0E111C;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
+    z-index: 999;
     
 
     ul {

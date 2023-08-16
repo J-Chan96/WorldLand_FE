@@ -1,18 +1,19 @@
 import { styled } from "styled-components";
 
-const Backdrop = ({ close }: TokenModalProps) => {
+const Backdrop = ({ close, intensity }: BackdropProps) => {
     return (
-        <Container onClick={() => close(false)} />
+        <Container intensity={intensity} onClick={() => close && close(false)} />
     )
 }
 
 export default Backdrop
 
-const Container = styled.div`
-position: absolute;
-z-index: 990;
-background: rgb(0, 0, 0, 0.4);
-width: 100%;
-height: 100vh;
-cursor: pointer;
-`;
+const Container = styled.div<{ intensity: number }>`
+    position: absolute;
+    z-index: 990;
+    width: 100%;
+    height: 100vh;
+    cursor: pointer;
+    background-size: cover;
+    backdrop-filter: ${(props) => `blur(${props.intensity}px)`}
+    `;

@@ -14,7 +14,7 @@ import { ABI, CHAINDS, CONTRACT_ADDRESSES, FUNCTION, Field } from "../../utils/e
 const Swap = () => {
     const [modal, setModal] = useState<boolean>(false);
     const { address, isConnected } = useAccount();
-    const [input, setInput] = useState<string>("");
+    const [input, setInput] = useState<string>("1000000000000000000");
     const [output, setOutput] = useState<string>("");
     const [currentTxHash, setCurrentTxHash] = useState<`0x${string}` | undefined>();
 
@@ -52,6 +52,9 @@ const Swap = () => {
             ]
         ],
         onSuccess(data) {
+            console.log({ data })
+        },
+        onError(data) {
             console.log({ data })
         }
     })
@@ -124,9 +127,16 @@ const Swap = () => {
 
     return (
         <Container>
+            <Backdrop intensity={5} />
+            <VideoContainer>
+                <Video autoPlay loop muted playsInline>
+                    <source src="/videos/MainVideo.mp4" />
+                    Your browser does not support the video tag.
+                </Video>
+            </VideoContainer>
             <SwapInputTab open={setModal} inputHandler={userInputHandler} input={input} output={output} />
             {modal && <>
-                <Backdrop close={setModal} />
+                <Backdrop intensity={10} close={setModal} />
                 <TokenModal close={setModal} />
             </>}
         </Container>
@@ -140,9 +150,29 @@ const Container = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background:linear-gradient(to bottom, #121423, #06080c);
     height: 100vh;
     position: relative;
 `;
 
 
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const VideoContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* 숨길 컨트롤 요소들을 선택하여 스타일을 적용합니다. */
+  video::-webkit-media-controls-panel,
+  video::-webkit-media-controls-overlay-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    opacity: 0;
+  }
+`;

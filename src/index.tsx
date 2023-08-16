@@ -7,7 +7,7 @@ import GlobalStyle from 'style/GlobalStyle';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum';
 import { Web3Modal } from '@web3modal/react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { arbitrum, mainnet } from 'wagmi/chains';
+import { arbitrum, mainnet, } from 'wagmi/chains';
 import { worldland, worldland_testnet, chainImages } from 'utils/wagmi';
 
 const chains = [worldland, worldland_testnet, arbitrum, mainnet,];
