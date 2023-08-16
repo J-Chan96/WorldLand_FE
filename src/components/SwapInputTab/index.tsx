@@ -67,6 +67,7 @@ const Container = styled.div`
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     z-index: 999;
+    opacity: 0.9;
     
 
     ul {

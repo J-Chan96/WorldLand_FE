@@ -62,6 +62,7 @@ const Container = styled.section`
     max-height: 600px;
     font-family: 'Nunito Sans', sans-serif;
     padding: 10px 0 0 0;
+    opacity: 0.9;
 
     .first-block {
         display: inherit;
