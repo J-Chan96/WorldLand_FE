@@ -6,9 +6,9 @@ import Backdrop from "components/Backdrop";
 import { chainIds } from "configs/services/chainIds";
 import { useAccount, useNetwork, useSwitchNetwork, useBalance, useContractWrite, useWaitForTransaction, useContractRead } from "wagmi";
 import { MAP_STR_ABI } from "configs/abis";
-import { wld_addresses } from "configs/contract_addresses";
+import { WLD_ADDRESSES } from "configs/contract_addresses";
 import { to_wei } from "utils/util";
-import { Field } from "../../utils/enum";
+import { ABI, CHAINDS, CONTRACT_ADDRESSES, FUNCTION, Field } from "../../utils/enum";
 
 
 const Swap = () => {
@@ -41,21 +41,26 @@ const Swap = () => {
     })
 
     const { data: amountOut, isError, isLoading } = useContractRead({
-        chainId: chain?.id,
-        address: wld_addresses["uniswap"]["router"],
-        abi: MAP_STR_ABI["UNISWAPV2_ROUTER"],
-        functionName: 'getAmountsOut',
+        address: WLD_ADDRESSES[CONTRACT_ADDRESSES.UNISWAP][CONTRACT_ADDRESSES.ROUTER],
+        abi: MAP_STR_ABI[ABI.UNISWAPV2_ROUTER],
+        functionName: FUNCTION.GETAMOUNTSOUT,
         args: [
-            address,
-            wld_addresses["bridge_contract"],
+            input,
+            [
+                WLD_ADDRESSES[CONTRACT_ADDRESSES.WRAPPEDETH_ADDRESS],
+                WLD_ADDRESSES[CONTRACT_ADDRESSES.LVT_ADDRESS],
+            ]
         ],
+        onSuccess(data) {
+            console.log({ data })
+        }
     })
 
     const { write } = useContractWrite({
         chainId: chain?.id,
-        address: wld_addresses["wrappedETH_address_BRIDGE"],
-        abi: MAP_STR_ABI["WRAPETH"],
-        functionName: 'burn',
+        address: WLD_ADDRESSES[CONTRACT_ADDRESSES.WRAPPEDETH_ADDRESS_BRIDGE],
+        abi: MAP_STR_ABI[ABI.WRAPETH],
+        functionName: FUNCTION.BURN,
         onMutate({ args }) {
             if (!isConnected) {
                 // handleOpenNotification({
@@ -63,8 +68,8 @@ const Swap = () => {
                 // });
                 return;
             }
-            if (chain?.id !== chainIds["worldland"]) {
-                switchNetwork?.(chainIds["worldland"])
+            if (chain?.id !== chainIds[CHAINDS.WORLDLAND_SEOUL]) {
+                switchNetwork?.(chainIds[CHAINDS.WORLDLAND_SEOUL])
             }
 
             if (input === "") {

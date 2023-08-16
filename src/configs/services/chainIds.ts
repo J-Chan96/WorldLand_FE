@@ -1,4 +1,5 @@
 export const chainIds: chainids = {
-  sepolia: 11155111,
-  worldland: 12345,
+  SEPOLIA: 11155111,
+  WORLDLAND_SEOUL: 103,
+  WORLDLAND_GWANGJU: 12345,
 };

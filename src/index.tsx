@@ -7,10 +7,10 @@ import GlobalStyle from 'style/GlobalStyle';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum';
 import { Web3Modal } from '@web3modal/react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { arbitrum, mainnet, polygon } from 'wagmi/chains';
-import { worldland, chainImages } from 'utils/wagmi';
+import { arbitrum, mainnet } from 'wagmi/chains';
+import { worldland, worldland_testnet, chainImages } from 'utils/wagmi';
 
-const chains = [worldland, arbitrum, mainnet, polygon];
+const chains = [worldland, worldland_testnet, arbitrum, mainnet,];
 const projectId = '90f6c51de51a4046732827e944ba4958';
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
