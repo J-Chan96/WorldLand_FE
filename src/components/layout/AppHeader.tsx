@@ -23,13 +23,12 @@ const HeaderWrapper = styled.header`
   border-bottom: 1px solid ${theme.colors.black700};
   width: 100%;
 
-
   ${maxQuery.tablet} {
     flex-direction: row;
     position: fixed;
     width: 100%;
     justify-content: space-between;
-    z-index: 9999;
+    z-index: 6;
 
     svg {
       cursor: pointer;

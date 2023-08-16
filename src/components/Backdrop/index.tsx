@@ -10,7 +10,7 @@ export default Backdrop
 
 const Container = styled.div<{ intensity: number }>`
     position: absolute;
-    z-index: 990;
+    z-index: ${({ intensity }) => intensity > 5 ? "5" : "3"} ;
     width: 100%;
     height: 100vh;
     cursor: pointer;
