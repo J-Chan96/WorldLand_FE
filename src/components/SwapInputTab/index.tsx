@@ -3,8 +3,11 @@ import { IoMdSettings } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { crypto_list } from "data";
+import { Field } from "../../utils/util";
 
-const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
+
+
+const SwapInputTab = ({ input, output, open, inputHandler }: SwapInputTabProps) => {
     return (
         <Container>
             <ul>
@@ -18,8 +21,8 @@ const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
             <div className="input-wrap">
                 <div className="input-hold">
                     <div className="input-and-label">
-                        <label htmlFor="pay">You pay</label>
-                        <input id="pay" type="text" placeholder="0" />
+                        <label htmlFor="input">You pay</label>
+                        <input id="input" type="text" placeholder="0" onChange={(e) => inputHandler(Field.INPUT, e.target.value)} />
                     </div>
                     <div onClick={() => open(true)} className="selected-coin">
                         <img src={crypto_list[0]["icon"]} alt={crypto_list[0]["title"]} />
@@ -30,8 +33,8 @@ const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
                 </div>
                 <div className="input-hold">
                     <div className="input-and-label">
-                        <label htmlFor="receive">You receive</label>
-                        <input id="receive" type="text" placeholder="0" />
+                        <label htmlFor="output">You receive</label>
+                        <input id="output" type="text" placeholder="0" onChange={(e) => inputHandler(Field.OUTPUT, e.target.value)} />
                     </div>
                     <div onClick={() => open(true)} className="selected-coin-2nd blue-bgd">
                         {/* <img src={crypto_list[2]["icon"]} alt={crypto_list[2]["title"]} /> */}

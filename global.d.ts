@@ -6,7 +6,9 @@ export declare global {
   }
   interface SwapInputTabProps {
     input: string;
+    output: string;
     open: Function;
+    inputHandler: (field: Field, typedValue: string) => void;
   }
 
   interface TokenModalProps {

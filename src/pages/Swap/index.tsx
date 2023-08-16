@@ -8,6 +8,8 @@ import { useAccount, useNetwork, useSwitchNetwork, useBalance, useContractWrite,
 import { MAP_STR_ABI } from "configs/abis";
 import { wld_addresses } from "configs/contract_addresses";
 import { to_wei } from "utils/util";
+import { Field } from "../../utils/util";
+
 
 const Swap = () => {
     const [modal, setModal] = useState<boolean>(false);
@@ -101,9 +103,23 @@ const Swap = () => {
     };
 
 
+    function userInputHandler(field: Field, typedValue: string) {
+        switch (field) {
+            case Field.INPUT:
+                setInput(typedValue);
+                break;
+            case Field.OUTPUT:
+                setOutput(typedValue);
+                break;
+            default:
+                break;
+        }
+    }
+
+
     return (
         <Container>
-            <SwapInputTab open={setModal} input="0" />
+            <SwapInputTab open={setModal} inputHandler={userInputHandler} input={input} output={output} />
             {modal && <>
                 <Backdrop close={setModal} />
                 <TokenModal close={setModal} />
