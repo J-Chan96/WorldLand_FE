@@ -1,10 +1,5 @@
 const Web3 = require('web3');
 
-export enum Field {
-  INPUT = 'INPUT',
-  OUTPUT = 'OUTPUT',
-}
-
 export const from_wei = (val: string) => Web3.utils.fromWei('' + val, 'ether');
 export const to_wei = (val: string) => Web3.utils.toWei('' + val, 'ether');
 

@@ -8,7 +8,7 @@ import { useAccount, useNetwork, useSwitchNetwork, useBalance, useContractWrite,
 import { MAP_STR_ABI } from "configs/abis";
 import { wld_addresses } from "configs/contract_addresses";
 import { to_wei } from "utils/util";
-import { Field } from "../../utils/util";
+import { Field } from "../../utils/enum";
 
 
 const Swap = () => {
@@ -40,15 +40,15 @@ const Swap = () => {
         },
     })
 
-    const { data: allowance, isError, isLoading } = useContractRead({
-        // chainId: chain?.id,
-        // address: wld_addresses["token_contract"],
-        // abi: MAP_STR_ABI["ERC20_ABI"],
-        // functionName: 'allowance',
-        // args: [
-        //   address,
-        //   wld_addresses["bridge_contract"],
-        // ],
+    const { data: amountOut, isError, isLoading } = useContractRead({
+        chainId: chain?.id,
+        address: wld_addresses["uniswap"]["router"],
+        abi: MAP_STR_ABI["UNISWAPV2_ROUTER"],
+        functionName: 'getAmountsOut',
+        args: [
+            address,
+            wld_addresses["bridge_contract"],
+        ],
     })
 
     const { write } = useContractWrite({

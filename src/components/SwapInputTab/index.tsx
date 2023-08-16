@@ -3,7 +3,7 @@ import { IoMdSettings } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { crypto_list } from "data";
-import { Field } from "../../utils/util";
+import { Field } from "../../utils/enum";
 
 
 
