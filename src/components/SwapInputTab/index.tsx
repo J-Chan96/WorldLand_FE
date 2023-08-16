@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { IoMdSettings } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
+import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { crypto_list } from "data";
 
 const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
@@ -25,6 +26,7 @@ const SwapInputTab = ({ input, open }: SwapInputTabProps) => {
                         <p>{crypto_list[0]["symbol"]}</p>
                         <BiChevronDown color="#ffffff" size={25} />
                     </div>
+                    <BsFillArrowDownSquareFill className="swap-arrow" color="#131A2A" size={45} />
                 </div>
                 <div className="input-hold">
                     <div className="input-and-label">
@@ -54,8 +56,9 @@ const Container = styled.div`
     width: 100%;
     max-width: 440px;
     border: 1px solid #2e374f;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 10px;
+    margin: 15px;
     gap: 10px;
     background-color: #0E111C;
     font-family: 'Nunito Sans', sans-serif;
@@ -68,7 +71,7 @@ const Container = styled.div`
         justify-content: center;
         width: 100%;
         gap: 10px;
-        margin: 5px 20px;
+        padding: 5px 10px;
         li {
             list-style-type: none;
             color: #53596E;
@@ -91,13 +94,23 @@ const Container = styled.div`
         flex-direction: column;
         width: 100%;
         gap: 5px;
+        position: relative;
+        .swap-arrow {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 11px;
+            border: 6px solid #0E111C;
+            background-color: #2e374f;
+        }
         .input-hold {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
             background-color: #131A2A;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
             height: 120px;
 

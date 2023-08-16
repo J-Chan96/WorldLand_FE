@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
-const Backdrop = () => {
+const Backdrop = ({ close }: TokenModalProps) => {
     return (
-        <Container />
+        <Container onClick={() => close(false)} />
     )
 }
 
@@ -14,4 +14,5 @@ z-index: 990;
 background: rgb(0, 0, 0, 0.4);
 width: 100%;
 height: 100vh;
+cursor: pointer;
 `;
