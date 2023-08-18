@@ -29,8 +29,8 @@ function MainStatistics() {
 
       // Average Block Time
       const latestBlock = await web3.eth.getBlock(latestBlockNumber);
-      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 10000);
-      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 10000;
+      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 78000);
+      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 78000;
 
       // Update "time" state only if it's different from the current value
       if (time !== averageTime) {
@@ -102,7 +102,7 @@ function MainStatistics() {
           <StatisticsDetail>
             <CountUp end={activeNodes} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Total Accounts</DetailDescription>
+          <DetailDescription>Validator Nodes</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
