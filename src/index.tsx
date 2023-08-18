@@ -10,6 +10,7 @@ import { Web3Modal } from '@web3modal/react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum, mainnet, polygon } from 'wagmi/chains';
 import { worldland, chainImages } from 'utils/wagmi';
+import { HelmetProvider } from 'react-helmet-async';
 
 const chains = [worldland, arbitrum, mainnet, polygon];
 const projectId = '90f6c51de51a4046732827e944ba4958';
@@ -26,17 +27,19 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains);
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <>
-    <WagmiConfig config={wagmiConfig}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <App />
-      </ThemeProvider>
-    </WagmiConfig>
-    <Web3Modal
-      projectId={projectId}
-      ethereumClient={ethereumClient}
-      // chainImages={chainImages}
-      defaultChain={worldland}
-    />
+    <HelmetProvider>
+      <WagmiConfig config={wagmiConfig}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <App />
+        </ThemeProvider>
+      </WagmiConfig>
+      <Web3Modal
+        projectId={projectId}
+        ethereumClient={ethereumClient}
+        // chainImages={chainImages}
+        defaultChain={worldland}
+      />
+    </HelmetProvider>
   </>,
 );
