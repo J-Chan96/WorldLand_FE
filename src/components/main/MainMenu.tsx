@@ -149,13 +149,13 @@ const MainMenu = () => {
               >
                 <Strong>Medium</Strong>
               </SpaceLink>
-              <SpaceLink href="/">
+              <SpaceLink href="https://twitter.com/Worldland_space" target="_blank" rel="noopener norefeerer">
                 <Strong>
                   <Twitter />
                   {'   '}Twitter
                 </Strong>
               </SpaceLink>
-              <SpaceLink href="/">
+              <SpaceLink href="https://discord.gg/yJERYVnE6a" target="_blank" rel="noopener noreferrer">
                 <Strong>
                   <Discord /> Discord
                 </Strong>
