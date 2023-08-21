@@ -13,7 +13,7 @@ import {
 function MainStatistics() {
   const [time, setTime] = useState<number>(0);
   const [totalBlocks, setTotalBlocks] = useState<number>(0);
-  const [totalWalletCount, setTotalWalletCount] = useState<number>(123);
+  const [totalWalletCount, setTotalWalletCount] = useState<number>(0);
   const statisticsRef = useRef<HTMLDivElement>(null);
 
   const formatValue = (value: number) => {
@@ -33,7 +33,7 @@ function MainStatistics() {
 
       try {
         const accounts = await web3.eth.getAccounts();
-        setTotalWalletCount(123);
+        setTotalWalletCount(124);
       } catch (error) {
         console.error('Error fetching wallet count:', error);
       }
