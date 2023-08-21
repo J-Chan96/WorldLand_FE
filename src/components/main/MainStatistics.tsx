@@ -13,9 +13,8 @@ import {
 function MainStatistics() {
   const [time, setTime] = useState<number>(0);
   const [totalBlocks, setTotalBlocks] = useState<number>(0);
-  const [activeNodes, setActiveNodes] = useState<number>(0);
+  const [totalWalletCount, setTotalWalletCount] = useState<number>(123);
   const statisticsRef = useRef<HTMLDivElement>(null);
-  const prevActiveNodes = useRef<number>(0); // to keep track of previous activeNodes value
 
   const formatValue = (value: number) => {
     return `${value.toFixed(1)}s`;
@@ -29,9 +28,15 @@ function MainStatistics() {
 
       // Average Block Time
       const latestBlock = await web3.eth.getBlock(latestBlockNumber);
-      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 78000);
-      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 78000;
+      const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 100000);
+      const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 100000;
 
+      try {
+        const accounts = await web3.eth.getAccounts();
+        setTotalWalletCount(123);
+      } catch (error) {
+        console.error('Error fetching wallet count:', error);
+      }
       // Update "time" state only if it's different from the current value
       if (time !== averageTime) {
         setTime(averageTime);
@@ -50,39 +55,6 @@ function MainStatistics() {
     return () => clearInterval(interval);
   }, [fetchBlockData]);
 
-  useEffect(() => {
-    // Fetch Active Accounts every 5 seconds
-    const interval = setInterval(() => {
-      web3.eth.net.getPeerCount().then((peerCount) => {
-        // Update "activeNodes" state only if it's different from the current value
-        if (activeNodes !== Number(peerCount)) {
-          setActiveNodes(Number(peerCount));
-        }
-      });
-    }, 30000);
-
-    // Initial fetch
-    web3.eth.net.getPeerCount().then((peerCount) => {
-      // Update "activeNodes" state only if it's different from the current value
-      if (activeNodes !== Number(peerCount)) {
-        setActiveNodes(Number(peerCount));
-      }
-    });
-
-    return () => clearInterval(interval);
-  }, [activeNodes]); // Add "activeNodes" as a dependency to this useEffect
-
-  useEffect(() => {
-    // Check if the "activeNodes" value has changed
-    if (prevActiveNodes.current !== activeNodes) {
-      // Update the previous "activeNodes" value
-      prevActiveNodes.current = activeNodes;
-    } else {
-      // Fetch "average block time" data only when "activeNodes" has not changed
-      fetchBlockData();
-    }
-  }, [activeNodes, fetchBlockData]);
-
   return (
     <StatisticsContainer ref={statisticsRef}>
       <StatisticsDetails>
@@ -100,9 +72,9 @@ function MainStatistics() {
         </StatisticContainer>
         <StatisticContainer>
           <StatisticsDetail>
-            <CountUp end={activeNodes} duration={0.5} />
+            <CountUp end={totalWalletCount} duration={0.5} />
           </StatisticsDetail>
-          <DetailDescription>Validator Nodes</DetailDescription>
+          <DetailDescription>Total Wallet Count</DetailDescription>
         </StatisticContainer>
       </StatisticsDetails>
     </StatisticsContainer>
