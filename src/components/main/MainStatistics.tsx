@@ -33,7 +33,7 @@ function MainStatistics() {
 
       try {
         const accounts = await web3.eth.getAccounts();
-        setTotalWalletCount(131);
+        setTotalWalletCount(133);
       } catch (error) {
         console.error('Error fetching wallet count:', error);
       }
