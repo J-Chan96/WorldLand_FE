@@ -15,10 +15,11 @@ import {
   Contack,
   MenuItemWrapper,
 } from './MainMenu.style';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Discord } from 'assets/header/Header';
 import AddNetworkButton from 'components/web3/AddNetworkButton';
+import axios from 'axios';
 // import { EVM } from 'assets/main/Main_core';
 
 const MainMenu = () => {
