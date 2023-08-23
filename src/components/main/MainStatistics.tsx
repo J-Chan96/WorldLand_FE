@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import CountUp from 'react-countup';
 import { web3 } from '../web3/useWeb3';
+import axios from 'axios';
 
 import {
   StatisticsContainer,
@@ -20,6 +21,16 @@ function MainStatistics() {
     return `${value.toFixed(1)}s`;
   };
 
+  const listAccount = async () => {
+    const response = await axios.post(
+      `http://scan.worldland.foundation/api?module=account&action=listaccounts&offset=500`,
+    );
+
+    console.log(response);
+    const response2 = response.data.result.length;
+    setTotalWalletCount(response2);
+  };
+
   const fetchBlockData = useCallback(async () => {
     try {
       // Total Blocks
@@ -31,12 +42,6 @@ function MainStatistics() {
       const startBlock = await web3.eth.getBlock(Number(latestBlockNumber) - 100000);
       const averageTime = (Number(latestBlock.timestamp) - Number(startBlock.timestamp)) / 100000;
 
-      try {
-        const accounts = await web3.eth.getAccounts();
-        setTotalWalletCount(133);
-      } catch (error) {
-        console.error('Error fetching wallet count:', error);
-      }
       // Update "time" state only if it's different from the current value
       if (time !== averageTime) {
         setTime(averageTime);
@@ -51,6 +56,7 @@ function MainStatistics() {
 
     // Initial fetch
     fetchBlockData();
+    listAccount();
 
     return () => clearInterval(interval);
   }, [fetchBlockData]);
