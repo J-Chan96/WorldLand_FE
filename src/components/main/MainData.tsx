@@ -108,6 +108,7 @@ function MainData() {
         <Helmet>
           <title>Worldland foundation</title>
           <meta name="description" content="We are Worldland Main Network" />
+          <meta property="og:url" content="https://worldland.foundation" />
           <meta property="og:title" content="Worldland" />
           <meta property="og:description" content="We are Worldland Main Network" />
           <meta property="og:image" content="https://lv-storage1.s3.amazonaws.com/logo.png" />
