@@ -22,13 +22,13 @@ function MainStatistics() {
   };
 
   const listAccount = async () => {
-    const response = await axios.post(
-      `http://scan.worldland.foundation/api?module=account&action=listaccounts&offset=500`,
-    );
+    // const response = await axios.post(
+    //   `http://scan.worldland.foundation/api?module=account&action=listaccounts&offset=500`,
+    // );
 
-    console.log(response);
-    const response2 = response.data.result.length;
-    setTotalWalletCount(response2);
+    // console.log(response);
+    // const response2 = response.data.result.length;
+    setTotalWalletCount(137);
   };
 
   const fetchBlockData = useCallback(async () => {
