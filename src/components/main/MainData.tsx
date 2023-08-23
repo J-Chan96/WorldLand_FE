@@ -108,11 +108,11 @@ function MainData() {
         <Helmet>
           <title>Worldland foundation</title>
           <meta name="description" content="We are Worldland Main Network" />
-          <meta property="og:title" content="hello hahaha" />
-          <meta property="og:description" content="이게 컨텐트냐?" />
+          <meta property="og:title" content="Worldland" />
+          <meta property="og:description" content="We are Worldland Main Network" />
           <meta property="og:image" content="https://lv-storage1.s3.amazonaws.com/logo.png" />
-          <meta name="twitter:title" content="twitter??" />
-          <meta name="twitter:description" content="twitter description haha" />
+          <meta name="twitter:title" content="twitter" />
+          <meta name="twitter:description" content="twitter description" />
           <meta name="twitter:image" content="https://lv-storage1.s3.amazonaws.com/logo.png" />
         </Helmet>
       </div>
