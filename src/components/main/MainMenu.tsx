@@ -142,11 +142,7 @@ const MainMenu = () => {
               <SpaceLink>
                 <Strong>Help Center</Strong>
               </SpaceLink>
-              <SpaceLink
-                href="https://medium.com/@worldland2023/worldland-coin-windows-%EC%B1%84%EA%B5%B4-%EB%B0%A9%EB%B2%95-9703fb6148b0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <SpaceLink href="https://medium.com/@worldland-official" target="_blank" rel="noopener noreferrer">
                 <Strong>Medium</Strong>
               </SpaceLink>
               <SpaceLink href="https://twitter.com/Worldland_space" target="_blank" rel="noopener norefeerer">
