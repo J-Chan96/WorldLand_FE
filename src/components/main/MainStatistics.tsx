@@ -26,7 +26,6 @@ function MainStatistics() {
       `https://scan.worldland.foundation/api?module=account&action=listaccounts&offset=500`,
     );
 
-    console.log(response);
     const response2 = response.data.result.length;
     setTotalWalletCount(response2);
   };
@@ -34,7 +33,15 @@ function MainStatistics() {
   const fetchBlockData = useCallback(async () => {
     try {
       // Total Blocks
+      // const [latestBlockNumber, listBlock] = await Promise.all([
+      //   await web3.eth.getBlockNumber(),
+      //   await axios.post(`https://scan.worldland.foundation/api?module=account&action=listaccounts&offset=500`),
+
+      //   // await web3.eth.getBlock(latestBlockNumber),
+      // ]);
       const latestBlockNumber = await web3.eth.getBlockNumber();
+      // const response = listBlock.data.result.length;
+      // setTotalWalletCount(response);
       setTotalBlocks(Number(latestBlockNumber));
 
       // Average Block Time
