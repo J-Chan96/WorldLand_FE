@@ -15,10 +15,11 @@ import {
   Contack,
   MenuItemWrapper,
 } from './MainMenu.style';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Discord } from 'assets/header/Header';
 import AddNetworkButton from 'components/web3/AddNetworkButton';
+import axios from 'axios';
 // import { EVM } from 'assets/main/Main_core';
 
 const MainMenu = () => {
@@ -95,7 +96,7 @@ const MainMenu = () => {
                   <SpaceLink href="http://scan.worldland.foundation/" target="_blank">
                     <Strong>Scan</Strong>
                   </SpaceLink>
-                  <SpaceLink href="/swap">
+                  <SpaceLink onClick={() => handleLinkClick('서비스 준비중입니다. ')}>
                     <Strong>Swap</Strong>
                   </SpaceLink>
                 </div>
@@ -142,13 +143,16 @@ const MainMenu = () => {
               <SpaceLink>
                 <Strong>Help Center</Strong>
               </SpaceLink>
-              <SpaceLink href="/">
+              <SpaceLink href="https://medium.com/@worldland-official" target="_blank" rel="noopener noreferrer">
+                <Strong>Medium</Strong>
+              </SpaceLink>
+              <SpaceLink href="https://twitter.com/Worldland_space" target="_blank" rel="noopener norefeerer">
                 <Strong>
                   <Twitter />
                   {'   '}Twitter
                 </Strong>
               </SpaceLink>
-              <SpaceLink href="/">
+              <SpaceLink href="https://discord.gg/yJERYVnE6a" target="_blank" rel="noopener noreferrer">
                 <Strong>
                   <Discord /> Discord
                 </Strong>
